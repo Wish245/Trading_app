@@ -1,0 +1,10 @@
+^D:\TRADE\TRADING_APP\BACKEND\BUILD\CMAKEFILES\4D80117D3B646468EAD4FACDB5BDC0C5\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SD:/trade/Trading_app/backend -BD:/trade/Trading_app/backend/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/trade/Trading_app/backend/build/FlowerMarketBackend.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
