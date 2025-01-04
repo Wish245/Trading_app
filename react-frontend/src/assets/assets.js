@@ -1,5 +1,5 @@
 import logo from "./logo.png";
-import header from "./Header.jpeg";
+// import header from "./Header.jpeg";
 import Facebook from "./facebook.png";
 import Instagram from "./instagram.png";
 import Twitter from "./twitter.png";
@@ -9,7 +9,7 @@ import Sunflower from "./sunflower.jpg";
 import Avatar from "./avatar.png";
 export const assets = {
     logo,
-    header,
+    // header,
     Facebook,
     Instagram,
     Twitter,

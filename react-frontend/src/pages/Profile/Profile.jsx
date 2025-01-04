@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Profile.css';
 import { assets } from '../../assets/assets';
 import Dashboard from '../../components/Dashboard/Dashboard';
+import StockForm from '../../components/StockForm/StockForm'; // Import StockForm component
 
 const Profile = () => {
+  const [showStockForm, setShowStockForm] = useState(false);
+
+  const toggleStockForm = () => {
+    setShowStockForm(!showStockForm);
+  };
+
   return (
     <div className="profile-container">
       {/* Profile Section */}
@@ -33,6 +40,13 @@ const Profile = () => {
       {/* Dashboard */}
       <div className="dashboard-container">
         <Dashboard />
+      </div>
+
+      {/* Create Stock Button */}
+      <div className="create-stock-btn-container">
+        <button className="create-stock-btn" onClick={toggleStockForm}>
+          Create Stock
+        </button>
       </div>
 
       {/* Stock List */}
@@ -100,6 +114,16 @@ const Profile = () => {
           </tbody>
         </table>
       </div>
+
+      {/* StockForm Modal */}
+      {showStockForm && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <StockForm />
+            <button className="close-modal-btn" onClick={toggleStockForm}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -1,142 +1,212 @@
 /* Profile Section */
 .profile-container {
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    color: #333;
-  }
-  
-  .profile-section {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .profile-pic {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 20px;
-    object-fit: cover;
-    border: 2px solid #ccc;
-  }
-  
-  .profile-details h2 {
-    margin: 0;
-    font-size: 24px;
-  }
-  
-  .profile-details p {
-    margin: 5px 0;
-  }
-  
-  .upload-btn {
-    margin-top: 10px;
-    padding: 8px 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .upload-btn:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Selling Insights */
-  .selling-insights {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .insights-card {
-    flex: 1;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    text-align: center;
-  }
-  
-  .insights-chart {
-    flex: 2;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  
-  /* Stock List */
-  .stock-list {
-    margin-bottom: 20px;
-  }
-  
-  .stock-list table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .stock-list th, .stock-list td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .stock-list th {
-    background-color: #f4f4f4;
-  }
-  
-  .stock-list button {
-    margin-right: 5px;
-    padding: 5px 10px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .stock-list button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Order History */
-  .order-history table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .order-history th, .order-history td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-  }
-  
-  .order-history th {
-    background-color: #f4f4f4;
-  }
-  
-  .order-history button {
-    margin-right: 5px;
-    padding: 5px 10px;
-    border: none;
-    background-color: #28a745;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .order-history button:hover {
-    background-color: #1e7e34;
-  }
-  
-  /* Dashboard Section */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+.profile-details h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.profile-details p {
+  margin: 5px 0;
+}
+
+.upload-btn {
+  margin-top: 10px;
+  padding: 6px 10px;
+  font-size: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Selling Insights */
+.selling-insights {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.insights-card {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Stock List */
+.stock-list {
+  margin-bottom: 20px;
+}
+
+.stock-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.stock-list th,
+.stock-list td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.stock-list th {
+  background-color: #f4f4f4;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.stock-list button {
+  padding: 4px 8px;
+  font-size: 12px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 60px; /* Fix button size */
+}
+
+.stock-list button:hover {
+  background-color: #0056b3;
+}
+
+/* Order History */
+.order-history table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.order-history th,
+.order-history td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.order-history th {
+  background-color: #f4f4f4;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.order-history button {
+  padding: 4px 8px;
+  font-size: 12px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 60px; /* Fix button size */
+}
+
+.order-history button:hover {
+  background-color: #1e7e34;
+}
+
+/* Dashboard Section */
 .dashboard-container {
-    margin: 20px 0;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-  }
-  
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button */
+.close-modal-btn {
+  margin-top: 20px;
+  padding: 4px 8px;
+  font-size: 12px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.close-modal-btn:hover {
+  background-color: #c82333;
+}
+
+/* Create Stock Button */
+.create-stock-btn-container {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.create-stock-btn {
+  padding: 8px 14px;
+  font-size: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 150px; /* Ensure balanced size */
+}
+
+.create-stock-btn:hover {
+  background-color: #0056b3;
+}

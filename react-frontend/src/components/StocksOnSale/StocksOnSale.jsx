@@ -1,33 +1,36 @@
 import React, { useState } from "react";
-import "./NewArrival.css";
-import { useNavigate } from "react-router-dom";
+import "./StocksOnSale.css";
 import { assets } from "../../assets/assets";
+import { useNavigate } from "react-router-dom";
 
 const flowerStocks = [
   {
     id: 1,
-    name: "Rose Bouquet",
+    name: "Rose Mahela",
     image: assets.RedRose,
     price: "$20",
+    // salePrice: "$15",
     description: "Fresh red roses in a beautiful bouquet.",
   },
   {
     id: 2,
-    name: "Tulip Set",
+    name: "Tulip Kosol",
     image: assets.Tulip,
     price: "$15",
+    // salePrice: "$12",
     description: "Colorful tulips perfect for any occasion.",
   },
   {
     id: 3,
-    name: "Sunflower Bunch",
+    name: "Sunflower Bumrah",
     image: assets.Sunflower,
     price: "$12",
+    // salePrice: "$9",
     description: "Bright sunflowers to brighten your day.",
   },
 ];
 
-const NewArrivals = () => {
+const StocksOnSale = () => {
   const [selectedFlower, setSelectedFlower] = useState(null);
   const navigate = useNavigate();
 
@@ -41,18 +44,21 @@ const NewArrivals = () => {
 
   const handleOrderClick = () => {
     // Redirect to the order page with optional flower details
-    navigate("/order", { state: { flower: selectedFlower } });
+    navigate("/order", { state: { flower : selectedFlower } });
   };
 
   return (
-    <div className="new-arrivals">
-      <h2>New Arrivals</h2>
+    <section className="stocks-on-sale-section">
+      <h2>Stocks on Sale</h2>
       <div className="cards-container">
         {flowerStocks.map((stock) => (
           <div className="card" key={stock.id} onClick={() => openModal(stock)}>
             <img src={stock.image} alt={stock.name} />
             <h3>{stock.name}</h3>
-            <p>{stock.price}</p>
+            <p>
+              <span className="original-price">{stock.price}</span>
+              {/* <span className="sale-price">{stock.salePrice}</span> */}
+            </p>
           </div>
         ))}
       </div>
@@ -69,7 +75,10 @@ const NewArrivals = () => {
               style={{ width: "100%", borderRadius: "8px" }}
             />
             <h2>{selectedFlower.name}</h2>
-            <p>{selectedFlower.price}</p>
+            <p>
+              <span className="original-price">{selectedFlower.price}</span>
+              {/* <span className="sale-price">{selectedStock.salePrice}</span> */}
+            </p>
             <p>{selectedFlower.description}</p>
             <button className="order-button" onClick={handleOrderClick}>
               Make Order
@@ -77,8 +86,8 @@ const NewArrivals = () => {
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 
-export default NewArrivals;
+export default StocksOnSale;

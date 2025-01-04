@@ -1,7 +1,7 @@
 .header {
     height: 34vw;
     margin: 30px auto;
-    /* background: url('/react-frontend/public/Header.jpeg'); */
+    /* background: url('/Header.jpeg'); */
     background-size: contain;
     position: relative;
 }
