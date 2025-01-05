@@ -113,8 +113,17 @@ void signupHandler(const crow::request& req, crow::response& res) {
     res.end();
 }
 
+// Logout route handler
+void logoutHandler(const crow::request& req, crow::response& res) {
+    // Perform any backend cleanup (e.g., invalidate sessions) if needed
+    res.code = 200;
+    res.write("{\"status\":\"success\",\"message\":\"Logout successful\"}");
+    res.end();
+}
+
 // Initialize the routes
 void initAuthRoutes(crow::SimpleApp& app) {
     CROW_ROUTE(app, "/api/login").methods("POST"_method)(loginHandler);
     CROW_ROUTE(app, "/api/signup").methods("POST"_method)(signupHandler);
+    CROW_ROUTE(app, "/api/logout").methods("POST"_method)(logoutHandler); // Add logout route
 }

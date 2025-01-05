@@ -1,14 +1,68 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Profile.css';
 import { assets } from '../../assets/assets';
 import Dashboard from '../../components/Dashboard/Dashboard';
-import StockForm from '../../components/StockForm/StockForm'; // Import StockForm component
+import StockForm from '../../components/StockForm/StockForm';
+import axios from 'axios';
 
 const Profile = () => {
   const [showStockForm, setShowStockForm] = useState(false);
+  const [profileData, setProfileData] = useState({
+    username: '',
+    email: '',
+    phone: '',
+    nationalID: '',
+    profile_picture_path: '',
+  });
+  const [isEditing, setIsEditing] = useState(false);
+  const userId = localStorage.getItem('userId'); // Retrieve userId from local storage
 
-  const toggleStockForm = () => {
-    setShowStockForm(!showStockForm);
+  // Fetch profile data from the backend
+  useEffect(() => {
+    const fetchProfileData = async () => {
+      try {
+        const response = await axios.get(`/api/profile?user_id=${userId}`);
+        setProfileData(response.data);
+      } catch (error) {
+        console.error('Error fetching profile data:', error);
+      }
+    };
+
+    if (userId) {
+      fetchProfileData();
+    } else {
+      console.error('User ID not found in local storage.');
+    }
+  }, [userId]);
+
+  // Handle profile update
+  const handleUpdateProfile = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('/api/profile/update', {
+        user_id: userId,
+        username: profileData.username,
+        email: profileData.email,
+        phone: profileData.phone,
+        nationalID: profileData.nationalID,
+      });
+      alert('Profile updated successfully!');
+      setIsEditing(false);
+    } catch (error) {
+      console.error('Error updating profile:', error);
+      alert('Failed to update profile.');
+    }
+  };
+
+  // Toggle edit mode
+  const toggleEditMode = () => {
+    setIsEditing(!isEditing);
+  };
+
+  // Handle input changes
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setProfileData({ ...profileData, [name]: value });
   };
 
   return (
@@ -17,11 +71,52 @@ const Profile = () => {
       <div className="profile-section">
         <img src={assets.Avatar} alt="Profile" className="profile-pic" />
         <div className="profile-details">
-          <h2>John Doe</h2>
-          <p>Email: john.doe@example.com</p>
-          <p>Phone: +123456789</p>
-          <p>NIC: 123456789V</p>
-          <button className="upload-btn">Upload/Change Picture</button>
+          {isEditing ? (
+            <form onSubmit={handleUpdateProfile}>
+              <input
+                type="text"
+                name="username"
+                value={profileData.username}
+                onChange={handleInputChange}
+                placeholder="Username"
+              />
+              <input
+                type="email"
+                name="email"
+                value={profileData.email}
+                onChange={handleInputChange}
+                placeholder="Email"
+              />
+              <input
+                type="text"
+                name="phone"
+                value={profileData.phone}
+                onChange={handleInputChange}
+                placeholder="Phone"
+              />
+              <input
+                type="text"
+                name="nationalID"
+                value={profileData.nationalID}
+                onChange={handleInputChange}
+                placeholder="National ID"
+              />
+              <button type="submit">Save</button>
+              <button type="button" onClick={toggleEditMode}>
+                Cancel
+              </button>
+            </form>
+          ) : (
+            <>
+              <h2>{profileData.username}</h2>
+              <p>Email: {profileData.email}</p>
+              <p>Phone: {profileData.phone}</p>
+              <p>NIC: {profileData.nationalID}</p>
+              <button className="upload-btn" onClick={toggleEditMode}>
+                Edit Profile
+              </button>
+            </>
+          )}
         </div>
       </div>
 
@@ -39,12 +134,12 @@ const Profile = () => {
 
       {/* Dashboard */}
       <div className="dashboard-container">
-        <Dashboard />
+        <Dashboard userId={userId} />
       </div>
 
       {/* Create Stock Button */}
       <div className="create-stock-btn-container">
-        <button className="create-stock-btn" onClick={toggleStockForm}>
+        <button className="create-stock-btn" onClick={() => setShowStockForm(true)}>
           Create Stock
         </button>
       </div>
@@ -120,7 +215,9 @@ const Profile = () => {
         <div className="modal-overlay">
           <div className="modal-content">
             <StockForm />
-            <button className="close-modal-btn" onClick={toggleStockForm}>Close</button>
+            <button className="close-modal-btn" onClick={() => setShowStockForm(false)}>
+              Close
+            </button>
           </div>
         </div>
       )}

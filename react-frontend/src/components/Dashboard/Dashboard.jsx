@@ -1,13 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Bar } from 'react-chartjs-2';
 import { Pie } from 'react-chartjs-2';
 import { Chart, CategoryScale, BarElement, ArcElement, LinearScale, Tooltip, Legend } from 'chart.js';
 import './Dashboard.css';
+import axios from 'axios';
 
 // Register the necessary components for the charts
 Chart.register(CategoryScale, BarElement, ArcElement, LinearScale, Tooltip, Legend);
 
 const Dashboard = () => {
+  const [dashboardData, setDashboardData] = useState({
+    total_earnings: 0,
+    completed_orders: 0,
+    total_stock: 0,
+    in_stock: 0,
+    out_of_stock: 0,
+  });
+
+  const userId = localStorage.getItem('userId'); // Retrieve userId from local storage
+
+  // Fetch dashboard data from the backend
+  useEffect(() => {
+    const fetchDashboardData = async () => {
+      try {
+        const response = await axios.get(`/api/dashboard?user_id=${userId}`);
+        setDashboardData(response.data);
+      } catch (error) {
+        console.error('Error fetching dashboard data:', error);
+      }
+    };
+
+    if (userId) {
+      fetchDashboardData();
+    } else {
+      console.error('User ID not found in local storage.');
+    }
+  }, [userId]);
+
   // Example data for charts
   const barData = {
     labels: ['January', 'February', 'March', 'April', 'May', 'June'],
@@ -26,7 +55,7 @@ const Dashboard = () => {
     labels: ['In Stock', 'Out of Stock'],
     datasets: [
       {
-        data: [75, 25], // Example: 75% in stock, 25% out of stock
+        data: [dashboardData.in_stock, dashboardData.out_of_stock],
         backgroundColor: ['#4caf50', '#f44336'],
         hoverBackgroundColor: ['#66bb6a', '#e57373'],
       },
