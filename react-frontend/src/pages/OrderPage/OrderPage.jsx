@@ -8,22 +8,51 @@ const OrderPage = () => {
   const flower = location.state?.flower;
 
   const [quantity, setQuantity] = useState(1);
+  const [error, setError] = useState("");
 
   const handleQuantityChange = (e) => {
     setQuantity(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError("");
 
-    // Redirect to payment gateway with order details
-    navigate("/payment", {
-      state: {
-        flower,
-        quantity,
-        total: quantity * parseFloat(flower.price.replace("$", "")),
-      },
-    });
+    const userId = localStorage.getItem("user_id");
+    if (!userId) {
+      setError("User not logged in. Please log in to place an order.");
+      return;
+    }
+
+    const total = quantity * parseFloat(flower.price.replace("$", ""));
+    const orderData = {
+      flowerId: flower.id,
+      quantity: parseInt(quantity),
+      total,
+      user_id: userId,
+    };
+
+    try {
+      const response = await fetch("/api/order", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(orderData),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        alert(result.message);
+        navigate("/payment", { state: { flower, quantity, total } });
+      } else {
+        const errorData = await response.json();
+        setError(errorData.message || "Failed to place order.");
+      }
+    } catch (err) {
+      console.error("Error placing order:", err);
+      setError("An error occurred while placing the order.");
+    }
   };
 
   if (!flower) {
@@ -49,8 +78,9 @@ const OrderPage = () => {
           required
         />
         <p>Total: ${quantity * parseFloat(flower.price.replace("$", ""))}</p>
+        {error && <p className="error-message">{error}</p>}
         <button type="submit" className="submit-button">
-          Proceed to Payment
+          Place Order
         </button>
       </form>
     </div>

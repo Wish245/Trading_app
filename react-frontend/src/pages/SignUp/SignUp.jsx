@@ -23,6 +23,7 @@ const SignUp = () => {
         console.log(response.data);
         if (response.data.status === "success") {
             setMessage("Signup successful! Please log in.");
+            window.location.href = "/login";    
         } else {
             setMessage(response.data.message);
         }

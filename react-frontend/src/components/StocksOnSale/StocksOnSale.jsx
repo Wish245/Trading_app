@@ -1,38 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./StocksOnSale.css";
-import { assets } from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
 
-const flowerStocks = [
-  {
-    id: 1,
-    name: "Rose Mahela",
-    image: assets.RedRose,
-    price: "$20",
-    // salePrice: "$15",
-    description: "Fresh red roses in a beautiful bouquet.",
-  },
-  {
-    id: 2,
-    name: "Tulip Kosol",
-    image: assets.Tulip,
-    price: "$15",
-    // salePrice: "$12",
-    description: "Colorful tulips perfect for any occasion.",
-  },
-  {
-    id: 3,
-    name: "Sunflower Bumrah",
-    image: assets.Sunflower,
-    price: "$12",
-    // salePrice: "$9",
-    description: "Bright sunflowers to brighten your day.",
-  },
-];
-
 const StocksOnSale = () => {
+  const [stocksOnSale, setStocksOnSale] = useState([]);
   const [selectedFlower, setSelectedFlower] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch("/api/stocks-on-sale")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch stocks on sale");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setStocksOnSale(data.stocksOnSale);
+      })
+      .catch((error) => {
+        console.error("Error fetching stocks on sale:", error);
+      });
+  }, []);
 
   const openModal = (flower) => {
     setSelectedFlower(flower);
@@ -43,21 +32,22 @@ const StocksOnSale = () => {
   };
 
   const handleOrderClick = () => {
-    // Redirect to the order page with optional flower details
-    navigate("/order", { state: { flower : selectedFlower } });
+    navigate("/order", { state: { flower: selectedFlower } });
   };
 
   return (
     <section className="stocks-on-sale-section">
       <h2>Stocks on Sale</h2>
       <div className="cards-container">
-        {flowerStocks.map((stock) => (
+        {stocksOnSale.map((stock) => (
           <div className="card" key={stock.id} onClick={() => openModal(stock)}>
             <img src={stock.image} alt={stock.name} />
             <h3>{stock.name}</h3>
             <p>
-              <span className="original-price">{stock.price}</span>
-              {/* <span className="sale-price">{stock.salePrice}</span> */}
+              <span className="original-price">${stock.price}</span>
+              {stock.salePrice && (
+                <span className="sale-price">${stock.salePrice}</span>
+              )}
             </p>
           </div>
         ))}
@@ -76,10 +66,11 @@ const StocksOnSale = () => {
             />
             <h2>{selectedFlower.name}</h2>
             <p>
-              <span className="original-price">{selectedFlower.price}</span>
-              {/* <span className="sale-price">{selectedStock.salePrice}</span> */}
+              <span className="original-price">${selectedFlower.price}</span>
+              {selectedFlower.salePrice && (
+                <span className="sale-price">${selectedFlower.salePrice}</span>
+              )}
             </p>
-            <p>{selectedFlower.description}</p>
             <button className="order-button" onClick={handleOrderClick}>
               Make Order
             </button>

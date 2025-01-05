@@ -16,19 +16,23 @@ const Login = () => {
       });
       console.log(response.data);
       if (response.data.status === "success") {
+        // Store userId in local storage
+        localStorage.setItem("userId", response.data.userId);
+
         setMessage("Login successful");
+        window.location.href = "/"; // redirect to home page
       } else {
         setMessage(response.data.message);
       }
     } catch (error) {
-      setMessage("Error logging in. Please check your credenials again.");
+      setMessage("Error logging in. Please check your credentials again.");
     }
   };
 
   return (
     <div className="login-container">
       <h2>Login</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label>Username:</label>
           <input

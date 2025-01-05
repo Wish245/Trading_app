@@ -25,6 +25,11 @@ const StockForm = () => {
     e.preventDefault();
     setError('');
     setSuccessMessage('');
+    const userId = localStorage.getItem("user_id");
+    if (!userId) {
+      setError("User not logged in. Please log in to create a stock.");
+      return;
+    }
 
     // Validation
     if (!flowerName || !quantity || !price || !image) {
@@ -42,6 +47,7 @@ const StockForm = () => {
     formData.append('quantity', quantity);
     formData.append('price', price);
     formData.append('image', image);
+    formData.append('user_id', userId)
 
     try {
       const response = await axios.post('/api/stock', formData, {
