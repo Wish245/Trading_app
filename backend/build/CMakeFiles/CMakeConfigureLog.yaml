@@ -24,7 +24,7 @@ events:
       The output was:
       0
       MSBuild version 17.4.1+9a89d02ff for .NET Framework
-      Build started 12/30/2024 4:05:16 PM.
+      Build started 1/7/2025 1:07:20 PM.
       Project "D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\3.31.3\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
       PrepareForBuild:
         Creating directory "Debug\\".
@@ -50,7 +50,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:08.65
+      Time Elapsed 00:00:04.22
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -76,7 +76,7 @@ events:
       The output was:
       0
       MSBuild version 17.4.1+9a89d02ff for .NET Framework
-      Build started 12/30/2024 4:05:25 PM.
+      Build started 1/7/2025 1:07:25 PM.
       Project "D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\3.31.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
         Creating directory "Debug\\".
@@ -102,7 +102,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:03.44
+      Time Elapsed 00:00:03.20
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -121,8 +121,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-cgd2xv"
-      binary: "D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-cgd2xv"
+      source: "D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-ua72fj"
+      binary: "D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-ua72fj"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -131,37 +131,37 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-cgd2xv'
+        Change Dir: 'D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-ua72fj'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_1ecd1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_d0455.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.4.1+9a89d02ff for .NET Framework
-        Build started 12/30/2024 4:05:29 PM.
-        Project "D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cgd2xv\\cmTC_1ecd1.vcxproj" on node 1 (default targets).
+        Build started 1/7/2025 1:07:30 PM.
+        Project "D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ua72fj\\cmTC_d0455.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_1ecd1.dir\\Debug\\".
-          Creating directory "D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cgd2xv\\Debug\\".
-          Creating directory "cmTC_1ecd1.dir\\Debug\\cmTC_1ecd1.tlog\\".
+          Creating directory "cmTC_d0455.dir\\Debug\\".
+          Creating directory "D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ua72fj\\Debug\\".
+          Creating directory "cmTC_d0455.dir\\Debug\\cmTC_d0455.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_1ecd1.dir\\Debug\\cmTC_1ecd1.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Creating "cmTC_d0455.dir\\Debug\\cmTC_d0455.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1ecd1.dir\\Debug\\\\" /Fd"cmTC_1ecd1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d0455.dir\\Debug\\\\" /Fd"cmTC_d0455.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.34.31937 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
           CMakeCCompilerABI.c
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1ecd1.dir\\Debug\\\\" /Fd"cmTC_1ecd1.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d0455.dir\\Debug\\\\" /Fd"cmTC_d0455.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cgd2xv\\Debug\\cmTC_1ecd1.exe" /INCREMENTAL /ILK:"cmTC_1ecd1.dir\\Debug\\cmTC_1ecd1.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-cgd2xv/Debug/cmTC_1ecd1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-cgd2xv/Debug/cmTC_1ecd1.lib" /MACHINE:X64  /machine:x64 cmTC_1ecd1.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_1ecd1.vcxproj -> D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cgd2xv\\Debug\\cmTC_1ecd1.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ua72fj\\Debug\\cmTC_d0455.exe" /INCREMENTAL /ILK:"cmTC_d0455.dir\\Debug\\cmTC_d0455.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-ua72fj/Debug/cmTC_d0455.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-ua72fj/Debug/cmTC_d0455.lib" /MACHINE:X64  /machine:x64 cmTC_d0455.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_d0455.vcxproj -> D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ua72fj\\Debug\\cmTC_d0455.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_1ecd1.dir\\Debug\\cmTC_1ecd1.tlog\\unsuccessfulbuild".
-          Touching "cmTC_1ecd1.dir\\Debug\\cmTC_1ecd1.tlog\\cmTC_1ecd1.lastbuildstate".
-        Done Building Project "D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-cgd2xv\\cmTC_1ecd1.vcxproj" (default targets).
+          Deleting file "cmTC_d0455.dir\\Debug\\cmTC_d0455.tlog\\unsuccessfulbuild".
+          Touching "cmTC_d0455.dir\\Debug\\cmTC_d0455.tlog\\cmTC_d0455.lastbuildstate".
+        Done Building Project "D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ua72fj\\cmTC_d0455.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:02.05
+        Time Elapsed 00:00:02.69
         
       exitCode: 0
   -
@@ -201,8 +201,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-430bp4"
-      binary: "D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-430bp4"
+      source: "D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-ty4tbu"
+      binary: "D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-ty4tbu"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -212,37 +212,37 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-430bp4'
+        Change Dir: 'D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-ty4tbu'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_f0a75.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_388ae.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.4.1+9a89d02ff for .NET Framework
-        Build started 12/30/2024 4:05:32 PM.
-        Project "D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-430bp4\\cmTC_f0a75.vcxproj" on node 1 (default targets).
+        Build started 1/7/2025 1:07:34 PM.
+        Project "D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ty4tbu\\cmTC_388ae.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_f0a75.dir\\Debug\\".
-          Creating directory "D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-430bp4\\Debug\\".
-          Creating directory "cmTC_f0a75.dir\\Debug\\cmTC_f0a75.tlog\\".
+          Creating directory "cmTC_388ae.dir\\Debug\\".
+          Creating directory "D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ty4tbu\\Debug\\".
+          Creating directory "cmTC_388ae.dir\\Debug\\cmTC_388ae.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_f0a75.dir\\Debug\\cmTC_f0a75.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Creating "cmTC_388ae.dir\\Debug\\cmTC_388ae.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f0a75.dir\\Debug\\\\" /Fd"cmTC_f0a75.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_388ae.dir\\Debug\\\\" /Fd"cmTC_388ae.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.34.31937 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
           CMakeCXXCompilerABI.cpp
-          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_f0a75.dir\\Debug\\\\" /Fd"cmTC_f0a75.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_388ae.dir\\Debug\\\\" /Fd"cmTC_388ae.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-430bp4\\Debug\\cmTC_f0a75.exe" /INCREMENTAL /ILK:"cmTC_f0a75.dir\\Debug\\cmTC_f0a75.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-430bp4/Debug/cmTC_f0a75.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-430bp4/Debug/cmTC_f0a75.lib" /MACHINE:X64  /machine:x64 cmTC_f0a75.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_f0a75.vcxproj -> D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-430bp4\\Debug\\cmTC_f0a75.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ty4tbu\\Debug\\cmTC_388ae.exe" /INCREMENTAL /ILK:"cmTC_388ae.dir\\Debug\\cmTC_388ae.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-ty4tbu/Debug/cmTC_388ae.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/trade/Trading_app/backend/build/CMakeFiles/CMakeScratch/TryCompile-ty4tbu/Debug/cmTC_388ae.lib" /MACHINE:X64  /machine:x64 cmTC_388ae.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_388ae.vcxproj -> D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ty4tbu\\Debug\\cmTC_388ae.exe
         FinalizeBuildStatus:
-          Deleting file "cmTC_f0a75.dir\\Debug\\cmTC_f0a75.tlog\\unsuccessfulbuild".
-          Touching "cmTC_f0a75.dir\\Debug\\cmTC_f0a75.tlog\\cmTC_f0a75.lastbuildstate".
-        Done Building Project "D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-430bp4\\cmTC_f0a75.vcxproj" (default targets).
+          Deleting file "cmTC_388ae.dir\\Debug\\cmTC_388ae.tlog\\unsuccessfulbuild".
+          Touching "cmTC_388ae.dir\\Debug\\cmTC_388ae.tlog\\cmTC_388ae.lastbuildstate".
+        Done Building Project "D:\\trade\\Trading_app\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ty4tbu\\cmTC_388ae.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:02.07
+        Time Elapsed 00:00:02.58
         
       exitCode: 0
   -

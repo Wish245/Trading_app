@@ -2,26 +2,26 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./NavBar.css";
 import { assets } from "../../assets/assets";
-import axios from "axios";
+import axios from "axios"
 
 const NavBar = () => {
   const navigate = useNavigate();
   const userId = localStorage.getItem("userId"); // Check if user is logged in
 
   const handleLogout = async () => {
-    try {
-      // Call the backend logout API
-      await axios.post("http://localhost:8080/api/logout");
-  
-      // Remove userId from local storage
-      localStorage.removeItem("userId");
-  
-      // Redirect to the home page
-      navigate("/");
-    } catch (error) {
-      console.error("Error logging out:", error);
-    }
-  };
+  try {
+    // Call the backend logout API
+    await axios.post("http://localhost:8080/api/logout");
+
+    // Remove userId from local storage
+    localStorage.removeItem("userId");
+
+    // Redirect to the home page
+    navigate("/");
+  } catch (error) {
+    console.error("Error logging out:", error);
+  }
+};
 
   return (
     <nav className="navbar">

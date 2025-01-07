@@ -1,8 +1,9 @@
 import React from "react";
 import "./Header.css";
+import HeaderImage from "./HeaderImage.jpeg"
 const Header = () => {
   return (
-    <div className="header">
+    <div className="header" style={{backgroundImage: `url(${HeaderImage})`}}>
       <div className="header-contents">
         <h1>Flower Market </h1>
         <p>

@@ -194,6 +194,9 @@ FlowerMarketBackend_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 FlowerMarketBackend_SOURCE_DIR:STATIC=D:/trade/Trading_app/backend
 
+//The directory containing a CMake configuration file for MySQL.
+MySQL_DIR:PATH=MySQL_DIR-NOTFOUND
+
 
 ########################
 # INTERNAL cache entries

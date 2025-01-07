@@ -1,3 +1,0 @@
-D:/trade/Trading_app/backend/build/CMakeFiles/FlowerMarketBackend.dir
-D:/trade/Trading_app/backend/build/CMakeFiles/ALL_BUILD.dir
-D:/trade/Trading_app/backend/build/CMakeFiles/ZERO_CHECK.dir

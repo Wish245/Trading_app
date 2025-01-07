@@ -1,8 +1,12 @@
+/* import  */
+
 .header {
     height: 34vw;
     margin: 30px auto;
-    /* background: url('/Header.jpeg'); */
-    background-size: contain;
+    /* background-image: url('./HeaderImage.jpeg'); Update the path if necessary */
+    background-size: cover; /* This will cover the entire area of the div */
+    background-position: center; /* This will center the image */
+    background-repeat: no-repeat; /* This will prevent the image from repeating */
     position: relative;
 }
 
