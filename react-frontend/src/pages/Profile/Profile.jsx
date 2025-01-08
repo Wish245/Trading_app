@@ -14,6 +14,13 @@ const Profile = () => {
     nationalID: '',
     profile_picture_path: '',
   });
+  const [dashboardData, setDashboardData] = useState({
+    totalEarnings: 0,
+    completedOrders: 0,
+    totalStock: 0,
+    inStock: 0,
+    outOfStock: 0,
+  });
   const [isEditing, setIsEditing] = useState(false);
   const userId = localStorage.getItem('userId'); // Retrieve userId from local storage
 
@@ -21,15 +28,25 @@ const Profile = () => {
   useEffect(() => {
     const fetchProfileData = async () => {
       try {
-        const response = await axios.get(`/api/profile?user_id=${userId}`);
+        const response = await axios.get(`http://localhost:8080/api/profile?user_id=${userId}`);
         setProfileData(response.data);
       } catch (error) {
         console.error('Error fetching profile data:', error);
       }
     };
 
+    const fetchDashboardData = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8080/api/dashboard?user_id=${userId}`);
+        setDashboardData(response.data);
+      } catch (error) {
+        console.error('Error fetching dashboard data:', error);
+      }
+    };
+
     if (userId) {
       fetchProfileData();
+      fetchDashboardData();
     } else {
       console.error('User ID not found in local storage.');
     }
@@ -39,7 +56,7 @@ const Profile = () => {
   const handleUpdateProfile = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/profile/update', {
+      await axios.post('http://localhost:8080/api/profile/update', {
         user_id: userId,
         username: profileData.username,
         email: profileData.email,
@@ -69,7 +86,11 @@ const Profile = () => {
     <div className="profile-container">
       {/* Profile Section */}
       <div className="profile-section">
-        <img src={assets.Avatar} alt="Profile" className="profile-pic" />
+        <img 
+          src={profileData.profile_picture_path ? profileData.profile_picture_path : assets.Avatar} 
+          alt="Profile" 
+          className="profile-pic" 
+        />
         <div className="profile-details">
           {isEditing ? (
             <form onSubmit={handleUpdateProfile}>
@@ -124,11 +145,11 @@ const Profile = () => {
       <div className="selling-insights">
         <div className="insights-card">
           <h3>Total Earnings</h3>
-          <p>$500</p>
+          <p>${dashboardData.totalEarnings}</p>
         </div>
         <div className="insights-card">
           <h3>Completed Orders</h3>
-          <p>25</p>
+          <p>{dashboardData.completedOrders}</p>
         </div>
       </div>
 
@@ -158,26 +179,7 @@ const Profile = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Roses</td>
-              <td>$10</td>
-              <td>50</td>
-              <td>In Stock</td>
-              <td>
-                <button>Edit</button>
-                <button>Remove</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Lilies</td>
-              <td>$8</td>
-              <td>0</td>
-              <td>Out of Stock</td>
-              <td>
-                <button>Edit</button>
-                <button>Remove</button>
-              </td>
-            </tr>
+            {/* Fetch and display real stock data here */}
           </tbody>
         </table>
       </div>
@@ -196,16 +198,7 @@ const Profile = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>ORD123</td>
-              <td>Jane Smith</td>
-              <td>$50</td>
-              <td>2025-01-01</td>
-              <td>
-                <button>View</button>
-                <button>Export</button>
-              </td>
-            </tr>
+            {/* Fetch and display real order history data here */}
           </tbody>
         </table>
       </div>

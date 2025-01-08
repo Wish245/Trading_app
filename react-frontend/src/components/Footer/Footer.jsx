@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import './Footer.css'
 import { assets } from '../../assets/assets'
 
 const Footer = () => {
+  const contactRef = useRef(null)  
   return (
     <div className='footer' id='footer'>
         <div className="footer-content">
@@ -24,7 +25,7 @@ const Footer = () => {
                     <li>Privacy Policy</li>
                 </ul>
             </div>
-            <div className="footer-content-right">
+            <div className="footer-content-right" ref={contactRef} id='contact'>
                 <h2>GET IN TOUCH</h2>
                 <ul>
                     <li>+94792305617</li>

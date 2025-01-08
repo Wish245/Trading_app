@@ -5,6 +5,7 @@
 #include <cppconn/resultset.h>
 #include <iostream>
 #include <string>
+#include "profile_router.h"
 
 // Function to connect to the database
 std::shared_ptr<sql::Connection> connectToDatabase() {
@@ -153,9 +154,177 @@ void fetchDashboardDataHandler(const crow::request& req, crow::response& res) {
     res.end();
 }
 
+// Fetch stock data
+void fetchStockDataHandler(const crow::request& req, crow::response& res) {
+    std::string userId = req.url_params.get("user_id");
+
+    try {
+        auto conn = connectToDatabase();
+        conn->setSchema("flower_market");
+
+        std::unique_ptr<sql::PreparedStatement> pstmt(
+            conn->prepareStatement("SELECT name, price, quantity FROM flower_stock WHERE user_id = ?")
+        );
+        pstmt->setString(1, userId);
+        std::unique_ptr<sql::ResultSet> resSet(pstmt->executeQuery());
+
+        crow::json::wvalue response;
+        int index = 0;
+        while (resSet->next()) {
+            response[index]["name"] = resSet->getString("name");
+            response[index]["price"] = resSet->getDouble("price");
+            response[index]["quantity"] = resSet->getInt("quantity");
+            index++;
+        }
+
+        res.code = 200;
+        res.write(crow::json::dump(response));
+    } catch (sql::SQLException& e) {
+        std::cerr << "SQL Error: " << e.what() << std::endl;
+        res.code = 500;
+        res.write("{\"status\":\"error\",\"message\":\"Database error\"}");
+    }
+    res.end();
+}
+
+// Fetch order history
+void fetchOrderHistoryHandler(const crow::request& req, crow::response& res) {
+    std::string userId = req.url_params.get("user_id");
+
+    try {
+        auto conn = connectToDatabase();
+        conn->setSchema("flower_market");
+
+        std::unique_ptr<sql::PreparedStatement> pstmt(
+            conn->prepareStatement("SELECT order_id, buyer, total, order_date FROM orders WHERE user_id = ?")
+        );
+        pstmt->setString(1, userId);
+        std::unique_ptr<sql::ResultSet> resSet(pstmt->executeQuery());
+
+        crow::json::wvalue response;
+        int index = 0;
+        while (resSet->next()) {
+            response[index]["order_id"] = resSet->getString("order_id");
+            response[index]["buyer"] = resSet->getString("buyer");
+            response[index]["total"] = resSet->getDouble("total");
+            response[index]["order_date"] = resSet->getString("order_date");
+            index++;
+        }
+
+        res.code = 200;
+        res.write(crow::json::dump(response));
+    } catch (sql::SQLException& e) {
+        std::cerr << "SQL Error: " << e.what() << std::endl;
+        res.code = 500;
+        res.write("{\"status\":\"error\",\"message\":\"Database error\"}");
+    }
+    res.end();
+}
+
+// Fetch monthly earnings
+void fetchMonthlyEarningsHandler(const crow::request& req, crow::response& res) {
+    std::string userId = req.url_params.get("user_id");
+
+    try {
+        auto conn = connectToDatabase();
+        conn->setSchema("flower_market");
+
+        std::unique_ptr<sql::PreparedStatement> pstmt(
+            conn->prepareStatement("SELECT MONTH(order_date) AS month, SUM(total) AS earnings FROM orders WHERE user_id = ? GROUP BY MONTH(order_date)")
+        );
+        pstmt->setString(1, userId);
+        std::unique_ptr<sql::ResultSet> resSet(pstmt->executeQuery());
+
+        crow::json::wvalue response;
+        int index = 0;
+        while (resSet->next()) {
+            response[index] = resSet->getDouble("earnings");
+            index++;
+        }
+
+        res.code = 200;
+        res.write(crow::json::dump(response));
+    } catch (sql::SQLException& e) {
+        std::cerr << "SQL Error: " << e.what() << std::endl;
+        res.code = 500;
+        res.write("{\"status\":\"error\",\"message\":\"Database error\"}");
+    }
+    res.end();
+}
+
+// Fetch notifications
+void fetchNotificationsHandler(const crow::request& req, crow::response& res) {
+    std::string userId = req.url_params.get("user_id");
+
+    try {
+        auto conn = connectToDatabase();
+        conn->setSchema("flower_market");
+
+        std::unique_ptr<sql::PreparedStatement> pstmt(
+            conn->prepareStatement("SELECT id, message, type FROM notifications WHERE user_id = ? AND dismissed = 0")
+        );
+        pstmt->setString(1, userId);
+        std::unique_ptr<sql::ResultSet> resSet(pstmt->executeQuery());
+
+        crow::json::wvalue response;
+        int index = 0;
+        while (resSet->next()) {
+            response[index]["id"] = resSet->getInt("id");
+            response[index]["message"] = resSet->getString("message");
+            response[index]["type"] = resSet->getString("type");
+            index++;
+        }
+
+        res.code = 200;
+        res.write(crow::json::dump(response));
+    } catch (sql::SQLException& e) {
+        std::cerr << "SQL Error: " << e.what() << std::endl;
+        res.code = 500;
+        res.write("{\"status\":\"error\",\"message\":\"Database error\"}");
+    }
+    res.end();
+}
+
+// Dismiss notification
+void dismissNotificationHandler(const crow::request& req, crow::response& res) {
+    auto body = crow::json::load(req.body);
+    if (!body || !body.has("notification_id")) {
+        res.code = 400;
+        res.write("{\"status\":\"error\",\"message\":\"Invalid request payload\"}");
+        res.end();
+        return;
+    }
+
+    int notificationId = body["notification_id"].i();
+
+    try {
+        auto conn = connectToDatabase();
+        conn->setSchema("flower_market");
+
+        std::unique_ptr<sql::PreparedStatement> pstmt(
+            conn->prepareStatement("UPDATE notifications SET dismissed = 1 WHERE id = ?")
+        );
+        pstmt->setInt(1, notificationId);
+        pstmt->executeUpdate();
+
+        res.code = 200;
+        res.write("{\"status\":\"success\",\"message\":\"Notification dismissed\"}");
+    } catch (sql::SQLException& e) {
+        std::cerr << "SQL Error: " << e.what() << std::endl;
+        res.code = 500;
+        res.write("{\"status\":\"error\",\"message\":\"Database error\"}");
+    }
+    res.end();
+}
+
 // Initialize profile and dashboard routes
 void initProfileRoutes(crow::SimpleApp& app) {
     CROW_ROUTE(app, "/api/profile").methods("GET"_method)(fetchProfileHandler);
     CROW_ROUTE(app, "/api/profile/update").methods("POST"_method)(updateProfileHandler);
     CROW_ROUTE(app, "/api/dashboard").methods("GET"_method)(fetchDashboardDataHandler);
+    CROW_ROUTE(app, "/api/stocks").methods("GET"_method)(fetchStockDataHandler);
+    CROW_ROUTE(app, "/api/orders").methods("GET"_method)(fetchOrderHistoryHandler);
+    CROW_ROUTE(app, "/api/monthly-earnings").methods("GET"_method)(fetchMonthlyEarningsHandler);
+    CROW_ROUTE(app, "/api/notifications").methods("GET"_method)(fetchNotificationsHandler);
+    CROW_ROUTE(app, "/api/notifications/dismiss").methods("POST"_method)(dismissNotificationHandler);
 }

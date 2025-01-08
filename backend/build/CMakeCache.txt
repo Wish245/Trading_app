@@ -14,6 +14,18 @@
 # EXTERNAL cache entries
 ########################
 
+//The directory containing a CMake configuration file for Boost.
+Boost_DIR:PATH=Boost_DIR-NOTFOUND
+
+//Path to a file.
+Boost_INCLUDE_DIR:PATH=Boost_INCLUDE_DIR-NOTFOUND
+
+//Boost system library (debug)
+Boost_SYSTEM_LIBRARY_DEBUG:FILEPATH=Boost_SYSTEM_LIBRARY_DEBUG-NOTFOUND
+
+//Boost system library (release)
+Boost_SYSTEM_LIBRARY_RELEASE:FILEPATH=Boost_SYSTEM_LIBRARY_RELEASE-NOTFOUND
+
 //Path to a program.
 CMAKE_AR:FILEPATH=C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.34.31933/bin/Hostx64/x64/lib.exe
 
@@ -194,14 +206,32 @@ FlowerMarketBackend_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 FlowerMarketBackend_SOURCE_DIR:STATIC=D:/trade/Trading_app/backend
 
-//The directory containing a CMake configuration file for MySQL.
-MySQL_DIR:PATH=MySQL_DIR-NOTFOUND
+//Path to a library.
+LIB_EAY_DEBUG:FILEPATH=C:/Program Files/OpenSSL-Win64/lib/VC/x64/MDd/libcrypto.lib
+
+//Path to a library.
+LIB_EAY_RELEASE:FILEPATH=C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libcrypto.lib
+
+//Path to a file.
+OPENSSL_APPLINK_SOURCE:FILEPATH=C:/Program Files/OpenSSL-Win64/include/openssl/applink.c
+
+//Path to a library.
+SSL_EAY_DEBUG:FILEPATH=C:/Program Files/OpenSSL-Win64/lib/VC/x64/MDd/libssl.lib
+
+//Path to a library.
+SSL_EAY_RELEASE:FILEPATH=C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libssl.lib
 
 
 ########################
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: Boost_DIR
+Boost_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_SYSTEM_LIBRARY_DEBUG
+Boost_SYSTEM_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Boost_SYSTEM_LIBRARY_RELEASE
+Boost_SYSTEM_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_AR
 CMAKE_AR-ADVANCED:INTERNAL=1
 //This is the directory where this CMakeCache.txt was created
@@ -264,6 +294,12 @@ CMAKE_GENERATOR_INSTANCE:INTERNAL=C:/Program Files/Microsoft Visual Studio/2022/
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
+//Test CMAKE_HAVE_LIBC_PTHREAD
+CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=
+//Have library pthreads
+CMAKE_HAVE_PTHREADS_CREATE:INTERNAL=
+//Have library pthread
+CMAKE_HAVE_PTHREAD_CREATE:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=D:/trade/Trading_app/backend
@@ -328,4 +364,8 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding OpenSSL
+FIND_PACKAGE_MESSAGE_DETAILS_OpenSSL:INTERNAL=[optimized;C:/Program Files/OpenSSL-Win64/lib/VC/x64/MD/libcrypto.lib;debug;C:/Program Files/OpenSSL-Win64/lib/VC/x64/MDd/libcrypto.lib][C:/Program Files/OpenSSL-Win64/include][c ][v3.4.0()]
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 
