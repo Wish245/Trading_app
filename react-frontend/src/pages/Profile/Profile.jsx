@@ -205,8 +205,8 @@ const Profile = () => {
 
       {/* StockForm Modal */}
       {showStockForm && (
-        <div className="modal-overlay">
-          <div className="modal-content">
+        <div className="modal-overlay" onClick={() => setShowStockForm(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
             <StockForm />
             <button className="close-modal-btn" onClick={() => setShowStockForm(false)}>
               Close
