@@ -1,6 +1,7 @@
-from fastapi import FastAPI, Form
+from fastapi import FastAPI
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware  # CORS middleware
+from pydantic import BaseModel
 
 app = FastAPI()
 
@@ -17,15 +18,28 @@ app.add_middleware(
 )
 
 mock_db = {
-    "user@example.com": "password123"
+    "admin": "password123", "user": "pass"
 }
 
+
+class LoginRequest(BaseModel):
+    username: str
+    password: str
+
+
 @app.post("/login")
-async def login(email: str = Form(...), password: str = Form(...)):
-    if email in mock_db and mock_db[email] == password:
-        return JSONResponse(content={"message": "Login successful"}, status_code=200)
+async def login(data: LoginRequest):
+    if data.username in mock_db and mock_db[data.username] == data.password:
+        return JSONResponse(content={
+            "status": "success",
+            "userId": data.username,
+            "message": f"Welcome, {data.username}!"
+        }, status_code=200)
     else:
-        return JSONResponse(content={"message": "Invalid credentials"}, status_code=401)
+        return JSONResponse(content={
+            "status": "error",
+            "message": "Invalid credentials"
+        }, status_code=401)
     
     if __name__ == "__main__":
         import uvicorn
