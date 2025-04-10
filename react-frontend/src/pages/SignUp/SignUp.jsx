@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import axios from "axios";
+import { signup } from "../../api/auth"; // Import the signup function from auth.js
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
+import { toast, ToastContainer } from "react-toastify"; // Import Toastify
+import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
 import "./SignUp.css";
 
 const SignUp = () => {
@@ -8,41 +11,48 @@ const SignUp = () => {
   const [phone, setPhone] = useState("");
   const [nationalID, setNationalID] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
-  const [isLoading, setIsLoading] = useState(false); // Loading state
+  const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const handlesignup = async (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
-    setIsLoading(true); // Start loading
-    setMessage(""); // Clear previous messages
+    console.log("Signup form submitted");
+    console.log({
+      username,
+      email,
+      phone,
+      national_id: nationalID, // Ensure this matches the backend field name
+      password,
+    });
+    setIsLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:8000/signup", {
-        username,
-        email,
-        phone,
-        national_id: nationalID,
-        password,
-      });
-      console.log(response.data);
+      const response = await signup(username, email, phone, nationalID, password);
+      console.log("Signup API Response:", response);
 
-      if (response.data.status === "success") {
-        setMessage("Signup successful! Please log in.");
-        window.location.href = "/login"; // Redirect to login page
+      if (response.status === "success") {
+        toast.success("Signup successful! Please log in.");
+        console.log("Signup successful. Redirecting to login...");
+        setTimeout(() => {
+          window.location.href = "/login"; // Redirect to login page
+        }, 2000);
       } else {
-        setMessage(response.data.message); // Display error message from backend
+        console.error("Signup failed:", response.message);
+        toast.error(response.message || "Signup failed. Please try again.");
       }
     } catch (error) {
-      setMessage("Error signing up. Please try again."); // Handle request failure
+      console.error("Signup Error:", error.message);
+      toast.error(error.message || "An error occurred during signup.");
     } finally {
-      setIsLoading(false); // End loading
+      setIsLoading(false);
+      console.log("Signup process completed");
     }
   };
 
   return (
     <div className="signup-container">
       <h2>Sign Up</h2>
-      <form onSubmit={handlesignup}>
+      <form onSubmit={handleSignup}>
         <div>
           <label>Username:</label>
           <input
@@ -81,21 +91,31 @@ const SignUp = () => {
         </div>
         <div>
           <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+          <div className="password-container">
+            <input
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <span
+              className="toggle-password"
+              onMouseDown={() => setShowPassword(true)}
+              onMouseUp={() => setShowPassword(false)}
+              onMouseLeave={() => setShowPassword(false)}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
         </div>
         <button type="submit" disabled={isLoading}>
           {isLoading ? "Signing Up..." : "Sign Up"}
         </button>
       </form>
-      {message && <p>{message}</p>}
       <p>
-        Already have an account? <a href="/login">Login</a>
+        Have an account? <a href="/login">Login</a>
       </p>
+      <ToastContainer />
     </div>
   );
 };

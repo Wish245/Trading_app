@@ -1,34 +1,45 @@
 import React, { useState } from "react";
-import axios from "axios"; // Import axios
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
+import { login } from "../../api/auth"; // Import the login function from auth.js
+import { toast, ToastContainer } from "react-toastify"; // Import Toastify
+import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
 import "./Login.css";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log("Login form submitted");
+    console.log("Username:", username);
+    console.log("Password:", password);
+    setLoading(true);
+
     try {
-      const response = await axios.post("http://localhost:8000/login", {
-        username,
-        password,
-      });
-      console.log(response.data);
-      if (response.data.status === "success") {
-        // Store JWT token in localStorage
-        localStorage.setItem("token", response.data.token); // Save token
+      const response = await login(username, password);
+      console.log("Login API Response:", response);
 
-        // Optionally store userId if needed
-        localStorage.setItem("userId", response.data.userId);
-
-        setMessage("Login successful");
-        window.location.href = "/"; // Redirect to home page
+      if (response.status === "success") {
+        toast.success("Login successful!");
+        console.log("Login successful. Redirecting to home...");
+        localStorage.setItem("token", response.token); // Save token to localStorage
+        localStorage.setItem("userId", response.userId); // Save userId to localStorage
+        setTimeout(() => {
+          window.location.href = "/"; // Redirect to the home page
+        }, 2000);
       } else {
-        setMessage(response.data.message);
+        console.error("Login failed:", response.message);
+        toast.error(response.message || "Login failed. Please try again.");
       }
     } catch (error) {
-      setMessage("Error logging in. Please check your credentials again.");
+      console.error("Login Error:", error.message);
+      toast.error(error.message || "An error occurred during login.");
+    } finally {
+      setLoading(false);
+      console.log("Login process completed");
     }
   };
 
@@ -47,23 +58,31 @@ const Login = () => {
         </div>
         <div>
           <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+          <div className="password-container">
+            <input
+              type={showPassword ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <span
+              className="toggle-password"
+              onMouseDown={() => setShowPassword(true)}
+              onMouseUp={() => setShowPassword(false)}
+              onMouseLeave={() => setShowPassword(false)}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
         </div>
-        <button type="submit">Login</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Logging in..." : "Login"}
+        </button>
       </form>
-      {message && (
-        <p className={message === "Login successful" ? "success" : "error"}>
-          {message}
-        </p>
-      )}
       <p>
         Don't have an account? <a href="/signup">Sign up</a>
       </p>
+      <ToastContainer />
     </div>
   );
 };

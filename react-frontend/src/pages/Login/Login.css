@@ -55,6 +55,56 @@ input:focus {
     box-shadow: 0 0 4px rgba(108, 99, 255, 0.4);
 }
 
+/* Style for the checkbox and label container */
+input[type="checkbox"] {
+    margin: 0; /* Remove default margin */
+    cursor: pointer;
+    accent-color: #6c63ff; /* Modern browsers support this for checkbox color */
+    vertical-align: middle; /* Align checkbox with text */
+}
+
+input[type="checkbox"] + label {
+    display: inline-block; /* Align checkbox and label horizontally */
+    vertical-align: middle; /* Align label with checkbox */
+    margin-left: 0.5rem; /* Add spacing between checkbox and label */
+    font-size: 0.9rem;
+    color: #555555;
+    cursor: pointer;
+}
+
+/* Add hover effect for the label */
+input[type="checkbox"] + label:hover {
+    color: #333333;
+}
+
+/* Optional: Add spacing between the checkbox container and the password input */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Add spacing between elements */
+}
+
+.password-container input {
+    flex: 1; /* Allow the input to take up available space */
+}
+
+/* Toggle password icon styling */
+.toggle-password {
+    position: absolute;
+    right: 10px; /* Position the icon inside the input field */
+    cursor: pointer;
+    color: #6c63ff; /* Match the theme color */
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-password:hover {
+    color: #5a54e6; /* Slightly darker color on hover */
+}
+
 button {
     background-color: #6c63ff;
     color: #ffffff;
@@ -70,6 +120,11 @@ button {
 
 button:hover {
     background-color: #5a54e6;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
 }
 
 p {
@@ -95,4 +150,35 @@ p a {
 
 p a:hover {
     text-decoration: underline;
+}
+
+/* Toastify container styling */
+.Toastify__toast-container {
+    font-size: 0.9rem;
+}
+
+.Toastify__toast--success {
+    background-color: #4caf50;
+    color: #ffffff;
+}
+
+.Toastify__toast--error {
+    background-color: #ff4d4f;
+    color: #ffffff;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    form {
+        padding: 1.5rem;
+        width: 90%;
+    }
+
+    .login-container h2 {
+        font-size: 1.8rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
 }

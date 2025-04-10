@@ -1,22 +1,14 @@
 /* SignUp.css */
 
-/* body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-} */
- body {
+/* General body styling */
+body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
     margin: 0;
     padding: 0;
 }
 
+/* Signup container styling */
 .signup-container {
     display: flex;
     flex-direction: column;
@@ -33,6 +25,7 @@
     text-align: center;
 }
 
+/* Form styling */
 form {
     background-color: #ffffff;
     padding: 2rem;
@@ -45,6 +38,7 @@ form {
     gap: 1.5rem;
 }
 
+/* Label styling */
 label {
     font-weight: bold;
     margin-bottom: 0.5rem;
@@ -52,6 +46,7 @@ label {
     color: #555555;
 }
 
+/* Input field styling */
 input {
     padding: 0.8rem;
     border: 1px solid #cccccc;
@@ -67,6 +62,34 @@ input:focus {
     box-shadow: 0 0 4px rgba(108, 99, 255, 0.4);
 }
 
+/* Password container styles */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    flex: 1; /* Allow the input to take up available space */
+}
+
+/* Toggle password icon styling */
+.toggle-password {
+    position: absolute;
+    right: 10px; /* Position the icon inside the input field */
+    cursor: pointer;
+    color: #6c63ff; /* Match the theme color */
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-password:hover {
+    color: #5a54e6; /* Slightly darker color on hover */
+}
+
+/* Button styling */
 button {
     background-color: #6c63ff;
     color: #ffffff;
@@ -84,6 +107,12 @@ button:hover {
     background-color: #5a54e6;
 }
 
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Paragraph styling */
 p {
     margin-top: 1rem;
     text-align: center;
@@ -107,4 +136,35 @@ p a {
 
 p a:hover {
     text-decoration: underline;
+}
+
+/* Toastify container styling */
+.Toastify__toast-container {
+    font-size: 0.9rem;
+}
+
+.Toastify__toast--success {
+    background-color: #4caf50;
+    color: #ffffff;
+}
+
+.Toastify__toast--error {
+    background-color: #ff4d4f;
+    color: #ffffff;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    form {
+        padding: 1.5rem;
+        width: 90%;
+    }
+
+    .signup-container h2 {
+        font-size: 1.8rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
 }
