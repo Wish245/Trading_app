@@ -11,7 +11,7 @@ const NavBar = () => {
   const handleLogout = async () => {
     try {
       // Call the backend logout API
-      await axios.post("http://localhost:8080/api/logout");
+      await axios.post("http://localhost:8000/logout");
 
       // Remove userId from local storage
       localStorage.removeItem("userId");

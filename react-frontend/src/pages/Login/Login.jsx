@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios"; // import axios
+import axios from "axios"; // Import axios
 import "./Login.css";
 
 const Login = () => {
@@ -16,11 +16,14 @@ const Login = () => {
       });
       console.log(response.data);
       if (response.data.status === "success") {
-        // Store userId in local storage
+        // Store JWT token in localStorage
+        localStorage.setItem("token", response.data.token); // Save token
+
+        // Optionally store userId if needed
         localStorage.setItem("userId", response.data.userId);
 
         setMessage("Login successful");
-        window.location.href = "/"; // redirect to home page
+        window.location.href = "/"; // Redirect to home page
       } else {
         setMessage(response.data.message);
       }

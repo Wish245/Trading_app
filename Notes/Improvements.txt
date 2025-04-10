@@ -1,0 +1,34 @@
+Need to have show password feature while signup and Login(Show Password toggle)
+
+Need to put logs in the code(Python logging module)
+
+need more advanced validations for user signup like password strength, email validation, etc.
+
+refactor code for better readability and maintainability.
+
+type annotations for function parameters and return types.
+
+write Unit tests for the code using Python's built-in unittest module.
+
+API enhancements
+    Error Responses
+    Pagination
+    Rate Limiting
+
+Deployment
+    Environment Variables , store sensitive data like JWT_SECRET in Environment variables using .env files
+    Dockerization(In future need to take back the docker approach for the deployment)
+    CI/CD Pipeline(In future need to take back the CI/CD pipeline for the deployment and testing)
+
+Monitoring
+Prometheus and Grafana for metrics and monitoringUse tools
+Use tools like Black, isort, and flake8 for code formatting and linting.
+
+Analytics
+Track user activity for insights
+
+Documentation
+Write API documentation using Swagger or API Blueprint. Use FastAPI's built-in support for Swagger UI and ReDoc for API documentation.
+
+README
+ADD Detailed README file with instructions on how to run the application, including any dependencies or setup required.
