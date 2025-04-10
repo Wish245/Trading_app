@@ -89,6 +89,7 @@ input[type="checkbox"] + label:hover {
     flex: 1; /* Allow the input to take up available space */
 }
 
+/* Toggle password icon styling */
 .toggle-password {
     position: absolute;
     right: 10px; /* Position the icon inside the input field */
@@ -121,6 +122,11 @@ button:hover {
     background-color: #5a54e6;
 }
 
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
 p {
     margin-top: 1rem;
     text-align: center;
@@ -144,4 +150,35 @@ p a {
 
 p a:hover {
     text-decoration: underline;
+}
+
+/* Toastify container styling */
+.Toastify__toast-container {
+    font-size: 0.9rem;
+}
+
+.Toastify__toast--success {
+    background-color: #4caf50;
+    color: #ffffff;
+}
+
+.Toastify__toast--error {
+    background-color: #ff4d4f;
+    color: #ffffff;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    form {
+        padding: 1.5rem;
+        width: 90%;
+    }
+
+    .login-container h2 {
+        font-size: 1.8rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+    }
 }
