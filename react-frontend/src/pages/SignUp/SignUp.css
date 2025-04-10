@@ -108,3 +108,29 @@ p a {
 p a:hover {
     text-decoration: underline;
 }
+
+/* Password container styles */
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input {
+    flex: 1; /* Allow the input to take up available space */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px; /* Position the icon inside the input field */
+    cursor: pointer;
+    color: #6c63ff; /* Match the theme color */
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-password:hover {
+    color: #5a54e6; /* Slightly darker color on hover */
+}

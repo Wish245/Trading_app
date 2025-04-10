@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { FaEye, FaEyeSlash } from "react-icons/fa"; // Import eye icons
 import "./SignUp.css";
 
 const SignUp = () => {
@@ -8,6 +9,7 @@ const SignUp = () => {
   const [phone, setPhone] = useState("");
   const [nationalID, setNationalID] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false); // State for toggling password visibility
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false); // Loading state
 
@@ -81,12 +83,22 @@ const SignUp = () => {
         </div>
         <div>
           <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
+          <div className="password-container">
+            <input
+              type={showPassword ? "text" : "password"} // Toggle between "text" and "password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <span
+              className="toggle-password"
+              onMouseDown={() => setShowPassword(true)} // Show password on mouse down
+              onMouseUp={() => setShowPassword(false)} // Hide password on mouse up
+              onMouseLeave={() => setShowPassword(false)} // Hide password if mouse leaves
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
+          </div>
         </div>
         <button type="submit" disabled={isLoading}>
           {isLoading ? "Signing Up..." : "Sign Up"}
