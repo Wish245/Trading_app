@@ -1,8 +1,8 @@
-Need to have show password feature while signup and Login(Show Password toggle)
+Need to have show password feature while signup and Login(Show Password toggle) --Done
 
-Need to put logs in the code(Python logging module)
+Need to put logs in the code(Python logging module) --started
 
-need more advanced validations for user signup like password strength, email validation, etc.
+need more advanced validations for user signup like password strength, email validation, etc. --Done for Frontend
 
 refactor code for better readability and maintainability.
 
