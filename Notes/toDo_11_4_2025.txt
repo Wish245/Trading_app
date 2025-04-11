@@ -1,0 +1,6 @@
+Need to handle backend validations
+Need to handle the backend folder structure
+Need to design the database completely
+decide tables
+decide apis require for frontend
+decide apis required for backend
