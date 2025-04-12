@@ -1,5 +1,6 @@
 import logging
-from fastapi import FastAPI, HTTPException, status, Depends
+import time
+from fastapi import FastAPI, HTTPException, status, Depends, Request
 from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -10,23 +11,43 @@ from models import SignupRequest, LoginRequest
 from auth import create_token, get_current_user
 from datetime import datetime
 
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.FileHandler("app.log"),  # Log to a file
-        logging.StreamHandler()          # Log to the console
-    ]
-)
-logger = logging.getLogger(__name__)
+from logger import setup_logger  # ✅ NEW: Import logger setup from separate file
+
+setup_logger()  # ✅ NEW: Initialize logger (with rotation etc.)
+logger = logging.getLogger(__name__)  # ✅ Use module-level logger
 
 app = FastAPI()
 
+# ✅ NEW: Middleware for logging each HTTP request (method, path, status, duration)
+class LoggingMiddleware:
+    def __init__(self, app):
+        self.app = app
+
+    async def __call__(self, scope, receive, send):
+        if scope["type"] == "http":
+            method = scope["method"]
+            path = scope["path"]
+            start = time.time()
+
+            async def send_wrapper(message):
+                if message["type"] == "http.response.start":
+                    status_code = message["status"]
+                    elapsed = time.time() - start
+                    logger.info(f"[HTTP] {method} {path} - {status_code} - {elapsed:.2f}s")
+                await send(message)
+
+            await self.app(scope, receive, send_wrapper)
+        else:
+            await self.app(scope, receive, send)
+
+# ✅ Register the logging middleware
+app.add_middleware(LoggingMiddleware)
+
+# CORS setup
 origins = [
     "http://localhost:3000",
-    "http://127.0.0.1:3000",  # Add this if needed
-    "http://localhost:5173"   # Add this if using Vite or another dev server
+    "http://127.0.0.1:3000",
+    "http://localhost:5173"
 ]
 app.add_middleware(
     CORSMiddleware,
@@ -38,23 +59,22 @@ app.add_middleware(
 
 @app.on_event("startup")
 async def startup():
-    logger.info("Starting up the application...")
+    logger.info("[STARTUP] App booting up...")
     await create_tables()
-    logger.info("Database tables created (if not already existing).")
+    logger.info("[STARTUP] Database tables ensured.")
 
 @app.on_event("shutdown")
 async def shutdown():
-    logger.info("Shutting down the application...")
+    logger.info("[SHUTDOWN] App is shutting down...")
 
 @app.post("/signup")
 async def signup(user: SignupRequest, db: AsyncSession = Depends(get_db)):
-    logger.info(f"Received signup request: {user}")
-    logger.info(f"Signup request received for username: {user.username}")
+    logger.info(f"[SIGNUP_ATTEMPT] Username: {user.username}, Email: {user.email}")
     query = select(User).where(User.username == user.username)
     result = await db.execute(query)
     existing_user = result.scalars().first()
     if existing_user:
-        logger.warning(f"Signup failed: Username '{user.username}' already exists.")
+        logger.warning(f"[SIGNUP_FAIL] Username '{user.username}' already exists.")
         raise HTTPException(status_code=400, detail="Username already exists")
 
     hashed_pwd = hash_password(user.password)
@@ -68,18 +88,18 @@ async def signup(user: SignupRequest, db: AsyncSession = Depends(get_db)):
     )
     db.add(new_user)
     await db.commit()
-    logger.info(f"User '{user.username}' registered successfully.")
+    logger.info(f"[SIGNUP_SUCCESS] User '{user.username}' registered.")
     return JSONResponse(content={"status": "success", "message": "User registered successfully"}, status_code=201)
 
 @app.post("/login")
 async def login(data: LoginRequest, db: AsyncSession = Depends(get_db)):
-    logger.info(f"Login request received for username: {data.username}")
+    logger.info(f"[LOGIN_ATTEMPT] Username: {data.username}")
     query = select(User).where(User.username == data.username)
     result = await db.execute(query)
     user = result.scalars().first()
     if user and verify_password(data.password, user.password):
         token = create_token(user.id)
-        logger.info(f"User '{data.username}' logged in successfully.")
+        logger.info(f"[LOGIN_SUCCESS] Username: {data.username}, User ID: {user.id}")
         return JSONResponse(content={
             "status": "success",
             "userId": user.id,
@@ -87,17 +107,17 @@ async def login(data: LoginRequest, db: AsyncSession = Depends(get_db)):
             "message": f"Welcome, {data.username}!"
         }, status_code=200)
     else:
-        logger.warning(f"Login failed for username: {data.username}. Invalid credentials.")
+        logger.warning(f"[LOGIN_FAIL] Username: {data.username}. Invalid credentials.")
         raise HTTPException(status_code=401, detail="Invalid credentials")
 
 @app.get("/protected")
 async def protected(user_id: int = Depends(get_current_user)):
-    logger.info(f"Protected route accessed by user ID: {user_id}")
+    logger.info(f"[PROTECTED] Accessed by user ID: {user_id}")
     return {"status": "success", "message": "Protected route access granted", "userId": user_id}
 
 @app.post("/logout")
 async def logout():
-    logger.info("Logout request received.")
+    logger.info("[LOGOUT] Logout triggered.")
     return JSONResponse(
         content={"status": "success", "message": "Logged out successfully"},
         status_code=200
