@@ -14,8 +14,8 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("Login form submitted");
-    console.log("Username:", username);
-    console.log("Password:", password);
+    // console.log("Username:", username);
+    // console.log("Password:", password);
     setLoading(true);
 
     try {
