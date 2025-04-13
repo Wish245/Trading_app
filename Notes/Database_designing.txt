@@ -1,0 +1,1 @@
+Lets walk through all the data we need to gather from each and every react page in our frontend, with that first identify what tables do we need. 
