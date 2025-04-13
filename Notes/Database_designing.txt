@@ -1,1 +1,68 @@
 Lets walk through all the data we need to gather from each and every react page in our frontend, with that first identify what tables do we need. 
+
+**SignUp**
+username
+email
+phone
+national_id
+password
+
+**Login**
+username
+password
+
+**Home**
+
+**Market**
+
+**OrderPage**
+flower name
+flower description
+flower price (should be per unit)
+quantity
+total (flower price * quantity)
+
+**PaymentPage**
+flower name
+quantity
+total
+
+**Profile**
+username
+email
+phone
+nationalID
+profile_picture_path
+
+totalEarnings
+completedOrders
+totalStock
+inStock
+outOfStock
+
+Flower stocks:
+name
+price
+quantity
+Status
+Actions
+
+Order History:
+order id
+Buyer
+total price
+Date
+Actions
+
+**Dashboard**
+totalEarnings
+completedOrders
+totalStock
+inStock
+outOfStock
+
+**StockForm**
+flowerName
+quantity
+price
+image
