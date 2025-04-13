@@ -1,0 +1,146 @@
+Lets walk through all the data we need to gather from each and every react page in our frontend, with that first identify what tables do we need. 
+
+**SignUp**
+username
+email
+phone
+national_id
+password
+
+**Login**
+username
+password
+
+**Home**
+
+**Market**
+
+**OrderPage**
+flower name
+flower description
+flower price (should be per unit)
+quantity
+total (flower price * quantity)
+
+**PaymentPage**
+flower name
+quantity
+total
+
+**Profile**
+username
+email
+phone
+nationalID
+profile_picture_path
+
+totalEarnings
+completedOrders
+totalStock
+inStock
+outOfStock
+
+Flower stocks:
+name
+price
+quantity
+Status
+Actions
+
+Order History:
+order id
+Buyer
+total price
+Date
+Actions
+
+**Dashboard**
+totalEarnings
+completedOrders
+totalStock
+inStock
+outOfStock
+
+**StockForm**
+flowerName
+quantity
+price
+image
+
+Now lets consider the basic tables we need for this. first we need a table for handelling users. 
+for now for handelling users we have a table. but for future updates we need following users table.
+
+users
+user_id
+username
+password
+email
+phone 
+national_id
+role //whether admin or regular user_id
+vendor
+
+So it seems we need to change only a little bit of exsisting user table
+
+then we need to keep track of the stocks basically it should be the flowers
+no we can keep it that we keep flowers seperately, but we give users to keep stocks of them seperately. 
+so it needs two tables
+
+Flowers
+flower_id
+flower_name
+flower_img_path
+
+Stock
+stall_id
+stock_id
+flower_id
+price
+quantity
+created_date
+sample_img_path
+
+so we seperate things like this
+first under the flowers section. there are by default flower categories.
+they are always categorized based on the flower category.
+
+oh a new idea. we can let users create a stall, within the stall they can create stocks.
+so above is not valid anymore except for the flower, its must
+
+stall
+stall_id
+stall_name
+user_id
+
+so first the user sign up 
+then user login
+then redirects to the home
+within home it shows everything as it is right now
+new stocks, and categories section
+also he/she can go to the profile section
+there is the button called create stall
+when he clicks it it asks for a name for the stall.
+Special Note:
+whenever a user creates a stall, user table should be identified him as a vendor. so after that it should show different navigation bar to the user with stall dashboard.
+then within the stall, user could see the stocks he has. already created under the categories of flowers. there should be new flower stock button. also there should be a option for registering new flower category. 
+but it should be sent to the admin. then admin should approve it and add it to the categories. unless, only predefined categories should be there. there should be a registering flower category option.
+then the stock form should ask for the data the table needed as well as a sample photograph. then the stock would be created and under the stalls flowers would be shown in the market space.
+
+now for a regular user the ordering process.
+
+Order
+user_id
+order_id
+stock_id
+amount
+
+customer can first send an order request. when a order request is sent they only sent the amount. then it checks from the database if the amount they ask could give from the stock. if yes, customer will redirects to the payment.
+if not it should check from the stall for the given flower id, if there any capability of giving the amount asked. if yes, the prices are changed, user should inform about it.
+if he/she wish to proceed. if not , order could be cancelled. if yes, same applies. then the payment.
+
+Payement
+order_id
+payment_id
+payment_amount
+
+then need to look for a payment reciept or something. but for now, this is perfect. see you around kid!!!!!!
