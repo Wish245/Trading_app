@@ -9,7 +9,7 @@ const SignUp = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [nationalID, setNationalID] = useState("");
+  const [national_id, setNational_id] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -21,13 +21,13 @@ const SignUp = () => {
       username,
       email,
       phone,
-      national_id: nationalID, // Ensure this matches the backend field name
+      national_id: national_id, // Ensure this matches the backend field name
       password,
     });
     setIsLoading(true);
 
     try {
-      const response = await signup(username, email, phone, nationalID, password);
+      const response = await signup(username, email, phone, national_id, password);
       console.log("Signup API Response:", response);
 
       if (response.status === "success") {
@@ -84,8 +84,8 @@ const SignUp = () => {
           <label>National ID:</label>
           <input
             type="text"
-            value={nationalID}
-            onChange={(e) => setNationalID(e.target.value)}
+            value={national_id}
+            onChange={(e) => setNational_id(e.target.value)}
             required
           />
         </div>

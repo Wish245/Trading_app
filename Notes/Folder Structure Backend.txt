@@ -1,0 +1,61 @@
+my_flower_market_backend/
+├── app/
+│   ├── __init__.py
+│   ├── main.py  # FastAPI app instance
+│
+│   ├── api/  # All your route handlers
+│   │   ├── __init__.py
+│   │   ├── deps.py  # Shared dependencies
+│   │   ├── users.py
+│   │   ├── auth.py
+│   │   ├── stock.py
+│   │   ├── orders.py
+│   │   └── payments.py
+│
+│   ├── core/  # App-wide config and constants
+│   │   ├── __init__.py
+│   │   ├── config.py  # Load .env, settings
+│   │   └── security.py  # Hashing, JWT logic
+│
+│   ├── db/
+│   │   ├── __init__.py
+│   │   ├── session.py  # SQLAlchemy DB connection
+│   │   └── base.py  # Base model + metadata
+│
+│   ├── models/  # SQLAlchemy models (linked to your tables)
+│   │   ├── __init__.py
+│   │   ├── user.py
+│   │   ├── contact.py
+│   │   ├── flower.py
+│   │   ├── stall.py
+│   │   ├── stock.py
+│   │   ├── order.py
+│   │   └── payment.py
+│
+│   ├── schemas/  # Pydantic models for request/response validation
+│   │   ├── __init__.py
+│   │   ├── user.py
+│   │   ├── auth.py
+│   │   ├── stock.py
+│   │   ├── order.py
+│   │   └── payment.py
+│
+│   ├── crud/  # Functions that touch the database
+│   │   ├── __init__.py
+│   │   ├── user.py
+│   │   ├── stock.py
+│   │   ├── order.py
+│   │   └── payment.py
+│
+│   └── utils/  # Helpers like email validation, image uploads
+│       ├── __init__.py
+│       ├── validators.py
+│       └── image_handler.py
+│
+├── alembic/  # Migrations
+│   ├── versions/
+│   └── env.py
+│
+├── .env
+├── requirements.txt
+└── README.md
