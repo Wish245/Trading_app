@@ -6,15 +6,24 @@ import axios from "axios";
 
 const NavBar = () => {
   const navigate = useNavigate();
-  const userId = localStorage.getItem("userId"); // Check if user is logged in
+  const token = localStorage.getItem("token"); // Get JWT token
 
   const handleLogout = async () => {
     try {
-      // Call the backend logout API
-      await axios.post("http://localhost:8000/logout");
+      // Call the backend logout API with token in Authorization header
+      await axios.post(
+        "http://localhost:8000/logout",
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
-      // Remove userId from local storage
-      localStorage.removeItem("userId");
+      // Remove token and user data from localStorage
+      localStorage.removeItem("token");
+      localStorage.removeItem("userId"); // Optional, if you're using it elsewhere
 
       // Redirect to the home page
       navigate("/");
@@ -55,10 +64,9 @@ const NavBar = () => {
         </li>
       </ul>
       <div className="navbar-login">
-        {userId ? ( // If user is logged in, show logout button
+        {token ? (
           <button onClick={handleLogout}>Logout</button>
         ) : (
-          // If user is not logged in, show login button
           <Link to="/login">
             <button>Login</button>
           </Link>

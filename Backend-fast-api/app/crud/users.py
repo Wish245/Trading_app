@@ -44,3 +44,7 @@ def create_user(db: Session, user_data: app.schemas.users.UserCreate) -> UserOut
         db.rollback()
         logger.error(f"Failed to create user '{user_data.username}': {str(e)}")
         raise e 
+    
+
+def get_user_by_username(db: Session, username: str):
+    return db.query(user_model.User).filter(user_model.User.username == username).first()

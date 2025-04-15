@@ -1,15 +1,23 @@
 import logging
 import time
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
 
-from logger import setup_logger  # ✅ Logger setup module
+from logger import setup_logger
+from app.api import auth, users  # 🧩 Import other routers as you build
+# from app.api import stock, orders, payments  # Uncomment when ready
 
-# ✅ Initialize logger
+# ✅ Setup logger
 setup_logger()
 logger = logging.getLogger(__name__)
 
-app = FastAPI()
+# ✅ FastAPI app with metadata
+app = FastAPI(
+    title="Flower Market API",
+    description="API backend for managing users, stalls, flowers, and payments in the flower marketplace.",
+    version="1.0.0"
+)
 
 # ✅ Logging middleware
 class LoggingMiddleware:
@@ -33,10 +41,10 @@ class LoggingMiddleware:
         else:
             await self.app(scope, receive, send)
 
-# ✅ Register logging middleware
+# ✅ Add middlewares
 app.add_middleware(LoggingMiddleware)
 
-# ✅ CORS setup
+# ✅ CORS (Frontend access)
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
@@ -50,10 +58,25 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# ✅ Lifecycle hooks
 @app.on_event("startup")
 async def startup():
-    logger.info("[STARTUP] Development environment initialized.")
+    logger.info("[STARTUP] Flower Market backend initialized.")
 
 @app.on_event("shutdown")
 async def shutdown():
-    logger.info("[SHUTDOWN] Development environment shutting down.")
+    logger.info("[SHUTDOWN] Flower Market backend shutting down.")
+
+# ✅ Global error handler (Optional but powerful)
+@app.exception_handler(Exception)
+async def general_exception_handler(request: Request, exc: Exception):
+    logger.error(f"[ERROR] {request.method} {request.url} - {str(exc)}")
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Something went wrong. Please try again later."},
+    )
+
+# ✅ Include routers (prefixes optional based on your routes)
+app.include_router(auth.router, prefix="/login", tags=["login"])
+app.include_router(users.router, prefix="/signup", tags=["SignUp"])
+app.include_router(auth.router, prefix="/logout",tags=["logout"])
