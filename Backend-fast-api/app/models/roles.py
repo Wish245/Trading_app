@@ -10,5 +10,5 @@ class Roles(Base):
 class UserRoles(Base):
     __tablename__ = "user_roles"
 
-    user_id = Column(Integer, ForeignKey("users.user_id"), ondelete = "CASCADE", primary_key=True)
-    role_id = Column(Integer, ForeignKey("roles.role_id"), ondelete = "CASCADE", primary_key=True)
+    user_id = Column(Integer, ForeignKey("users.user_id", ondelete = "CASCADE"), primary_key=True)
+    role_id = Column(Integer, ForeignKey("roles.role_id", ondelete = "CASCADE"), primary_key=True)

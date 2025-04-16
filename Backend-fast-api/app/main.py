@@ -4,7 +4,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from logger import setup_logger
+from app.logger import setup_logger
 from app.api import auth, users  # 🧩 Import other routers as you build
 # from app.api import stock, orders, payments  # Uncomment when ready
 

@@ -1,4 +1,3 @@
-# logger.py (updated with colorlog)
 import logging
 from logging.handlers import TimedRotatingFileHandler
 from colorlog import ColoredFormatter
@@ -36,3 +35,10 @@ def setup_logger():
     if not logger.handlers:
         logger.addHandler(file_handler)
         logger.addHandler(stream_handler)
+
+    return logger  # Return the configured logger
+
+def get_logger(name: str):
+    logger = setup_logger()
+    logger.name = name  # Set the logger's name
+    return logger
