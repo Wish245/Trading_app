@@ -27,17 +27,23 @@ const SignUp = () => {
     setIsLoading(true);
 
     try {
-      const response = await signup(username, email, phone, national_id, password);
+      const response = await signup(
+        username,
+        email,
+        phone,
+        national_id,
+        password
+      );
       console.log("Signup API Response:", response);
 
-      if (response.status === "success") {
+      if (response && response.username) {
         toast.success("Signup successful! Please log in.");
         console.log("Signup successful. Redirecting to login...");
         setTimeout(() => {
           window.location.href = "/login"; // Redirect to login page
         }, 2000);
       } else {
-        console.error("Signup failed:", response.message);
+        console.error("Signup failed:", response);
         toast.error(response.message || "Signup failed. Please try again.");
       }
     } catch (error) {
