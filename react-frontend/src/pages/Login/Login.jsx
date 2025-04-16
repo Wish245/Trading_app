@@ -22,13 +22,12 @@ const Login = () => {
       const response = await login(username, password);
       console.log("Login API Response:", response);
 
-      if (response.status === "success") {
+      if (response.access_token) {
         toast.success("Login successful!");
         console.log("Login successful. Redirecting to home...");
-        localStorage.setItem("token", response.token); // Save token to localStorage
-        localStorage.setItem("userId", response.userId); // Save userId to localStorage
+        localStorage.setItem("token", response.access_token); // <- use the correct field
         setTimeout(() => {
-          window.location.href = "/"; // Redirect to the home page
+          window.location.href = "/";
         }, 2000);
       } else {
         console.error("Login failed:", response.message);

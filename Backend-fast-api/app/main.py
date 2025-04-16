@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from app.logger import setup_logger
-from app.api import auth, users  # 🧩 Import other routers as you build
+from app.api import auth# 🧩 Import other routers as you build
 # from app.api import stock, orders, payments  # Uncomment when ready
 
 # ✅ Setup logger
@@ -77,6 +77,4 @@ async def general_exception_handler(request: Request, exc: Exception):
     )
 
 # ✅ Include routers (prefixes optional based on your routes)
-app.include_router(auth.router, prefix="/login", tags=["login"])
-app.include_router(users.router, prefix="/signup", tags=["SignUp"])
-app.include_router(auth.router, prefix="/logout",tags=["logout"])
+app.include_router(auth.router, tags=["auth"])

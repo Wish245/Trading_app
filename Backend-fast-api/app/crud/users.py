@@ -10,18 +10,19 @@ logger = app.logger.get_logger(__name__)
 
 def create_user(db: Session, user_data: app.schemas.users.UserCreate) -> UserOut:
     try:
-        with db.begin():
+        # with db.begin():
             hashed_password = hash_password(user_data.password)
 
             db_user = user_model(
                 username = user_data.username,
                 national_id = user_data.national_id,
                 password = hashed_password,
-                email = user_data.email,
-                phone = user_data.phone,
+                # email = user_data.email,
+                # phone = user_data.phone,
             )
             db.add(db_user)
-            db.flush()
+            db.commit()
+            db.refresh(db_user)
 
             email_contact = contact_model(
                 contact_type = "email",
@@ -47,4 +48,4 @@ def create_user(db: Session, user_data: app.schemas.users.UserCreate) -> UserOut
     
 
 def get_user_by_username(db: Session, username: str):
-    return db.query(user_model.User).filter(user_model.User.username == username).first()
+    return db.query(user_model).filter(user_model.username == username).first()

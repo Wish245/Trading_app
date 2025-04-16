@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr, constr
+from pydantic import BaseModel, EmailStr, constr, ConfigDict
 from typing import Optional, Annotated
 
 class ContactCreate(BaseModel):
@@ -17,5 +17,4 @@ class UserOut(BaseModel):
     user_id: int
     username: str
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
