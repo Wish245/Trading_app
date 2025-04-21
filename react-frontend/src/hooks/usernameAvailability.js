@@ -9,7 +9,9 @@ export default function useUsernameAvailability() {
         socket.current = new WebSocket('ws://localhost:8000/ws/username-check');
 
         socket.current.onopen = () => setIsConnected(true);
-        socket.current.onerror = {console.error(false);
+        socket.current.onclose = () => setIsConnected(false);
+        socket.current.onerror = (error) => console.error('WebSocket error:', error);
+        
         }
     })
 }
