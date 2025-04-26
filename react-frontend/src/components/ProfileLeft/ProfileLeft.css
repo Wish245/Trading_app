@@ -1,0 +1,82 @@
+.whole-block {
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    gap: 2rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+  }
+  
+  .avatar-imge {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+  }
+  
+  .details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .username {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333333;
+    margin: 0;
+  }
+  
+  .nic {
+    font-size: 1rem;
+    color: #666666;
+    margin: 0;
+  }
+  
+  .edit-btn, .savebtn, .cancelbtn {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+  }
+  
+  .edit-btn:hover, .savebtn:hover, .cancelbtn:hover {
+    background-color: #0056b3;
+  }
+  
+  .edit-username {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    width: 100%;
+  }
+  
+  .availability-stat {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  .available {
+    color: #28a745;
+  }
+  
+  .unavilable {
+    color: #dc3545;
+  }
+  
+  .scbtn {
+    margin-top: 0.5rem;
+  }
+  
