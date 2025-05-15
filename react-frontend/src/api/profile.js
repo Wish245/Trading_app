@@ -30,6 +30,37 @@ export const updatePhone = async (newPhone) => {
     return data;
 }
 
+export const validateProfileInput = (username, email, phone) => {
+
+    // Type validation
+    if (typeof username !== 'string' || typeof email !== 'string' || typeof phone !== 'string') {
+        throw new Error("Invalid input. must be a text input.");
+    }
+
+    // Username validation
+    if (username.includes(' ')) {
+        throw new Error("Username cannot contain spaces. Please remove any spaces.");
+    }
+    if (username.length < 3 || username.length > 15) {
+        throw new Error("Username must be between 3 and 15 characters long.");
+    }
+    if (!/^[a-zA-Z0-9_]+$/.test(username)) {
+        throw new Error("Username can only include letters, numbers, and underscores.");
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email regex
+    if (!emailRegex.test(email)) {
+        throw new Error("Please enter a valid email address (e.g., user@example.com).");
+    }
+
+    // Phone number validation
+    if (!/^\d{10,15}$/.test(phone)) {
+        throw new Error("Phone number must be between 10 and 15 digits and contain only numbers.");
+    }
+
+    return null;
+};
 // export const getUserPrimaryContacts = async () => {
 //     const {data} = await axiosInstance.get('/contact/primary');
 //     return data;
