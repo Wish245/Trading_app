@@ -6,7 +6,7 @@ import "./ProfileLeft.css";
 
 export default function ProfileLeft() {
   const [editing, setEditing] = useState(false);
-  const [profile, setProfile] = useState({ username: "", national_id: "" });
+  const [profile, setProfile] = useState({ username: "", national_id: "", email: "", phone: ""});
   const [tempUsername, setTempUsername] = useState("");
   const { available, checkUsername } = useUsernameAvailability();
 
