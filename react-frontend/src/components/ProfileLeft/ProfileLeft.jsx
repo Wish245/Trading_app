@@ -78,6 +78,16 @@ export default function ProfileLeft() {
                 <span className="unavailable">username is taken</span>
               )}
             </div>
+            <input
+              type="text"
+              value={tempEmail}
+              className="edit-username"
+            />
+            <input
+              type="text"
+              value={tempPhone}
+              className="edit-username"
+            />
             <div className="scbtn">
               <button className="savebtn" onClick={handleSave}>
                 Save
