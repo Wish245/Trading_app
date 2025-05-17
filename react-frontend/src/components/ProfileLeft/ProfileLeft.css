@@ -12,7 +12,7 @@
     margin: 2rem auto;
   }
   
-  .avatar-imge {
+  .avatar-image {
     width: 120px;
     height: 120px;
     object-fit: cover;
@@ -41,7 +41,7 @@
   }
   
   .edit-btn, .savebtn, .cancelbtn {
-    background-color: #007bff;
+    background-color:  #6d28d9;
     color: #ffffff;
     border: none;
     padding: 0.6rem 1.2rem;
@@ -52,7 +52,7 @@
   }
   
   .edit-btn:hover, .savebtn:hover, .cancelbtn:hover {
-    background-color: #0056b3;
+    background-color:#a36cc9;
   }
   
   .edit-username {
