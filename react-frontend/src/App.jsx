@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import NavBar from './components/NavBar/NavBar'
 import Home from './pages/Home/Home'
 import Footer from './components/Footer/Footer'
-import Profile from './pages/Profile/Profile'
+import ProfileLeft from './components/ProfileLeft/ProfileLeft'
 import OrderPage from './pages/OrderPage/OrderPage'
 import PaymentPage from './pages/PaymentPage/PaymentPage'
 import Market from './pages/Market/Market'
@@ -17,7 +17,7 @@ const App = () => {
         <NavBar />
         <Routes>
           <Route path="/" element={<Home/>} />
-          <Route path="/profile" element={<Profile/>} />
+          <Route path="/profile" element={<ProfileLeft/>} />
           <Route path='/order' element={<OrderPage/>}/>
           <Route path='/payment' element={<PaymentPage/>}/>
           <Route path='/market' element={<Market/>}/>
