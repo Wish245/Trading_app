@@ -80,7 +80,8 @@ const ProfileLeft = () => {
                 <span className="unavailable">username is taken</span>
               )}
             </div>
-            <p className="nic">National ID: {profile.national_id}</p>
+            <label htmlFor="">National ID:</label>
+            <p className="nic-edit"> {profile.national_id}</p>
             <label htmlFor="email">Email: </label>
             <input
               type="text"
