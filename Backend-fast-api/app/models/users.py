@@ -10,4 +10,4 @@ class User(Base):
     password = Column(Text, nullable=False)
     national_id = Column(String(20), unique=True, nullable=False)
 
-    contacts = relationship("Contact", back_propagates="user")
+    contacts = relationship("Contact", back_populates="user")

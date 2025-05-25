@@ -7,7 +7,7 @@ import app.schemas.profile
 
 logger = app.logger.get_logger(__name__)
 
-def get_user_profile(db: Session, username: int) -> GetProfile:
+def get_user_profile(db: Session, user_id: int) -> GetProfile:
     try:
 
         user = db.query(user_model).filter(user_model.user_id == user_id).first()

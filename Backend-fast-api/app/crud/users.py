@@ -37,9 +37,12 @@ def create_user(db: Session, user_data: app.schemas.users.UserCreate) -> UserOut
             )
 
             db.add_all([email_contact,phone_contact])
-
-            db.refresh(db_user)
+            logger.info("passed this point")
+            db.refresh(email_contact)
+            db.refresh(phone_contact)
             logger.info(f"User '{db_user.username}' created with ID {db_user.user_id}")
+            logger.info(f"User email '{email_contact.contact_value}' with contact id {email_contact.contact_id}")
+            logger.info(f"User email '{phone_contact.contact_value}' with contact id {phone_contact.contact_id}")
             return UserOut.from_orm(db_user)
     except Exception as e:
         db.rollback()
