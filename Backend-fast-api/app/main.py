@@ -3,7 +3,7 @@ import time
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
-
+from app.api import profile
 from app.logger import setup_logger
 from app.api import auth# 🧩 Import other routers as you build
 # from app.api import stock, orders, payments  # Uncomment when ready
@@ -78,3 +78,4 @@ async def general_exception_handler(request: Request, exc: Exception):
 
 # ✅ Include routers (prefixes optional based on your routes)
 app.include_router(auth.router, tags=["auth"])
+app.include_router(profile.router,prefix="/profile", tags=["profile"])

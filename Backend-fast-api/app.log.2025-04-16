@@ -1,0 +1,452 @@
+2025-04-16 18:19:57,916 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 18:19:57,917 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 18:20:00,162 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 18:20:07,884 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 18:22:28,514 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 18:22:37,578 - app.main - INFO - [HTTP] POST /signup - 404 - 0.00s
+2025-04-16 18:54:01,591 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 18:54:05,698 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 18:54:06,812 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 18:54:08,682 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 18:54:14,538 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 18:54:16,257 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 18:54:41,253 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 18:54:42,950 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 18:54:50,984 - app.main - ERROR - [ERROR] POST http://localhost:8000/signup - type object 'User' has no attribute 'User'
+2025-04-16 18:58:07,769 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 18:58:10,049 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 18:58:18,604 - app.main - ERROR - [ERROR] POST http://localhost:8000/signup - type object 'User' has no attribute 'User'
+2025-04-16 18:58:45,357 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 18:58:47,563 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 18:58:54,678 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-04-16 18:58:54,693 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 18:58:54,693 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-04-16 18:58:54,693 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 18:58:54,699 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-04-16 18:58:54,699 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 18:58:54,699 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 18:58:54,699 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 18:58:54,709 - sqlalchemy.engine.Engine - INFO - [generated in 0.00396s] {'username_1': 'Ishanga', 'param_1': 1}
+2025-04-16 18:58:54,709 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 18:58:54,709 - app.crud.users - ERROR - Failed to create user 'Ishanga': A transaction is already begun on this Session.
+2025-04-16 18:58:54,724 - app.main - ERROR - [ERROR] POST http://localhost:8000/signup - A transaction is already begun on this Session.
+2025-04-16 18:59:18,654 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 18:59:25,710 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 18:59:29,492 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 18:59:36,985 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 18:59:44,437 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-04-16 18:59:44,437 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 18:59:44,441 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-04-16 18:59:44,442 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 18:59:44,442 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-04-16 18:59:44,442 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 18:59:44,446 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 18:59:44,446 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 18:59:44,454 - sqlalchemy.engine.Engine - INFO - [generated in 0.00226s] {'username_1': 'Ishanga', 'param_1': 1}
+2025-04-16 18:59:44,462 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 18:59:44,470 - app.crud.users - ERROR - Failed to create user 'Ishanga': A transaction is already begun on this Session.
+2025-04-16 18:59:44,474 - app.main - ERROR - [ERROR] POST http://localhost:8000/signup - A transaction is already begun on this Session.
+2025-04-16 19:03:07,553 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:03:09,738 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:03:47,055 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:03:51,677 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:03:51,685 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:03:53,780 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:03:54,111 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:03:55,786 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:04:05,493 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:04:07,314 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:04:07,319 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:04:09,081 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:04:10,047 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:04:12,243 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:04:12,250 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:04:13,995 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:04:15,523 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:04:17,736 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:04:34,062 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:04:41,995 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:05:02,219 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-04-16 19:05:02,227 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:05:02,227 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-04-16 19:05:02,227 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:05:02,227 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-04-16 19:05:02,235 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:05:02,235 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:05:02,244 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 19:05:02,252 - sqlalchemy.engine.Engine - INFO - [generated in 0.00309s] {'username_1': 'Ishanga', 'param_1': 1}
+2025-04-16 19:05:02,452 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 19:05:02,452 - app.crud.users - ERROR - Failed to create user 'Ishanga': 'email' is an invalid keyword argument for User
+2025-04-16 19:05:02,452 - app.main - ERROR - [ERROR] POST http://localhost:8000/signup - 'email' is an invalid keyword argument for User
+2025-04-16 19:07:41,446 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:07:43,769 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:07:43,769 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:07:46,013 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:07:50,154 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:07:58,745 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:08:09,622 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-04-16 19:08:09,622 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:08:09,630 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-04-16 19:08:09,630 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:08:09,630 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-04-16 19:08:09,630 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:08:09,638 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:08:09,646 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 19:08:09,647 - sqlalchemy.engine.Engine - INFO - [generated in 0.00400s] {'username_1': 'Ishanga', 'param_1': 1}
+2025-04-16 19:08:09,848 - sqlalchemy.engine.Engine - INFO - INSERT INTO users (username, password, national_id) VALUES (%(username)s, %(password)s, %(national_id)s) RETURNING users.user_id
+2025-04-16 19:08:09,848 - sqlalchemy.engine.Engine - INFO - [generated in 0.00170s] {'username': 'Ishanga', 'password': '$argon2id$v=19$m=65536,t=3,p=4$WYuRMgZgbI0RQkhJ6b03Bg$a7hRnUNR6zZT23IJFWxKVi6tN8R/nV539M2Nbe+uBE0', 'national_id': '200014500123'}
+2025-04-16 19:08:09,864 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-04-16 19:08:09,872 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:08:09,880 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 19:08:09,880 - sqlalchemy.engine.Engine - INFO - [generated in 0.00217s] {'pk_1': 1}
+2025-04-16 19:08:09,880 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 19:08:09,889 - sqlalchemy.engine.Engine - INFO - [cached since 0.01418s ago] {'pk_1': 1}
+2025-04-16 19:08:09,897 - app.crud.users - INFO - User 'Ishanga' created with ID 1
+2025-04-16 19:08:09,897 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 19:08:09,897 - app.crud.users - ERROR - Failed to create user 'Ishanga': You must set the config attribute `from_attributes=True` to use from_orm
+2025-04-16 19:08:09,905 - app.main - ERROR - [ERROR] POST http://localhost:8000/signup - You must set the config attribute `from_attributes=True` to use from_orm
+2025-04-16 19:12:11,927 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:12:35,592 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:12:35,592 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:12:38,377 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:12:42,476 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:13:52,994 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:13:59,092 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-04-16 19:13:59,092 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:13:59,100 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-04-16 19:13:59,101 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:13:59,101 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-04-16 19:13:59,101 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:13:59,101 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:13:59,101 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 19:13:59,101 - sqlalchemy.engine.Engine - INFO - [generated in 0.00088s] {'username_1': 'Ishanga', 'param_1': 1}
+2025-04-16 19:13:59,108 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 19:13:59,108 - app.main - INFO - [HTTP] POST /signup - 400 - 0.33s
+2025-04-16 19:17:13,791 - app.main - INFO - [HTTP] POST /login - 422 - 0.02s
+2025-04-16 19:21:41,806 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:21:51,111 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:23:25,547 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-04-16 19:23:25,547 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:23:25,555 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-04-16 19:23:25,555 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:23:25,555 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-04-16 19:23:25,555 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:23:25,555 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:23:25,563 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 19:23:25,563 - sqlalchemy.engine.Engine - INFO - [generated in 0.00145s] {'username_1': 'Ishanga', 'param_1': 1}
+2025-04-16 19:23:25,718 - sqlalchemy.engine.Engine - INFO - INSERT INTO users (username, password, national_id) VALUES (%(username)s, %(password)s, %(national_id)s) RETURNING users.user_id
+2025-04-16 19:23:25,718 - sqlalchemy.engine.Engine - INFO - [generated in 0.00146s] {'username': 'Ishanga', 'password': '$argon2id$v=19$m=65536,t=3,p=4$bW1NqZXSei8lpPSek7K2Ng$7CcJ9pR9PGt4zDHLGBii4JDip17SCl2wgZauTtspFgg', 'national_id': '200014500123'}
+2025-04-16 19:23:25,718 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-04-16 19:23:25,726 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:23:25,734 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 19:23:25,734 - sqlalchemy.engine.Engine - INFO - [generated in 0.00119s] {'pk_1': 2}
+2025-04-16 19:23:25,734 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 19:23:25,734 - sqlalchemy.engine.Engine - INFO - [cached since 0.004748s ago] {'pk_1': 2}
+2025-04-16 19:23:25,734 - app.crud.users - INFO - User 'Ishanga' created with ID 2
+2025-04-16 19:23:25,734 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 19:23:25,742 - app.crud.users - ERROR - Failed to create user 'Ishanga': You must set the config attribute `from_attributes=True` to use from_orm
+2025-04-16 19:23:25,742 - app.main - ERROR - [ERROR] POST http://localhost:8000/signup - You must set the config attribute `from_attributes=True` to use from_orm
+2025-04-16 19:23:53,700 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:27:27,762 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:27:37,217 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-04-16 19:27:37,217 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:27:37,217 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-04-16 19:27:37,217 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:27:37,217 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-04-16 19:27:37,225 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:27:37,227 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:27:37,227 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 19:27:37,227 - sqlalchemy.engine.Engine - INFO - [generated in 0.00108s] {'username_1': 'Ishanga', 'param_1': 1}
+2025-04-16 19:27:37,233 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 19:27:37,241 - app.main - INFO - [HTTP] POST /signup - 400 - 0.34s
+2025-04-16 19:28:09,419 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:28:18,270 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:28:31,805 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-04-16 19:28:31,805 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:28:31,805 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-04-16 19:28:31,805 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:28:31,805 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-04-16 19:28:31,805 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:28:31,805 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:28:31,805 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 19:28:31,805 - sqlalchemy.engine.Engine - INFO - [generated in 0.00040s] {'username_1': 'Ishanga', 'param_1': 1}
+2025-04-16 19:28:31,928 - sqlalchemy.engine.Engine - INFO - INSERT INTO users (username, password, national_id) VALUES (%(username)s, %(password)s, %(national_id)s) RETURNING users.user_id
+2025-04-16 19:28:31,928 - sqlalchemy.engine.Engine - INFO - [generated in 0.00135s] {'username': 'Ishanga', 'password': '$argon2id$v=19$m=65536,t=3,p=4$G8MY4xyD0Pr//x/jHEMIQQ$L1uPQfNofbw81UKK+uzWIeZBBCl8eRVXY5nP/mi2QOc', 'national_id': '200014500123'}
+2025-04-16 19:28:31,928 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-04-16 19:28:31,944 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:28:31,944 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 19:28:31,944 - sqlalchemy.engine.Engine - INFO - [generated in 0.00086s] {'pk_1': 3}
+2025-04-16 19:28:31,944 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 19:28:31,944 - sqlalchemy.engine.Engine - INFO - [cached since 0.004119s ago] {'pk_1': 3}
+2025-04-16 19:28:31,944 - app.crud.users - INFO - User 'Ishanga' created with ID 3
+2025-04-16 19:28:31,944 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 19:28:31,944 - app.main - INFO - [HTTP] POST /signup - 201 - 0.46s
+2025-04-16 19:29:07,620 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:29:07,620 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 19:29:07,624 - sqlalchemy.engine.Engine - INFO - [cached since 35.81s ago] {'username_1': 'Ishanga', 'param_1': 1}
+2025-04-16 19:29:07,624 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 19:29:07,628 - app.main - INFO - [HTTP] POST /signup - 400 - 0.02s
+2025-04-16 19:29:19,816 - app.main - INFO - [HTTP] POST /signup - 422 - 0.00s
+2025-04-16 19:29:34,342 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:29:34,346 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 19:29:34,346 - sqlalchemy.engine.Engine - INFO - [cached since 62.53s ago] {'username_1': 'Weakling', 'param_1': 1}
+2025-04-16 19:29:34,467 - sqlalchemy.engine.Engine - INFO - INSERT INTO users (username, password, national_id) VALUES (%(username)s, %(password)s, %(national_id)s) RETURNING users.user_id
+2025-04-16 19:29:34,467 - sqlalchemy.engine.Engine - INFO - [cached since 62.53s ago] {'username': 'Weakling', 'password': '$argon2id$v=19$m=65536,t=3,p=4$BoAQQuhdq5VSCiFkTCnF2A$LrANyoFSfg+RlWLab2N519Mx5777WCzyoHLw2JO7SYg', 'national_id': '200014500125'}
+2025-04-16 19:29:34,476 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-04-16 19:29:34,476 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:29:34,476 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 19:29:34,476 - sqlalchemy.engine.Engine - INFO - [cached since 62.53s ago] {'pk_1': 4}
+2025-04-16 19:29:34,484 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 19:29:34,484 - sqlalchemy.engine.Engine - INFO - [cached since 62.54s ago] {'pk_1': 4}
+2025-04-16 19:29:34,484 - app.crud.users - INFO - User 'Weakling' created with ID 4
+2025-04-16 19:29:34,492 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 19:29:34,492 - app.main - INFO - [HTTP] POST /signup - 201 - 0.15s
+2025-04-16 19:29:55,603 - app.main - INFO - [HTTP] POST /login - 422 - 0.00s
+2025-04-16 19:31:13,933 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:40:38,210 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:40:44,465 - app.main - ERROR - [ERROR] POST http://localhost:8000/login - name 'form_data' is not defined
+2025-04-16 19:40:53,659 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:41:51,653 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:41:57,603 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-04-16 19:41:57,617 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:41:57,618 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-04-16 19:41:57,618 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:41:57,618 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-04-16 19:41:57,618 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:41:57,618 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:41:57,618 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 19:41:57,618 - sqlalchemy.engine.Engine - INFO - [generated in 0.00060s] {'username_1': 'Ishanga', 'param_1': 1}
+2025-04-16 19:41:57,729 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 19:41:57,729 - app.main - INFO - [HTTP] POST /login - 200 - 0.46s
+2025-04-16 19:42:18,061 - app.main - INFO - [HTTP] POST /logout - 200 - 0.00s
+2025-04-16 19:43:01,227 - app.main - INFO - [HTTP] POST /logout - 200 - 0.00s
+2025-04-16 19:43:07,174 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:43:07,174 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 19:43:07,174 - sqlalchemy.engine.Engine - INFO - [cached since 69.55s ago] {'username_1': 'Ishanga', 'param_1': 1}
+2025-04-16 19:43:07,280 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 19:43:07,280 - app.main - INFO - [HTTP] POST /login - 401 - 0.11s
+2025-04-16 19:43:16,831 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:43:16,831 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 19:43:16,831 - sqlalchemy.engine.Engine - INFO - [cached since 79.21s ago] {'username_1': 'GhostUser', 'param_1': 1}
+2025-04-16 19:43:16,831 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 19:43:16,831 - app.main - INFO - [HTTP] POST /login - 401 - 0.01s
+2025-04-16 19:44:45,588 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-04-16 19:46:47,954 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-04-16 19:46:50,964 - app.main - INFO - [HTTP] POST /logout - 200 - 0.01s
+2025-04-16 19:49:19,963 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-04-16 19:49:19,971 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:49:19,971 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-04-16 19:49:19,971 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:49:19,971 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-04-16 19:49:19,971 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-04-16 19:49:19,979 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:49:19,982 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 19:49:19,988 - sqlalchemy.engine.Engine - INFO - [generated in 0.00230s] {'username_1': 'Ishanga', 'param_1': 1}
+2025-04-16 19:49:20,153 - sqlalchemy.engine.Engine - INFO - INSERT INTO users (username, password, national_id) VALUES (%(username)s, %(password)s, %(national_id)s) RETURNING users.user_id
+2025-04-16 19:49:20,153 - sqlalchemy.engine.Engine - INFO - [generated in 0.00230s] {'username': 'Ishanga', 'password': '$argon2id$v=19$m=65536,t=3,p=4$y/kfg/D+v1cK4dz7nzMmBA$c49Vy1H9ztKTCe6w+FBCXBWid3gUP4UlJJu3eexDKnA', 'national_id': '200014500123'}
+2025-04-16 19:49:20,161 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-04-16 19:49:20,169 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 19:49:20,173 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 19:49:20,177 - sqlalchemy.engine.Engine - INFO - [generated in 0.00423s] {'pk_1': 5}
+2025-04-16 19:49:20,180 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 19:49:20,180 - sqlalchemy.engine.Engine - INFO - [cached since 0.009164s ago] {'pk_1': 5}
+2025-04-16 19:49:20,180 - app.crud.users - INFO - User 'Ishanga' created with ID 5
+2025-04-16 19:49:20,187 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 19:49:20,188 - app.main - INFO - [HTTP] POST /signup - 201 - 0.55s
+2025-04-16 20:08:16,015 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 20:08:16,022 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 20:08:16,024 - sqlalchemy.engine.Engine - INFO - [cached since 1143s ago] {'username_1': 'Sankha', 'param_1': 1}
+2025-04-16 20:08:16,141 - sqlalchemy.engine.Engine - INFO - INSERT INTO users (username, password, national_id) VALUES (%(username)s, %(password)s, %(national_id)s) RETURNING users.user_id
+2025-04-16 20:08:16,142 - sqlalchemy.engine.Engine - INFO - [cached since 1143s ago] {'username': 'Sankha', 'password': '$argon2id$v=19$m=65536,t=3,p=4$2VsLgZCyFiIEoDSGkLI25g$VXTvVF1Cft/U4CQ4EsOHUSfm/5rQam79jlGAhd7tOX8', 'national_id': '300015399153'}
+2025-04-16 20:08:16,144 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-04-16 20:08:16,148 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 20:08:16,149 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 20:08:16,150 - sqlalchemy.engine.Engine - INFO - [cached since 1143s ago] {'pk_1': 6}
+2025-04-16 20:08:16,153 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 20:08:16,153 - sqlalchemy.engine.Engine - INFO - [cached since 1143s ago] {'pk_1': 6}
+2025-04-16 20:08:16,154 - app.crud.users - INFO - User 'Sankha' created with ID 6
+2025-04-16 20:08:16,159 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 20:08:16,161 - app.main - INFO - [HTTP] POST /signup - 201 - 0.27s
+2025-04-16 20:10:51,925 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 20:10:51,927 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 20:10:51,931 - sqlalchemy.engine.Engine - INFO - [cached since 1299s ago] {'username_1': 'Sankha', 'param_1': 1}
+2025-04-16 20:10:51,949 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 20:10:51,952 - app.main - INFO - [HTTP] POST /signup - 400 - 0.03s
+2025-04-16 20:11:29,776 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 20:11:29,796 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 20:11:29,797 - sqlalchemy.engine.Engine - INFO - [cached since 1337s ago] {'username_1': 'Udamini', 'param_1': 1}
+2025-04-16 20:11:29,889 - sqlalchemy.engine.Engine - INFO - INSERT INTO users (username, password, national_id) VALUES (%(username)s, %(password)s, %(national_id)s) RETURNING users.user_id
+2025-04-16 20:11:29,891 - sqlalchemy.engine.Engine - INFO - [cached since 1337s ago] {'username': 'Udamini', 'password': '$argon2id$v=19$m=65536,t=3,p=4$v5fyHsP4PwdAKKU0ZswZgw$BRMApBGPQTBQIoZnLvYzK2dKvC5/3t61N8e7E1vxSYE', 'national_id': '400015399153'}
+2025-04-16 20:11:29,893 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-04-16 20:11:29,898 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 20:11:29,899 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 20:11:29,900 - sqlalchemy.engine.Engine - INFO - [cached since 1336s ago] {'pk_1': 7}
+2025-04-16 20:11:29,903 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 20:11:29,906 - sqlalchemy.engine.Engine - INFO - [cached since 1337s ago] {'pk_1': 7}
+2025-04-16 20:11:29,908 - app.crud.users - INFO - User 'Udamini' created with ID 7
+2025-04-16 20:11:29,912 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 20:11:29,913 - app.main - INFO - [HTTP] POST /signup - 201 - 0.14s
+2025-04-16 20:22:45,849 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 20:22:45,852 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 20:22:45,854 - sqlalchemy.engine.Engine - INFO - [cached since 2013s ago] {'username_1': 'Pakaya', 'param_1': 1}
+2025-04-16 20:22:45,948 - sqlalchemy.engine.Engine - INFO - INSERT INTO users (username, password, national_id) VALUES (%(username)s, %(password)s, %(national_id)s) RETURNING users.user_id
+2025-04-16 20:22:45,950 - sqlalchemy.engine.Engine - INFO - [cached since 2013s ago] {'username': 'Pakaya', 'password': '$argon2id$v=19$m=65536,t=3,p=4$5dx7D+Gcs1bKWQthDOG81w$mgIKnZnX3+1S3384a2VzzhcxFWMcl8E0pdSN5IXxM7w', 'national_id': '800015399153'}
+2025-04-16 20:22:45,953 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-04-16 20:22:45,956 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 20:22:45,957 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 20:22:45,958 - sqlalchemy.engine.Engine - INFO - [cached since 2013s ago] {'pk_1': 8}
+2025-04-16 20:22:45,960 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 20:22:45,960 - sqlalchemy.engine.Engine - INFO - [cached since 2013s ago] {'pk_1': 8}
+2025-04-16 20:22:45,962 - app.crud.users - INFO - User 'Pakaya' created with ID 8
+2025-04-16 20:22:45,965 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 20:22:45,968 - app.main - INFO - [HTTP] POST /signup - 201 - 0.15s
+2025-04-16 20:24:36,623 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 20:24:36,624 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 20:24:36,625 - sqlalchemy.engine.Engine - INFO - [cached since 2123s ago] {'username_1': 'Huttoo', 'param_1': 1}
+2025-04-16 20:24:36,701 - sqlalchemy.engine.Engine - INFO - INSERT INTO users (username, password, national_id) VALUES (%(username)s, %(password)s, %(national_id)s) RETURNING users.user_id
+2025-04-16 20:24:36,702 - sqlalchemy.engine.Engine - INFO - [cached since 2123s ago] {'username': 'Huttoo', 'password': '$argon2id$v=19$m=65536,t=3,p=4$RihFSImxVirlXItxrlWqFQ$CbhY9H1OOQFjadneGMCMuffdKlY6TMBwRJYLkJlFk3w', 'national_id': '388829100184'}
+2025-04-16 20:24:36,707 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-04-16 20:24:36,709 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 20:24:36,710 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 20:24:36,711 - sqlalchemy.engine.Engine - INFO - [cached since 2123s ago] {'pk_1': 9}
+2025-04-16 20:24:36,713 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-04-16 20:24:36,714 - sqlalchemy.engine.Engine - INFO - [cached since 2123s ago] {'pk_1': 9}
+2025-04-16 20:24:36,715 - app.crud.users - INFO - User 'Huttoo' created with ID 9
+2025-04-16 20:24:36,716 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 20:24:36,717 - app.main - INFO - [HTTP] POST /signup - 201 - 0.10s
+2025-04-16 20:25:08,361 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 20:25:08,363 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 20:25:08,364 - sqlalchemy.engine.Engine - INFO - [cached since 2155s ago] {'username_1': 'huttoo', 'param_1': 1}
+2025-04-16 20:25:08,367 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 20:25:08,368 - app.main - INFO - [HTTP] POST /login - 401 - 0.05s
+2025-04-16 20:26:00,034 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 20:26:00,039 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 20:26:00,042 - sqlalchemy.engine.Engine - INFO - [cached since 2207s ago] {'username_1': 'Huttoo', 'param_1': 1}
+2025-04-16 20:26:00,202 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 20:26:00,203 - app.main - INFO - [HTTP] POST /login - 200 - 0.18s
+2025-04-16 20:26:39,888 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 20:26:39,890 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 20:26:39,891 - sqlalchemy.engine.Engine - INFO - [cached since 2247s ago] {'username_1': 'Huttoo', 'param_1': 1}
+2025-04-16 20:26:39,991 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 20:26:39,995 - app.main - INFO - [HTTP] POST /login - 200 - 0.11s
+2025-04-16 20:36:59,461 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 20:36:59,462 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 20:36:59,464 - sqlalchemy.engine.Engine - INFO - [cached since 2866s ago] {'username_1': 'Huttoo', 'param_1': 1}
+2025-04-16 20:36:59,582 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 20:36:59,583 - app.main - INFO - [HTTP] POST /login - 200 - 0.13s
+2025-04-16 20:37:17,253 - app.main - INFO - [HTTP] POST /logout - 200 - 0.01s
+2025-04-16 20:37:34,492 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-04-16 20:37:34,494 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-04-16 20:37:34,495 - sqlalchemy.engine.Engine - INFO - [cached since 2901s ago] {'username_1': 'Sankha', 'param_1': 1}
+2025-04-16 20:37:34,624 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-04-16 20:37:34,626 - app.main - INFO - [HTTP] POST /login - 200 - 0.14s
+2025-04-16 20:39:28,907 - app.main - INFO - [HTTP] POST /logout - 200 - 0.00s
+2025-04-16 20:39:37,771 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.

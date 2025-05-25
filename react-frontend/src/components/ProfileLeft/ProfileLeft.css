@@ -44,6 +44,7 @@
     background-color:  #6d28d9;
     color: #ffffff;
     border: none;
+    margin: 1cm;
     padding: 0.6rem 1.2rem;
     border-radius: 6px;
     cursor: pointer;
@@ -61,6 +62,11 @@
     border: 1px solid #ccc;
     border-radius: 6px;
     width: 100%;
+  }
+  
+  .nic-edit {
+    padding: 0.5rem;
+    font-size: 1rem;
   }
   
   .availability-stat {

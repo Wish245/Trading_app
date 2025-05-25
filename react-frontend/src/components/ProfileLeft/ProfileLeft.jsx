@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { assets } from "../../assets/assets";
 import * as ProfileAPI from "../../api/profile";
-import useUsernameAvailability from "../../hooks/usernameAvailability";
+// import useUsernameAvailability from "../../hooks/usernameAvailability";
 import "./ProfileLeft.css";
 
 const ProfileLeft = () => {
   const [editing, setEditing] = useState(false);
   const [profile, setProfile] = useState({ username: "", national_id: "", email: "", phone: ""});
   const [tempUsername, setTempUsername] = useState("");
-  const { available, checkUsername } = useUsernameAvailability();
+  // const { available, checkUsername } = useUsernameAvailability();
   const [tempEmail, setTempEmail] = useState("");
   const [tempPhone, setTempPhone] = useState("");
 
@@ -31,7 +31,7 @@ const ProfileLeft = () => {
   const handleUsernameChange = (e) => {
     const value = e.target.value;
     setTempUsername(value);
-    checkUsername(value);
+    // checkUsername(value);
   };
 
   const handleSave = async () => {
@@ -71,7 +71,7 @@ const ProfileLeft = () => {
               className="edit-username"
               id="username"
             />
-            <div className="availability-stat">
+            {/* <div className="availability-stat">
               {available === null ? (
                 ""
               ) : available ? (
@@ -79,8 +79,9 @@ const ProfileLeft = () => {
               ) : (
                 <span className="unavailable">username is taken</span>
               )}
-            </div>
-            <p className="nic">National ID: {profile.national_id}</p>
+            </div> */}
+            <label htmlFor="">National ID:</label>
+            <p className="nic-edit"> {profile.national_id}</p>
             <label htmlFor="email">Email: </label>
             <input
               type="text"

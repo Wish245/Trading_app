@@ -23,7 +23,7 @@ export const updateEmail = async (newEmail) => {
 }
 
 export const updatePhone = async (newPhone) => {
-    const {data} = await axiosInstance.put('/profile/email',{
+    const {data} = await axiosInstance.put('/profile/phone',{
         phone: newPhone,
     });
 
