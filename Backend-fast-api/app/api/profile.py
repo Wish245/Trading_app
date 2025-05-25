@@ -5,7 +5,7 @@ from app.schemas.auth import TokenResponse
 from app.crud.profile import get_user_profile, edit_email,edit_phone,edit_username
 from app.schemas.profile import GetProfile,UpdateEmail,UpdatePhone,UpdateUsername
 from app.models.users import User
-from app.models.contact import Contact
+# from app.models.contact import Contact
 from app.api.deps import get_current_user
 from app.crud import profile as profile_crud
 

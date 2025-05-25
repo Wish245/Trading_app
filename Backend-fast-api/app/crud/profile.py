@@ -13,21 +13,14 @@ def get_user_profile(db: Session, user_id: int) -> GetProfile:
         user = db.query(user_model).filter(user_model.user_id == user_id).first()
         if not user:
             return None
-        
-        email = phone = None
 
-        for contact in user.contacts:
-            if contact.contact_type == "email" and not email:
-                email = contact.contact_value
-            if contact.contact_type == "phone" and not phone:
-                phone = contact.contact_value
-        
-        return GetProfile (
-            username = user.username,
-            national_id = user.national_id,
-            email = email or "",
-            phone = phone or ""
-            )
+        else: 
+            return GetProfile (
+                username = user.username,
+                national_id = user.national_id,
+                email = user.email,
+                phone = user.phone
+                )
     except Exception as e:
         logger.error(f"failed to fetch user data")
         raise e
@@ -62,21 +55,15 @@ def edit_email(db: Session, user_id: int, new_email: str) -> UpdateEmail:
         user = db.query(user_model).filter(user_model.user_id == user_id).first()
         if not user:
             return None
+        existing = db.query(user_model).filter(user_model.email == new_email).first()
+
+        if existing and existing.id != user_id:
+            raise ValueError("Email is already linked to other user")
         
-        for contact in user.contact:
-            if contact.contact_type == "email":
-                db.delete(contact)
-                break
-
-        email_contact = contact_model(
-            contact_type = "email",
-            contact_value = new_email,
-            is_primary = True
-        )
-
-        db.add(email_contact)
+        user.email = new_email
+        db.commit()
         db.refresh(user)
-        logger.info(f"email upadated ")
+        logger.info(f"Email updated {user.email}")
         return user
     
     except Exception as e:
@@ -85,27 +72,22 @@ def edit_email(db: Session, user_id: int, new_email: str) -> UpdateEmail:
         raise e
     
 
-def edit_phone(db: Session, user_id: int, new_phone: str) -> UpdateEmail:
+def edit_phone(db: Session, user_id: int, new_phone: str) -> UpdatePhone:
     try:
 
         user = db.query(user_model).filter(user_model.user_id == user_id).first()
         if not user:
             return None
         
-        for contact in user.contact:
-            if contact.contact_type == "phone":
-                db.delete(contact)
-                break
+        existing = db.query(user_model).filter(user_model.phone == new_phone).first()
 
-        phone_contact = contact_model(
-            contact_type = "phone",
-            contact_value = new_phone,
-            is_primary = True
-        )
-
-        db.add(phone_contact)
+        if existing and existing.id != user_id:
+            raise ValueError("Phone number is already linked to other user")
+        
+        user.phone = new_phone
+        db.commit()
         db.refresh(user)
-        logger.info(f"phone upadated ")
+        logger.info(f"Phone updated {user.phone}")
         return user
     
     except Exception as e:

@@ -9,5 +9,7 @@ class User(Base):
     username = Column(String(50), unique=True, index=True, nullable=False)
     password = Column(Text, nullable=False)
     national_id = Column(String(20), unique=True, nullable=False)
+    phone = Column(String(10), nullable=False)
+    email = Column(String(50), nullable=False)
 
-    contacts = relationship("Contact", back_populates="user")
+    # contacts = relationship("Contact", back_populates="user")
