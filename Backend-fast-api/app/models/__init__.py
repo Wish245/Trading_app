@@ -1,5 +1,5 @@
 from .users import User
-from .contact import Contact
+# from .contact import Contact
 from .roles import Roles, UserRoles
 from .flower import Flower, FlowerCategory, FlowerTranslation
 from .stall import Stall
@@ -9,7 +9,7 @@ from .payment import Payment, PaymentMethod, PaymentStatus
 
 __all__ = [
     "User",
-    "Contact",
+    # "Contact",
     "Flower",
     "FlowerCategory",
     "FlowerTranslation",

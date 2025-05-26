@@ -1,6 +1,3 @@
--- CREATE DATABASE
-CREATE DATABASE my_flower_market;
-
 -- USERS
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,

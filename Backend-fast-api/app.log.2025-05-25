@@ -1,0 +1,427 @@
+2025-05-25 07:40:41,891 - app.main - ERROR - [ERROR] GET http://localhost:8000/profile/me - 'NoneType' object has no attribute 'get'
+2025-05-25 07:40:43,143 - app.main - INFO - [HTTP] POST /logout - 200 - 0.02s
+2025-05-25 07:43:02,638 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 07:43:02,643 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 07:43:02,645 - sqlalchemy.engine.Engine - INFO - [cached since 3.173e+04s ago] {'username_1': 'Pulindu09', 'param_1': 1}
+2025-05-25 07:43:02,822 - sqlalchemy.engine.Engine - INFO - INSERT INTO users (username, password, national_id) VALUES (%(username)s, %(password)s, %(national_id)s) RETURNING users.user_id
+2025-05-25 07:43:02,824 - sqlalchemy.engine.Engine - INFO - [generated in 0.00254s] {'username': 'Pulindu09', 'password': '$argon2id$v=19$m=65536,t=3,p=4$wjgnJOS8F8L4/98bQ2gNQQ$jAHUpqmSwLJeOGvPwhltohFa6fJ3s4k7YCfFDnEWrLk', 'national_id': '200783100294'}
+2025-05-25 07:43:02,835 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-05-25 07:43:02,842 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 07:43:02,848 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-05-25 07:43:02,849 - sqlalchemy.engine.Engine - INFO - [generated in 0.00275s] {'pk_1': 13}
+2025-05-25 07:43:02,851 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-05-25 07:43:02,853 - sqlalchemy.engine.Engine - INFO - [cached since 0.00605s ago] {'pk_1': 13}
+2025-05-25 07:43:02,855 - app.crud.users - INFO - User 'Pulindu09' created with ID 13
+2025-05-25 07:43:02,863 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 07:43:02,864 - app.main - INFO - [HTTP] POST /signup - 201 - 0.46s
+2025-05-25 08:36:14,240 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-05-25 08:36:47,476 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-05-25 08:36:47,477 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-05-25 08:37:18,897 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-05-25 08:38:26,386 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-05-25 08:38:26,387 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 08:38:26,390 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-05-25 08:38:26,390 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 08:38:26,392 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-05-25 08:38:26,397 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 08:38:26,399 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 08:38:26,406 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 08:38:26,406 - sqlalchemy.engine.Engine - INFO - [generated in 0.00080s] {'username_1': 'Priyangika', 'param_1': 1}
+2025-05-25 08:38:26,528 - sqlalchemy.engine.Engine - INFO - INSERT INTO users (username, password, national_id) VALUES (%(username)s, %(password)s, %(national_id)s) RETURNING users.user_id
+2025-05-25 08:38:26,529 - sqlalchemy.engine.Engine - INFO - [generated in 0.00095s] {'username': 'Priyangika', 'password': '$argon2id$v=19$m=65536,t=3,p=4$tFYqhVAqZezdGyNkTKnV+g$jE1abPhlEtb1H/TwiG774FXoSV4bwlzXTwCOZUjLEqE', 'national_id': '197611900v'}
+2025-05-25 08:38:26,534 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-05-25 08:38:26,539 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 08:38:26,541 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-05-25 08:38:26,542 - sqlalchemy.engine.Engine - INFO - [generated in 0.00107s] {'pk_1': 14}
+2025-05-25 08:38:26,544 - app.crud.users - INFO - passed this point
+2025-05-25 08:38:26,545 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-05-25 08:38:26,546 - sqlalchemy.engine.Engine - INFO - [cached since 0.005533s ago] {'pk_1': 14}
+2025-05-25 08:38:26,548 - app.crud.users - INFO - User 'Priyangika' created with ID 14
+2025-05-25 08:38:26,550 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 08:38:26,551 - app.main - INFO - [HTTP] POST /signup - 201 - 0.37s
+2025-05-25 15:45:47,951 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-05-25 15:49:05,417 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-05-25 15:49:05,417 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 15:49:05,419 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-05-25 15:49:05,420 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 15:49:05,420 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-05-25 15:49:05,421 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 15:49:05,422 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 15:49:05,425 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 15:49:05,426 - sqlalchemy.engine.Engine - INFO - [generated in 0.00079s] {'username_1': 'Priyangika', 'param_1': 1}
+2025-05-25 15:49:05,530 - sqlalchemy.engine.Engine - INFO - INSERT INTO users (username, password, national_id) VALUES (%(username)s, %(password)s, %(national_id)s) RETURNING users.user_id
+2025-05-25 15:49:05,531 - sqlalchemy.engine.Engine - INFO - [generated in 0.00070s] {'username': 'Priyangika', 'password': '$argon2id$v=19$m=65536,t=3,p=4$UWpNidFaC2EshZAyhvBeSw$33e5fhnvb/PcD+Ea6v2JdSdAQNeJlhBdccz3NtyLg/4', 'national_id': '1976119v'}
+2025-05-25 15:49:05,533 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-05-25 15:49:05,535 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 15:49:05,536 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-05-25 15:49:05,537 - sqlalchemy.engine.Engine - INFO - [generated in 0.00066s] {'pk_1': 15}
+2025-05-25 15:49:05,539 - app.crud.users - INFO - passed this point
+2025-05-25 15:49:05,539 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 15:49:05,541 - app.crud.users - ERROR - Failed to create user 'Priyangika': Instance '<Contact at 0x2d39085bc50>' is not persistent within this Session
+2025-05-25 15:49:05,542 - app.main - ERROR - [ERROR] POST http://localhost:8000/signup - Instance '<Contact at 0x2d39085bc50>' is not persistent within this Session
+2025-05-25 15:49:54,278 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 15:49:54,280 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 15:49:54,282 - sqlalchemy.engine.Engine - INFO - [cached since 48.86s ago] {'username_1': 'Priyangika', 'param_1': 1}
+2025-05-25 15:49:54,291 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 15:49:54,293 - app.main - INFO - [HTTP] POST /signup - 400 - 0.02s
+2025-05-25 15:59:30,510 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 15:59:30,511 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 15:59:30,513 - sqlalchemy.engine.Engine - INFO - [cached since 625.1s ago] {'username_1': 'Priyangika', 'param_1': 1}
+2025-05-25 15:59:30,516 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 15:59:30,518 - app.main - INFO - [HTTP] POST /signup - 400 - 0.01s
+2025-05-25 15:59:40,462 - app.main - INFO - [HTTP] GET /profile/me - 401 - 0.00s
+2025-05-25 16:01:03,288 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-05-25 18:48:20,971 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-05-25 18:51:05,236 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-05-25 18:51:05,237 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 18:51:05,238 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-05-25 18:51:05,239 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 18:51:05,240 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-05-25 18:51:05,241 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 18:51:05,242 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 18:51:05,247 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 18:51:05,248 - sqlalchemy.engine.Engine - INFO - [generated in 0.00070s] {'username_1': 'Priyangika', 'param_1': 1}
+2025-05-25 18:51:05,253 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 18:51:05,254 - app.main - ERROR - [ERROR] POST http://localhost:8000/signup - (psycopg2.errors.UndefinedColumn) column users.phone does not exist
+LINE 1: ...password, users.national_id AS users_national_id, users.phon...
+                                                             ^
+
+[SQL: SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s]
+[parameters: {'username_1': 'Priyangika', 'param_1': 1}]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-05-25 18:56:04,106 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-05-25 18:56:16,515 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-05-25 18:56:29,150 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-05-25 18:56:29,151 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 18:56:29,152 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-05-25 18:56:29,153 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 18:56:29,154 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-05-25 18:56:29,154 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 18:56:29,155 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 18:56:29,158 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 18:56:29,159 - sqlalchemy.engine.Engine - INFO - [generated in 0.00106s] {'username_1': 'Priyangika', 'param_1': 1}
+2025-05-25 18:56:29,288 - sqlalchemy.engine.Engine - INFO - INSERT INTO users (username, password, national_id, phone, email) VALUES (%(username)s, %(password)s, %(national_id)s, %(phone)s, %(email)s) RETURNING users.user_id
+2025-05-25 18:56:29,289 - sqlalchemy.engine.Engine - INFO - [generated in 0.00089s] {'username': 'Priyangika', 'password': '$argon2id$v=19$m=65536,t=3,p=4$tBbCOEeIkTIm5DwnZCyFcA$Hcb+PMzegh6gn4F+Ojs/4IBK9J5g8tMorQohL8KyqPA', 'national_id': '1976119v', 'phone': '0774207096', 'email': 'priya@gmail.com'}
+2025-05-25 18:56:29,290 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 18:56:29,291 - app.crud.users - ERROR - Failed to create user 'Priyangika': (psycopg2.errors.InvalidTextRepresentation) malformed array literal: "0774207096"
+LINE 1: ...gh6gn4F+Ojs/4IBK9J5g8tMorQohL8KyqPA', '1976119v', '077420709...
+                                                             ^
+DETAIL:  Array value must start with "{" or dimension information.
+
+[SQL: INSERT INTO users (username, password, national_id, phone, email) VALUES (%(username)s, %(password)s, %(national_id)s, %(phone)s, %(email)s) RETURNING users.user_id]
+[parameters: {'username': 'Priyangika', 'password': '$argon2id$v=19$m=65536,t=3,p=4$tBbCOEeIkTIm5DwnZCyFcA$Hcb+PMzegh6gn4F+Ojs/4IBK9J5g8tMorQohL8KyqPA', 'national_id': '1976119v', 'phone': '0774207096', 'email': 'priya@gmail.com'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-05-25 18:56:29,292 - app.main - ERROR - [ERROR] POST http://localhost:8000/signup - (psycopg2.errors.InvalidTextRepresentation) malformed array literal: "0774207096"
+LINE 1: ...gh6gn4F+Ojs/4IBK9J5g8tMorQohL8KyqPA', '1976119v', '077420709...
+                                                             ^
+DETAIL:  Array value must start with "{" or dimension information.
+
+[SQL: INSERT INTO users (username, password, national_id, phone, email) VALUES (%(username)s, %(password)s, %(national_id)s, %(phone)s, %(email)s) RETURNING users.user_id]
+[parameters: {'username': 'Priyangika', 'password': '$argon2id$v=19$m=65536,t=3,p=4$tBbCOEeIkTIm5DwnZCyFcA$Hcb+PMzegh6gn4F+Ojs/4IBK9J5g8tMorQohL8KyqPA', 'national_id': '1976119v', 'phone': '0774207096', 'email': 'priya@gmail.com'}]
+(Background on this error at: https://sqlalche.me/e/20/9h9h)
+2025-05-25 19:01:57,351 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-05-25 19:29:45,746 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-05-25 19:35:57,139 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-05-25 19:35:57,139 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 19:35:57,140 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-05-25 19:35:57,140 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 19:35:57,141 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-05-25 19:35:57,141 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 19:35:57,142 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 19:35:57,145 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 19:35:57,145 - sqlalchemy.engine.Engine - INFO - [generated in 0.00076s] {'username_1': 'Priyangika', 'param_1': 1}
+2025-05-25 19:35:57,267 - sqlalchemy.engine.Engine - INFO - INSERT INTO users (username, password, national_id, phone, email) VALUES (%(username)s, %(password)s, %(national_id)s, %(phone)s, %(email)s) RETURNING users.user_id
+2025-05-25 19:35:57,268 - sqlalchemy.engine.Engine - INFO - [generated in 0.00090s] {'username': 'Priyangika', 'password': '$argon2id$v=19$m=65536,t=3,p=4$857zfu8dI6T0vrdWam0tZQ$fbhH3mUIprW2ACI+c7xZFN+BJoMw62/yqAsU4DRJLRI', 'national_id': '1976119v', 'phone': '0774207096', 'email': 'priya@gmail.com'}
+2025-05-25 19:35:57,270 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-05-25 19:35:57,273 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 19:35:57,274 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id, users.phone, users.email 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-05-25 19:35:57,275 - sqlalchemy.engine.Engine - INFO - [generated in 0.00061s] {'pk_1': 1}
+2025-05-25 19:35:57,276 - app.crud.users - INFO - User 'Priyangika' created with ID 1
+2025-05-25 19:35:57,278 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 19:35:57,279 - app.main - INFO - [HTTP] POST /signup - 201 - 0.32s
+2025-05-25 19:36:14,544 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 19:36:14,545 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 19:36:14,546 - sqlalchemy.engine.Engine - INFO - [cached since 17.4s ago] {'username_1': 'Priyangika', 'param_1': 1}
+2025-05-25 19:36:14,640 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 19:36:14,642 - app.main - INFO - [HTTP] POST /login - 200 - 0.10s
+2025-05-25 19:36:20,178 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 19:36:20,182 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 19:36:20,188 - sqlalchemy.engine.Engine - INFO - [cached since 23.04s ago] {'username_1': 'Priyangika', 'param_1': 1}
+2025-05-25 19:36:20,194 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s
+2025-05-25 19:36:20,195 - sqlalchemy.engine.Engine - INFO - [generated in 0.00157s] {'user_id_1': 1, 'param_1': 1}
+2025-05-25 19:36:20,200 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 19:36:20,202 - app.main - INFO - [HTTP] GET /profile/me - 200 - 0.03s
+2025-05-25 19:36:33,820 - app.main - INFO - [HTTP] POST /logout - 200 - 0.00s
+2025-05-25 19:38:23,670 - app.main - INFO - [HTTP] GET /profile/me - 401 - 0.00s
+2025-05-25 19:40:22,963 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 19:40:22,966 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 19:40:22,967 - sqlalchemy.engine.Engine - INFO - [cached since 265.8s ago] {'username_1': 'Priyangika', 'param_1': 1}
+2025-05-25 19:40:23,144 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 19:40:23,146 - app.main - INFO - [HTTP] POST /login - 200 - 0.19s
+2025-05-25 19:40:27,269 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 19:40:27,275 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 19:40:27,283 - sqlalchemy.engine.Engine - INFO - [cached since 270.1s ago] {'username_1': 'Priyangika', 'param_1': 1}
+2025-05-25 19:40:27,312 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s
+2025-05-25 19:40:27,314 - sqlalchemy.engine.Engine - INFO - [cached since 247.1s ago] {'user_id_1': 1, 'param_1': 1}
+2025-05-25 19:40:27,323 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 19:40:27,336 - app.main - INFO - [HTTP] GET /profile/me - 200 - 0.08s
+2025-05-25 19:41:05,338 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 19:41:05,342 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 19:41:05,343 - sqlalchemy.engine.Engine - INFO - [cached since 308.2s ago] {'username_1': 'Priyangika', 'param_1': 1}
+2025-05-25 19:41:05,356 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s
+2025-05-25 19:41:05,362 - sqlalchemy.engine.Engine - INFO - [cached since 285.2s ago] {'user_id_1': 1, 'param_1': 1}
+2025-05-25 19:41:05,365 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 19:41:05,369 - sqlalchemy.engine.Engine - INFO - [cached since 308.2s ago] {'username_1': 'Priya', 'param_1': 1}
+2025-05-25 19:41:05,379 - sqlalchemy.engine.Engine - INFO - UPDATE users SET username=%(username)s WHERE users.user_id = %(users_user_id)s
+2025-05-25 19:41:05,380 - sqlalchemy.engine.Engine - INFO - [generated in 0.00187s] {'username': 'Priya', 'users_user_id': 1}
+2025-05-25 19:41:05,384 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-05-25 19:41:05,407 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 19:41:05,413 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id, users.phone, users.email 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-05-25 19:41:05,420 - sqlalchemy.engine.Engine - INFO - [cached since 308.1s ago] {'pk_1': 1}
+2025-05-25 19:41:05,428 - app.crud.users - INFO - new useraname: 'Priya'
+2025-05-25 19:41:05,437 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 19:41:05,442 - app.main - INFO - [HTTP] PUT /profile/username - 200 - 0.11s
+2025-05-25 19:41:05,482 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 19:41:05,489 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 19:41:05,506 - sqlalchemy.engine.Engine - INFO - [cached since 308.4s ago] {'username_1': 'Priyangika', 'param_1': 1}
+2025-05-25 19:41:05,525 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 19:41:05,529 - app.main - INFO - [HTTP] PUT /profile/email - 401 - 0.06s
+2025-05-25 19:41:09,211 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 19:41:09,225 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 19:41:09,229 - sqlalchemy.engine.Engine - INFO - [cached since 312.1s ago] {'username_1': 'Priyangika', 'param_1': 1}
+2025-05-25 19:41:09,243 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 19:41:09,248 - app.main - INFO - [HTTP] PUT /profile/username - 401 - 0.04s
+2025-05-25 19:41:12,962 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 19:41:12,964 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 19:41:12,966 - sqlalchemy.engine.Engine - INFO - [cached since 315.8s ago] {'username_1': 'Priyangika', 'param_1': 1}
+2025-05-25 19:41:12,971 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 19:41:12,974 - app.main - INFO - [HTTP] PUT /profile/username - 401 - 0.01s
+2025-05-25 20:48:05,708 - app.main - ERROR - [ERROR] PUT http://localhost:8000/profile/username - 'NoneType' object has no attribute 'get'
+2025-05-25 20:50:22,286 - app.main - ERROR - [ERROR] GET http://localhost:8000/profile/me - 'NoneType' object has no attribute 'get'
+2025-05-25 20:50:39,273 - app.main - ERROR - [ERROR] GET http://localhost:8000/profile/me - 'NoneType' object has no attribute 'get'
+2025-05-25 20:50:47,269 - app.main - ERROR - [ERROR] GET http://localhost:8000/profile/me - 'NoneType' object has no attribute 'get'
+2025-05-25 20:51:01,267 - app.main - ERROR - [ERROR] GET http://localhost:8000/profile/me - 'NoneType' object has no attribute 'get'
+2025-05-25 20:51:57,239 - app.main - ERROR - [ERROR] PUT http://localhost:8000/profile/username - 'NoneType' object has no attribute 'get'
+2025-05-25 20:51:59,124 - app.main - ERROR - [ERROR] PUT http://localhost:8000/profile/username - 'NoneType' object has no attribute 'get'
+2025-05-25 20:51:59,866 - app.main - ERROR - [ERROR] PUT http://localhost:8000/profile/username - 'NoneType' object has no attribute 'get'
+2025-05-25 20:52:00,302 - app.main - ERROR - [ERROR] PUT http://localhost:8000/profile/username - 'NoneType' object has no attribute 'get'
+2025-05-25 20:52:00,842 - app.main - ERROR - [ERROR] PUT http://localhost:8000/profile/username - 'NoneType' object has no attribute 'get'
+2025-05-25 20:52:01,081 - app.main - ERROR - [ERROR] PUT http://localhost:8000/profile/username - 'NoneType' object has no attribute 'get'
+2025-05-25 20:52:01,443 - app.main - ERROR - [ERROR] PUT http://localhost:8000/profile/username - 'NoneType' object has no attribute 'get'
+2025-05-25 20:52:02,093 - app.main - ERROR - [ERROR] PUT http://localhost:8000/profile/username - 'NoneType' object has no attribute 'get'
+2025-05-25 20:53:21,403 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-05-25 20:53:32,099 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-05-25 20:53:37,229 - app.main - ERROR - [ERROR] PUT http://localhost:8000/profile/username - 'NoneType' object has no attribute 'get'
+2025-05-25 20:58:29,455 - app.main - INFO - [HTTP] POST /logout - 200 - 0.00s
+2025-05-25 20:58:51,962 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-05-25 20:58:51,963 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 20:58:51,966 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-05-25 20:58:51,966 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 20:58:51,968 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-05-25 20:58:51,969 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-05-25 20:58:51,970 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 20:58:51,974 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 20:58:51,975 - sqlalchemy.engine.Engine - INFO - [generated in 0.00094s] {'username_1': 'Priyangika', 'param_1': 1}
+2025-05-25 20:58:51,979 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 20:58:51,980 - app.main - INFO - [HTTP] POST /login - 401 - 0.28s
+2025-05-25 20:58:58,247 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 20:58:58,253 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 20:58:58,257 - sqlalchemy.engine.Engine - INFO - [cached since 6.283s ago] {'username_1': 'Priya', 'param_1': 1}
+2025-05-25 20:58:58,627 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 20:58:58,629 - app.main - INFO - [HTTP] POST /login - 200 - 0.38s
+2025-05-25 20:59:06,340 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 20:59:06,342 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 20:59:06,343 - sqlalchemy.engine.Engine - INFO - [cached since 14.37s ago] {'username_1': 'Priya', 'param_1': 1}
+2025-05-25 20:59:06,349 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s
+2025-05-25 20:59:06,350 - sqlalchemy.engine.Engine - INFO - [generated in 0.00134s] {'user_id_1': 1, 'param_1': 1}
+2025-05-25 20:59:06,666 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 20:59:06,667 - app.main - INFO - [HTTP] GET /profile/me - 200 - 0.41s
+2025-05-25 20:59:32,297 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 20:59:32,298 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 20:59:32,299 - sqlalchemy.engine.Engine - INFO - [cached since 40.32s ago] {'username_1': 'Priya', 'param_1': 1}
+2025-05-25 20:59:32,301 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s
+2025-05-25 20:59:32,303 - sqlalchemy.engine.Engine - INFO - [cached since 25.95s ago] {'user_id_1': 1, 'param_1': 1}
+2025-05-25 20:59:32,304 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 20:59:32,305 - sqlalchemy.engine.Engine - INFO - [cached since 40.33s ago] {'username_1': 'Sankha', 'param_1': 1}
+2025-05-25 20:59:32,308 - sqlalchemy.engine.Engine - INFO - UPDATE users SET username=%(username)s WHERE users.user_id = %(users_user_id)s
+2025-05-25 20:59:32,316 - sqlalchemy.engine.Engine - INFO - [generated in 0.00749s] {'username': 'Sankha', 'users_user_id': 1}
+2025-05-25 20:59:32,321 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-05-25 20:59:32,327 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 20:59:32,331 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id, users.username, users.password, users.national_id, users.phone, users.email 
+FROM users 
+WHERE users.user_id = %(pk_1)s
+2025-05-25 20:59:32,332 - sqlalchemy.engine.Engine - INFO - [generated in 0.00155s] {'pk_1': 1}
+2025-05-25 20:59:32,335 - app.crud.users - INFO - new useraname: 'Sankha'
+2025-05-25 20:59:32,336 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 20:59:32,338 - app.main - INFO - [HTTP] PUT /profile/username - 200 - 0.04s
+2025-05-25 20:59:32,353 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 20:59:32,354 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 20:59:32,355 - sqlalchemy.engine.Engine - INFO - [cached since 40.38s ago] {'username_1': 'Priya', 'param_1': 1}
+2025-05-25 20:59:32,363 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 20:59:32,364 - app.main - INFO - [HTTP] PUT /profile/email - 401 - 0.01s
+2025-05-25 20:59:40,156 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 20:59:40,157 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 20:59:40,158 - sqlalchemy.engine.Engine - INFO - [cached since 48.18s ago] {'username_1': 'Priya', 'param_1': 1}
+2025-05-25 20:59:40,160 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 20:59:40,161 - app.main - INFO - [HTTP] GET /profile/me - 401 - 0.01s
+2025-05-25 20:59:45,141 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 20:59:45,147 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 20:59:45,149 - sqlalchemy.engine.Engine - INFO - [cached since 53.17s ago] {'username_1': 'Priya', 'param_1': 1}
+2025-05-25 20:59:45,151 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 20:59:45,154 - app.main - INFO - [HTTP] GET /profile/me - 401 - 0.02s
+2025-05-25 21:04:56,768 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 21:04:56,770 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 21:04:56,788 - sqlalchemy.engine.Engine - INFO - [cached since 364.8s ago] {'username_1': 'Priya', 'param_1': 1}
+2025-05-25 21:04:56,792 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 21:04:56,794 - app.main - INFO - [HTTP] GET /profile/me - 401 - 0.03s
+2025-05-25 21:04:58,036 - app.main - INFO - [HTTP] POST /logout - 200 - 0.00s
+2025-05-25 21:05:16,941 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 21:05:16,942 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 21:05:16,943 - sqlalchemy.engine.Engine - INFO - [cached since 385s ago] {'username_1': 'Sankha', 'param_1': 1}
+2025-05-25 21:05:17,045 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 21:05:17,047 - app.main - INFO - [HTTP] POST /login - 200 - 0.11s
+2025-05-25 21:05:20,293 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 21:05:20,295 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 21:05:20,298 - sqlalchemy.engine.Engine - INFO - [cached since 388.3s ago] {'username_1': 'Sankha', 'param_1': 1}
+2025-05-25 21:05:20,301 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s
+2025-05-25 21:05:20,303 - sqlalchemy.engine.Engine - INFO - [cached since 374s ago] {'user_id_1': 1, 'param_1': 1}
+2025-05-25 21:05:20,308 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 21:05:20,310 - app.main - INFO - [HTTP] GET /profile/me - 200 - 0.02s
+2025-05-25 21:05:35,461 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-05-25 21:05:35,462 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 21:05:35,463 - sqlalchemy.engine.Engine - INFO - [cached since 403.5s ago] {'username_1': 'Sankha', 'param_1': 1}
+2025-05-25 21:05:35,466 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.user_id = %(user_id_1)s 
+ LIMIT %(param_1)s
+2025-05-25 21:05:35,467 - sqlalchemy.engine.Engine - INFO - [cached since 389.1s ago] {'user_id_1': 1, 'param_1': 1}
+2025-05-25 21:05:35,469 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-05-25 21:05:35,471 - sqlalchemy.engine.Engine - INFO - [cached since 403.5s ago] {'username_1': 'Sankha', 'param_1': 1}
+2025-05-25 21:05:35,472 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-05-25 21:05:35,473 - app.crud.users - ERROR - Failed to change the username
+2025-05-25 21:05:35,474 - app.main - INFO - [HTTP] PUT /profile/username - 500 - 0.01s

@@ -34,6 +34,18 @@ const ProfileLeft = () => {
     // checkUsername(value);
   };
 
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setTempEmail(value);
+    // checkUsername(value);
+  };
+  
+  const handlePhoneChange = (e) => {
+    const value = e.target.value;
+    setTempPhone(value);
+    // checkUsername(value);
+  };
+
   const handleSave = async () => {
     try {
       await ProfileAPI.validateProfileInput(tempUsername,tempEmail,tempPhone);
@@ -86,6 +98,7 @@ const ProfileLeft = () => {
             <input
               type="text"
               value={tempEmail}
+              onChange={handleEmailChange}
               className="edit-username"
               id="email"
             />
@@ -93,6 +106,7 @@ const ProfileLeft = () => {
             <input
               type="text"
               value={tempPhone}
+              onChange={handlePhoneChange}
               className="edit-username"
               id="phone"
             />
