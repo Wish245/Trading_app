@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { createStall } from "../../api/profile";
+import { createStall } from "../../api/stall";
 import "./AddStall.css";
 
 const AddStall = () => {
@@ -30,7 +30,7 @@ const AddStall = () => {
         <div className="stall-form-container">
             <h2>Create Stall</h2>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="detail-stall">
                     <label>Stall name:</label>
                     <input 
                      type="text"
@@ -39,7 +39,9 @@ const AddStall = () => {
                      required
                     /> 
                 </div>
-                <button type="submit">Submit</button>
+                <div className="button-div">
+                    <button type="submit">Submit</button>
+                </div>
             </form>
         </div>
     );

@@ -9,6 +9,7 @@ import PaymentPage from './pages/PaymentPage/PaymentPage'
 import Market from './pages/Market/Market'
 import Login from './pages/Login/Login'
 import SignUp from './pages/SignUp/SignUp'
+import AddStall from './components/AddStall/AddStall'
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
           <Route path='/market' element={<Market/>}/>
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<SignUp/>}/>
+          <Route path='/createStall' element={<AddStall/>}/>
         </Routes>
       </div>
       <Footer />
