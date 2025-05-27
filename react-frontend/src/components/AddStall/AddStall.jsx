@@ -1,9 +1,11 @@
 import React,{useState} from "react";
-import { createStall } from "../../api/profile";
+import { createStall } from "../../api/stall";
 import "./AddStall.css";
+import { useNavigate } from "react-router-dom";
 
 const AddStall = () => {
     const [stallName, setStallName] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -13,10 +15,10 @@ const AddStall = () => {
             const response = await createStall(stallName);
             console.log("createStall:", response);
 
-            if (response.status === 200) {
+            if (response.status === 201) {
                 console.log("Stall creation successful");
                 setTimeout(() => {
-                    window.location.href = "/market";
+                    navigate('/market');
                 },2000);
             } else {
                 console.error("Error creating stall", response.message);
@@ -30,7 +32,7 @@ const AddStall = () => {
         <div className="stall-form-container">
             <h2>Create Stall</h2>
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="detail-stall">
                     <label>Stall name:</label>
                     <input 
                      type="text"
@@ -39,7 +41,9 @@ const AddStall = () => {
                      required
                     /> 
                 </div>
-                <button type="submit">Submit</button>
+                <div className="button-div">
+                    <button type="submit">Submit</button>
+                </div>
             </form>
         </div>
     );
