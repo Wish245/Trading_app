@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from app.models import User as user_model, Contact as contact_model
+from app.models import User as user_model
 import app.schemas
 from app.schemas.profile import GetProfile,UpdateEmail,UpdatePhone,UpdateUsername
 import app.logger
