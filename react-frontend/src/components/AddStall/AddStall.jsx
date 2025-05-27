@@ -1,9 +1,11 @@
 import React,{useState} from "react";
 import { createStall } from "../../api/stall";
 import "./AddStall.css";
+import { useNavigate } from "react-router-dom";
 
 const AddStall = () => {
     const [stallName, setStallName] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -16,7 +18,7 @@ const AddStall = () => {
             if (response.status === 201) {
                 console.log("Stall creation successful");
                 setTimeout(() => {
-                    window.location.href = "/market";
+                    navigate('/market');
                 },2000);
             } else {
                 console.error("Error creating stall", response.message);

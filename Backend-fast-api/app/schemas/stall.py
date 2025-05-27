@@ -9,4 +9,5 @@ class StallOut(BaseModel):
     stall_id: int
     stall_name: str
 
-    model_config = ConfigDict(from_attribute=True)
+    class Config:
+        from_attributes = True
