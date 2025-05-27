@@ -7,11 +7,11 @@ import app.logger
 
 logger = app.logger.get_logger(__name__)
 
-def create_stall(db: Session, stall_data: app.schemas.stall.CreateStall) -> StallOut:
+def create_stall(db: Session, user_id = int, stall_name = str) -> StallOut:
     try:
         db_stall = stall_model (
-            user_id = stall_data.user_id,
-            stall_name = stall_data.stall_name,
+            user_id = user_id,
+            stall_name = stall_name,
         )
         db.add(db_stall)
         db.commit()

@@ -1,7 +1,7 @@
 from pydantic import BaseModel, ConfigDict
 
 class CreateStall(BaseModel):
-    user_id: int
+    # user_id: int
     stall_name: str
 
 class StallOut(BaseModel):
