@@ -13,7 +13,7 @@ const AddStall = () => {
             const response = await createStall(stallName);
             console.log("createStall:", response);
 
-            if (response.status === 200) {
+            if (response.status === 201) {
                 console.log("Stall creation successful");
                 setTimeout(() => {
                     window.location.href = "/market";
