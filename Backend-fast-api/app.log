@@ -195,3 +195,4 @@ WHERE stall.stall_id = %(pk_1)s
 2025-05-28 01:05:47,443 - app.crud.stall - INFO - Stall 'Primrose_sex' created with ID 8
 2025-05-28 01:05:47,445 - sqlalchemy.engine.Engine - INFO - ROLLBACK
 2025-05-28 01:05:47,446 - app.main - INFO - [HTTP] POST /stall/create - 201 - 0.03s
+2025-05-28 01:45:51,844 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
