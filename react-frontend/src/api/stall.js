@@ -8,3 +8,8 @@ export const createStall = async (stallname) => {
         return response;
     
 };
+
+export const getStall = async () => {
+    const response = await axiosInstance.get('/stall');
+    return response.data;
+};
