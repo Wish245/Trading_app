@@ -167,3 +167,8 @@ export const signup = async (username, email, phone, nationalID, password) => {
         throw new Error("Network error. Please check your connection.");
     }
 };
+
+export const getCurrentUser = async () => {
+    const response = axiosInstance.get('/current');
+    return response;
+};
