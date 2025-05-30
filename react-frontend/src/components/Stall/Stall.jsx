@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import './Stall.css';
-import * as StallAPI from "../../api/stall";
+// import * as StallAPI from "../../api/stall";
 import * as StockAPI from "../../api/stock";
 
 function Stall({stall_id, stall_name}) {
