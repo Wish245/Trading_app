@@ -1,0 +1,29 @@
+import React, {useState, useEffect} from "react";
+import './MyStall.css';
+import * as StallAPI from "../../api/stall";
+import Stall from "../Stall/Stall";
+
+function AllStall() {
+    const [stalls, setStalls] = useState([]);
+
+    useEffect(() => {
+        StallAPI.getStall()
+        .then(setStalls)
+        .catch(err => console.error("Error fetching stalls.", err));
+    },[]);
+
+    return(
+        <div className="my-stall-box">
+            <div className="my-stall-name">
+                <h1>All Stalls</h1>
+            </div>
+            <div className="stalls-wrapper">
+                {stalls.map(stall => (
+                    <Stall key={stall.stall_id} stall_id={stall.stall_id} stall_name={stall.stall_name}/>
+                ))}
+            </div>
+        </div>
+    );
+}
+
+export default AllStall;
