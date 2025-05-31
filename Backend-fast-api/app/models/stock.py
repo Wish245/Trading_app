@@ -6,7 +6,7 @@ class Stock(Base):
     __tablename__ = "stock"
     stock_id = Column(Integer, primary_key=True)
     stall_id = Column(Integer, ForeignKey("stall.stall_id", ondelete="CASCADE"), nullable=False)
-    flower_id = Column(Integer, ForeignKey("flowers.flower_id", ondelete="CASCADE"), nullable=False)
+    item_id = Column(Integer, ForeignKey("flowers.flower_id", ondelete="CASCADE"), nullable=False)
     price = Column(Numeric(10, 2), nullable=False)
     quantity = Column(Integer, nullable=False)
     created_date = Column(TIMESTAMP, server_default=func.now())
