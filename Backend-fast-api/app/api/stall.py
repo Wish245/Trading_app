@@ -5,6 +5,7 @@ from app.crud import stall as stall_crud
 from app.schemas.stall import CreateStall, StallOut
 from app.api.deps import get_current_user
 from app.models.users import User
+from typing import List,Optional
 
 router = APIRouter()
 
@@ -14,4 +15,21 @@ def stall_create(stall_data: CreateStall, db: Session = Depends(get_db), current
         stall = stall_crud.create_stall(db, current_user.user_id, stall_data.stall_name )
         return stall
     except Exception:
-        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Creating the stall failed")
+        raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, details="Creating the stall failed")
+    
+
+@router.get("/all", response_model=List[StallOut])
+def all_stalls(db: Session = Depends(get_db)):
+    try:
+        stall = stall_crud.get_all_stall(db)
+        return stall
+    except Exception:
+        raise HTTPException(status_code=404, details="Stalls not found")
+
+@router.get("/me", response_model=Optional[List[StallOut]])
+def my_stalls(db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
+    try:
+        stall = stall_crud.get_my_stall(db, current_user.user_id)
+        return stall
+    except Exception:
+        raise HTTPException(status_code=404, details="Stalls not found")

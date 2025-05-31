@@ -10,13 +10,11 @@ export const createStall = async (stallname) => {
 };
 
 export const getStall = async () => {
-    const response = await axiosInstance.get('/stall');
+    const response = await axiosInstance.get('/stall/all');
     return response.data;
 };
 
 export const getMyStall = async (user_id) => {
-    const response = await axiosInstance.get('/me',{
-        user_id: user_id,
-    });
+    const response = await axiosInstance.get('/stall/me');
     return response.data;
 };
