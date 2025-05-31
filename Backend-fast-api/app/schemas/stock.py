@@ -1,6 +1,9 @@
 from pydantic import BaseModel,PositiveInt,condecimal
 from datetime import datetime
 
+class StockInStall(BaseModel):
+    stall_id: int
+
 class StockOut(BaseModel):
     stock_id: int
     stall_id: PositiveInt
