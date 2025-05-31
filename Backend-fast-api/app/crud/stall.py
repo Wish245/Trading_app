@@ -1,7 +1,7 @@
 import app.schemas.stall
 from sqlalchemy.orm import Session
 from app.models import Stall as stall_model
-from app.models import User as user_model
+# from app.models import User as user_model
 import app.schemas
 from app.schemas.stall import StallOut
 import app.logger
