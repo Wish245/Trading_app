@@ -15,7 +15,7 @@ def my_stock(payload: StockInStall, db: Session = Depends(get_db)):
     except Exception:
         raise HTTPException(statuc_code = 404, details="stocks not found")
 
-@router.get("/all", respond_model=List[StockOut])
+@router.get("/all", response_model=List[StockOut])
 def all_stock(db: Session = Depends(get_db)):
     try:
         stocks = stock_crud.get_all_stock(db)
