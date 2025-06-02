@@ -9,6 +9,7 @@ function Stall({stall_id, stall_name}) {
     useEffect(() => {
         StockAPI.getMyStock(stall_id)
         .then(setStocks)
+         .then(data => setStocks(data || []))
         .catch(err => console.error("Error Fetching details.", err));
     },[stall_id]);
 
@@ -30,7 +31,7 @@ function Stall({stall_id, stall_name}) {
                         <tbody>
                             {stocks.map(stock =>(
                                 <tr key={stock.stock_id} className="st-t-body">
-                                    <td className="head">{stock.stock_name}</td>
+                                    <td className="head">{stock.item_name}</td>
                                     <td className="head">
                                         <button>View</button>
                                     </td>

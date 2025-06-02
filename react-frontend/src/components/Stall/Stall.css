@@ -16,13 +16,13 @@
 
 .stock-create-btn {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin-bottom: 15px;
 }
 
 .stock-create-btn button {
     padding: 8px 16px;
-    background-color: #6d28d9;
+    background-color: #875ec9;
     color: white;
     font-weight: bold;
     border: none;
@@ -44,8 +44,8 @@
 }
 
 .st-t-head {
-    background-color: #6d28d9;
-    color: wheat;
+    background-color: #B8CFCE;
+    color: #333;
 }
 
 .head {
