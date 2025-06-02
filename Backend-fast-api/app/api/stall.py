@@ -12,6 +12,12 @@ router = APIRouter()
 @router.post("/create", response_model=StallOut, status_code=status.HTTP_201_CREATED)
 def stall_create(stall_data: CreateStall, db: Session = Depends(get_db), current_user: User = Depends(get_current_user) ):
     try:
+        existing_stall = stall_crud.get_stall_by_stall_name(db, stall_data.stall_name)
+        if existing_stall:
+            raise HTTPException(
+                status_code=status.HTTP_401_UNAUTHORIZED,
+                detail="Invalid stallname",
+            )
         stall = stall_crud.create_stall(db, current_user.user_id, stall_data.stall_name )
         return stall
     except Exception:

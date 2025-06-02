@@ -50,3 +50,7 @@ def get_all_stall(db: Session) -> List[StallOut]:
     except Exception as e:
         logger.error(f"failed to fetch all stalls")
         raise e
+
+
+def get_stall_by_stall_name(db: Session, stall_name: str):
+        return db.query(stall_model).filter(stall_model.stall_name == stall_name).first()

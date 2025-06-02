@@ -7,7 +7,9 @@ export const getStock = async () => {
 
 export const getMyStock = async (stall_id) => {
     const response = await axiosInstance.get('/stock/me',{
-        stall_id: stall_id,
+        params : {
+            stall_id: stall_id,
+        },
     });
     return response.data;
 };

@@ -2,9 +2,7 @@ import axiosInstance from "./axiosInstance";
 
 export const createStall = async (stallname) => {
     
-        const response = await axiosInstance.post('/stall/create',{
-            stall_name: stallname,
-        });
+        const response = await axiosInstance.post('/stall/create');
         return response;
     
 };
