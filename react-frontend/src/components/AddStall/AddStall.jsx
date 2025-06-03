@@ -1,14 +1,18 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { createStall } from "../../api/stall";
 import "./AddStall.css";
 import { useNavigate } from "react-router-dom";
 
 const AddStall = () => {
     const [stallName, setStallName] = useState("");
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
+        setError(null);
         console.log("Stall adding process initiated");
 
         try {
@@ -17,15 +21,16 @@ const AddStall = () => {
 
             if (response.status === 201) {
                 console.log("Stall creation successful");
-                setTimeout(() => {
-                    navigate('/market');
-                },2000);
+                navigate("/market");
             } else {
-                console.error("Error creating stall", response.message);
+                setError(response?.data?.detail || "Failed to create stall.");
             }
-        } catch (error) {
-            console.error("Error", error.message);
-        } 
+        } catch (err) {
+            console.error("Error", err.message);
+            setError(err.response?.data?.detail || "Stall name is already existing");
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
@@ -35,14 +40,17 @@ const AddStall = () => {
                 <div className="detail-stall">
                     <label>Stall name:</label>
                     <input 
-                     type="text"
-                     value={stallName}
-                     onChange={(e) => setStallName(e.target.value)}
-                     required
-                    /> 
+                        type="text"
+                        value={stallName}
+                        onChange={(e) => setStallName(e.target.value)}
+                        required
+                    />
                 </div>
+                {error && <p className="error-message">{error}</p>}
                 <div className="button-div">
-                    <button type="submit">Submit</button>
+                    <button type="submit" disabled={loading}>
+                        {loading ? "Creating..." : "Submit"}
+                    </button>
                 </div>
             </form>
         </div>

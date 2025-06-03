@@ -57,9 +57,9 @@ input {
 }
 
 input:focus {
-    border-color: #6c63ff;
+    border-color: #71e000;
     outline: none;
-    box-shadow: 0 0 4px rgba(108, 99, 255, 0.4);
+    box-shadow: 0 4px 8px rgba(56, 176, 0, 0.3);
 }
 
 /* Password container styles */
@@ -78,7 +78,7 @@ input:focus {
     position: absolute;
     right: 10px; /* Position the icon inside the input field */
     cursor: pointer;
-    color: #6c63ff; /* Match the theme color */
+    color: #71e000; /* Match the theme color */
     font-size: 1.2rem;
     display: flex;
     align-items: center;
@@ -86,12 +86,12 @@ input:focus {
 }
 
 .toggle-password:hover {
-    color: #5a54e6; /* Slightly darker color on hover */
+    color: #38b000; /* Slightly darker color on hover */
 }
 
 /* Button styling */
 button {
-    background-color: #6c63ff;
+    background-color: #71e000;
     color: #ffffff;
     padding: 0.8rem;
     border: none;
@@ -104,7 +104,7 @@ button {
 }
 
 button:hover {
-    background-color: #5a54e6;
+    background-color: #38b000;
 }
 
 button:disabled {
@@ -129,7 +129,7 @@ p.success {
 }
 
 p a {
-    color: #6c63ff;
+    color: #38b000;
     text-decoration: none;
     font-weight: bold;
 }

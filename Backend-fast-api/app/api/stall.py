@@ -6,6 +6,9 @@ from app.schemas.stall import CreateStall, StallOut
 from app.api.deps import get_current_user
 from app.models.users import User
 from typing import List,Optional
+import app.logger
+
+logger = app.logger.get_logger(__name__)
 
 router = APIRouter()
 
@@ -19,6 +22,7 @@ def stall_create(stall_data: CreateStall, db: Session = Depends(get_db), current
                 detail="Invalid stallname",
             )
         stall = stall_crud.create_stall(db, current_user.user_id, stall_data.stall_name )
+        logger.info(f"Received stall creation request: {stall_data}")
         return stall
     except Exception:
         raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, details="Creating the stall failed")

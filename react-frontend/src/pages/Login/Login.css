@@ -50,16 +50,16 @@ input {
 }
 
 input:focus {
-    border-color: #6c63ff;
+    border-color: #71e000;
     outline: none;
-    box-shadow: 0 0 4px rgba(108, 99, 255, 0.4);
+    box-shadow: 0 4px 8px rgba(56, 176, 0, 0.3);
 }
 
 /* Style for the checkbox and label container */
 input[type="checkbox"] {
     margin: 0; /* Remove default margin */
     cursor: pointer;
-    accent-color: #6c63ff; /* Modern browsers support this for checkbox color */
+    accent-color: #9cef1a; /* Modern browsers support this for checkbox color */
     vertical-align: middle; /* Align checkbox with text */
 }
 
@@ -94,7 +94,7 @@ input[type="checkbox"] + label:hover {
     position: absolute;
     right: 10px; /* Position the icon inside the input field */
     cursor: pointer;
-    color: #6c63ff; /* Match the theme color */
+    color: #38b000; /* Match the theme color */
     font-size: 1.2rem;
     display: flex;
     align-items: center;
@@ -102,11 +102,11 @@ input[type="checkbox"] + label:hover {
 }
 
 .toggle-password:hover {
-    color: #5a54e6; /* Slightly darker color on hover */
+    color: #71e000; /* Slightly darker color on hover */
 }
 
 button {
-    background-color: #6c63ff;
+    background-color: #38b000;
     color: #ffffff;
     padding: 0.8rem;
     border: none;
@@ -119,7 +119,7 @@ button {
 }
 
 button:hover {
-    background-color: #5a54e6;
+    background-color: #71e000;
 }
 
 button:disabled {
@@ -143,7 +143,7 @@ p.success {
 }
 
 p a {
-    color: #6c63ff;
+    color: #38b000;
     text-decoration: none;
     font-weight: bold;
 }

@@ -32,7 +32,7 @@
   
   /* Login Button Styling */
   .navbar-login button {
-    background-color: #ff7f50;
+    background-color: #38b000;
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -42,7 +42,7 @@
   }
   
   .navbar-login button:hover {
-    background-color: #ff4500;
+    background-color: #71e000;
   }
   
   /* Responsive Styling */

@@ -8,21 +8,26 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.stall-name {
+    justify-content: center;
+}
+
 .stall-name h1 {
     font-size: 24px;
     margin-bottom: 15px;
     color: #333;
+    justify-content: center;
 }
 
 .stock-create-btn {
     display: flex;
-    justify-content: flex-start;
+    justify-content:center;
     margin-bottom: 15px;
 }
 
 .stock-create-btn button {
     padding: 8px 16px;
-    background-color: #875ec9;
+    background-color: #38b000;
     color: white;
     font-weight: bold;
     border: none;
@@ -31,7 +36,7 @@
 }
 
 .stock-create-btn button:hover {
-    background-color: #5b21b6;
+    background-color: #71e000;
 }
 
 .stock-table-space {
@@ -44,9 +49,10 @@
 }
 
 .st-t-head {
-    background-color: #B8CFCE;
+    background-color: hsla(78, 87%, 52%, 0.5); /* also 50% opacity */
     color: #333;
 }
+
 
 .head {
     padding: 10px;
