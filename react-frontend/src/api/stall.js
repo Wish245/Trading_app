@@ -18,3 +18,10 @@ export const getMyStall = async (user_id) => {
     const response = await axiosInstance.get('/stall/me');
     return response.data;
 };
+
+export const deleteStall = async(stall_id) => {
+    const response = await axiosInstance.delete('/stall/delete', {
+        stall_id: stall_id
+    });
+    return response;
+}
