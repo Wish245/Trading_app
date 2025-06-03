@@ -82,7 +82,7 @@ body {
 }
 
 .button-div button {
-    background-color: #6c63ff;
+    background-color: #38b000;
     color: #ffffff;
     padding: 0.8rem;
     border: none;
@@ -97,7 +97,7 @@ body {
 }
 
 .button-div button:hover {
-    background-color: #5a54e6;
+    background-color: #71e000;
 }
 
 @media (max-width: 768px) {
@@ -113,4 +113,9 @@ body {
    .button-div button {
         font-size: 0.9rem;
     }
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
 }

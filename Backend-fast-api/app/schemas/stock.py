@@ -1,4 +1,4 @@
-from pydantic import BaseModel,PositiveInt,condecimal
+from pydantic import BaseModel,PositiveInt,condecimal, ConfigDict
 from datetime import datetime
 
 # class StockInStall(BaseModel):
@@ -12,5 +12,4 @@ class StockOut(BaseModel):
     quantity: PositiveInt
     created_date: datetime
 
-    class config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
