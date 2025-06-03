@@ -11,3 +11,6 @@ class StallOut(BaseModel):
 
     class Config:
         from_attributes = True
+
+class StallDel(BaseModel):
+    stall_id: int

@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException, status, Response
 from sqlalchemy.orm import Session
 from app.db.session import get_db
 from app.crud import stall as stall_crud
-from app.schemas.stall import CreateStall, StallOut
+from app.schemas.stall import CreateStall, StallOut, StallDel
 from app.api.deps import get_current_user
 from app.models.users import User
 from typing import List,Optional
@@ -43,3 +43,10 @@ def my_stalls(db: Session = Depends(get_db), current_user: User = Depends(get_cu
         return stall
     except Exception:
         raise HTTPException(status_code=404, details="Stalls not found")
+    
+@router.delete("/delete", response_model=dict)
+def delete_stall(stall_data: StallDel,db: Session = Depends(get_db)):
+    success = stall_crud.delete_stall(db,stall_data.stall_id)
+    if not success:
+        raise HTTPException(status_code=404, detail="Stall not found")
+    return{"message": "Stall deleted successfully"}
