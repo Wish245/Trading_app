@@ -6,6 +6,7 @@ import app.schemas
 from app.schemas.stall import StallOut
 import app.logger
 from typing import List,Optional
+import os
 
 logger = app.logger.get_logger(__name__)
 
@@ -54,3 +55,63 @@ def get_all_stall(db: Session) -> List[StallOut]:
 
 def get_stall_by_stall_name(db: Session, stall_name: str):
         return db.query(stall_model).filter(stall_model.stall_name == stall_name).first()
+
+def delete_stall(db: Session, stall_id: int) -> bool:
+    try:
+
+        stall = db.query(stall_model).filter(stall_model.stall_id == stall_id).first()
+
+        if not stall:
+            logger.warning(f"stall with stall_id '{stall_id}' not found")
+        
+        db.delete(stall)
+        db.commit()
+        logger.info(f"stall with stall_id '{stall_id}' was removed successfully")
+        return True
+    
+    except Exception as e:
+        db.rollback()
+        logger.error(f"Failed to delete the stall with stall_id {stall_id}")
+
+def set_stall_background(db: Session, stall_id: int, filename: str) -> bool:
+    """
+    Store the given filename (relative path) in stall_bg_img for this stall.
+    Returns True if updated, False if the stall wasn't found.
+    """
+    stall = db.query(stall_model).filter(stall_model.stall_id == stall_id).first()
+    if not stall:
+        logger.warning(f"set_stall_background: stall {stall_id} not found")
+        return False
+
+    stall.stall_bg_img = filename
+    try:
+        db.add(stall)
+        db.commit()
+        logger.info(f"set_stall_background: stall {stall_id} updated with {filename}")
+        return True
+    except Exception as e:
+        db.rollback()
+        logger.error(f"set_stall_background failed for stall {stall_id}: {e}")
+        return False
+    
+
+def remove_stall_background(db: Session, stall_id: int) -> bool:
+    """
+    Clears stall_bg_img for this stall (does not delete file on disk).
+    Returns True if stall existed and was updated; False otherwise.
+    """
+    stall = db.query(stall_model).filter(stall_model.stall_id == stall_id).first()
+    if not stall:
+        logger.warning(f"remove_stall_background: stall {stall_id} not found")
+        return False
+
+    stall.stall_bg_img = None
+    try:
+        db.add(stall)
+        db.commit()
+        logger.info(f"remove_stall_background: cleared bg_img for stall {stall_id}")
+        return True
+    except Exception as e:
+        db.rollback()
+        logger.error(f"remove_stall_background failed for stall {stall_id}: {e}")
+        return False
