@@ -137,3 +137,20 @@
     border-radius: 4px;
     cursor: pointer;
 }
+
+.bgm-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.bgm-icon {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.bgm-icon:hover {
+  filter: brightness(1.3);
+}
