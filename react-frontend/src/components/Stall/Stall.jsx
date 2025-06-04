@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import * as StockAPI from "../../api/stock";
-import {deleteStall,uploadBackground,removeBackground} from "../../api/stall";
+import { deleteStall, uploadBackground, removeBackground } from "../../api/stall";
 import recycleBin from "../../assets/recycle-bin.png";
 import addImg from "../../assets/add-img.png";
 import removeImg from "../../assets/remove-img.png";
@@ -14,6 +14,7 @@ function Stall({ stall_id, stall_name, onDelete }) {
   const [bgmExists, setBgmExists] = useState(false);
   const [showImagePopup, setShowImagePopup] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
+  const [bgRefreshKey, setBgRefreshKey] = useState(Date.now()); // For cache busting
   const navigate = useNavigate();
 
   // 1) Fetch stocks and check background existence on mount/when stall_id changes
@@ -23,12 +24,12 @@ function Stall({ stall_id, stall_name, onDelete }) {
       .catch((err) => console.error("Error Fetching details.", err));
 
     const img = new Image();
-    img.src = `assets/Stall-Bgm/stall_${stall_id}.png?ts=${Date.now()}`;
+    img.src = `http://localhost:8000/static/Stall-Bgm/stall_${stall_id}.png?ts=${Date.now()}`;
     img.onload = () => setBgmExists(true);
     img.onerror = () => setBgmExists(false);
   }, [stall_id]);
 
-  // 2) Handle file selection from <input type="file" />
+  // 2) Handle file selection
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -36,7 +37,7 @@ function Stall({ stall_id, stall_name, onDelete }) {
     }
   };
 
-  // 3) When user clicks “Save” in the popup, upload selectedFile
+  // 3) Handle image upload
   const handleImageSave = async () => {
     if (!selectedFile) return;
 
@@ -45,34 +46,41 @@ function Stall({ stall_id, stall_name, onDelete }) {
       setBgmExists(true);
       setShowImagePopup(false);
       setSelectedFile(null);
+      setBgRefreshKey(Date.now()); // Force image refresh
     } catch (err) {
       console.error("Image upload failed:", err);
     }
   };
 
-  // 4) When user clicks “Remove” icon, delete from backend & local state
+  // 4) Handle background removal
   const handleImageRemove = async () => {
     try {
       await removeBackground(stall_id);
       setBgmExists(false);
+      setBgRefreshKey(Date.now()); // Force image refresh
     } catch (err) {
       console.error("Image removal failed:", err);
     }
   };
 
-  // 5) When user confirms deletion of stall
+  // 5) Handle stall deletion
   const handleDelete = async () => {
     try {
       await deleteStall(stall_id);
-      onDelete(stall_id); // tell parent to drop this stall from list
-      navigate("/market"); // redirect to /market
+      onDelete(stall_id);
+      navigate("/market");
     } catch (err) {
       console.error("Failed to delete stall", err);
     }
   };
 
   return (
-    <div className="stall-box" style={{ backgroundImage: `url(http://localhost:8000/static/Stall-Bgm/stall_${stall_id}.png)`}}>
+    <div
+      className="stall-box"
+      style={{
+        backgroundImage: `url(http://localhost:8000/static/Stall-Bgm/stall_${stall_id}.png?ts=${bgRefreshKey})`,
+      }}
+    >
       <div className="stall-header">
         {/* Background image controls */}
         <div className="bgm-controls">
@@ -93,7 +101,7 @@ function Stall({ stall_id, stall_name, onDelete }) {
           )}
         </div>
 
-        {/* Add‐image popup */}
+        {/* Add-image popup */}
         {showImagePopup && (
           <div className="popup-overlay">
             <div className="popup">
@@ -164,7 +172,7 @@ function Stall({ stall_id, stall_name, onDelete }) {
         </table>
       </div>
 
-      {/* Delete‐stall confirmation popup */}
+      {/* Delete-stall confirmation popup */}
       {showConfirm && (
         <div className="popup-overlay">
           <div className="popup">
