@@ -6,7 +6,11 @@
     max-width: 600px;
     background-color: #f9f9f9;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
 
 .stall-name {
     justify-content: center;

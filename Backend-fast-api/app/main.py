@@ -7,8 +7,9 @@ from app.api import profile
 from app.api import stall
 from app.api import stock
 from app.logger import setup_logger
-from app.api import auth# 🧩 Import other routers as you build
-# from app.api import stock, orders, payments  # Uncomment when ready
+from app.api import auth
+from fastapi.staticfiles import StaticFiles
+import os
 
 # ✅ Setup logger
 setup_logger()
@@ -19,6 +20,12 @@ app = FastAPI(
     title="Flower Market API",
     description="API backend for managing users, stalls, flowers, and payments in the flower marketplace.",
     version="1.0.0"
+)
+
+app.mount(
+    "/static",
+    StaticFiles(directory=os.path.join("assets")),
+    name="static"
 )
 
 # ✅ Logging middleware

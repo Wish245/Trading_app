@@ -2,11 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import * as StockAPI from "../../api/stock";
-import {
-  deleteStall,
-  uploadBackground,
-  removeBackground,
-} from "../../api/stall";
+import {deleteStall,uploadBackground,removeBackground} from "../../api/stall";
 import recycleBin from "../../assets/recycle-bin.png";
 import addImg from "../../assets/add-img.png";
 import removeImg from "../../assets/remove-img.png";
@@ -27,7 +23,7 @@ function Stall({ stall_id, stall_name, onDelete }) {
       .catch((err) => console.error("Error Fetching details.", err));
 
     const img = new Image();
-    img.src = `Backend-fast-api/assets/Stall-Bgm/stall_${stall_id}.png?ts=${Date.now()}`;
+    img.src = `assets/Stall-Bgm/stall_${stall_id}.png?ts=${Date.now()}`;
     img.onload = () => setBgmExists(true);
     img.onerror = () => setBgmExists(false);
   }, [stall_id]);
@@ -76,7 +72,7 @@ function Stall({ stall_id, stall_name, onDelete }) {
   };
 
   return (
-    <div className="stall-box">
+    <div className="stall-box" style={{ backgroundImage: `url(http://localhost:8000/static/Stall-Bgm/stall_${stall_id}.png)`}}>
       <div className="stall-header">
         {/* Background image controls */}
         <div className="bgm-controls">
