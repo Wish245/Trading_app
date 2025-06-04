@@ -5213,3 +5213,5 @@ WHERE stock.stall_id = %(stall_id_1)s
 2025-06-04 07:02:04,606 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
 2025-06-04 07:02:05,671 - app.main - INFO - [STARTUP] Flower Market backend initialized.
 2025-06-04 07:02:06,138 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-06-04 07:02:07,104 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-06-04 07:03:30,454 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
