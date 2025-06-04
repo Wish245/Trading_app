@@ -53,6 +53,8 @@ def delete_stall(stall_id: int = Query(...), db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Stall not found")
     return {"message": "Stall deleted successfully"}
 
+
+
 @router.post("/upload-background", status_code=status.HTTP_200_OK)
 async def upload_stall_background(
     stall_id: int = Form(...),

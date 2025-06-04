@@ -27,16 +27,17 @@ export const deleteStall = async(stall_id) => {
 }
 
 export const uploadBackground = async (stall_id, file) => {
-    const formData = new FormData();
-    formData.append("stall_id",stall_id);
-    formData.append("image", file);
+  const formData = new FormData();
+  formData.append("stall_id", stall_id);
+  formData.append("image", file);
 
-    const response = await axiosInstance.post('/stall/upload-background,', formData, {
-        headers: {'Content-Type': 'multipart/form-data'}
-    });
+  const response = await axiosInstance.post('/stall/upload-background', formData, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+  });
 
-    return response.data
+  return response.data;
 };
+
 
 export const removeBackground = async (stall_id) => {
   const response = await axiosInstance.delete('/stall/remove-background', {
