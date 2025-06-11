@@ -26,3 +26,5 @@ def get_all_stock(db: Session) -> List[StockOut]:
     except Exception as e:
         logger.error(f"failed to fetch stocks")
         raise e
+    
+def create_stock(db: Session, stall_id: int, )

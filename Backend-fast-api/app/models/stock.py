@@ -9,6 +9,7 @@ class Stock(Base):
     item_name = Column(String(100), nullable=False)
     price = Column(Numeric(10, 2), nullable=False)
     quantity = Column(Integer, nullable=False)
+    stock_img_path = Column(String(500))
     created_date = Column(TIMESTAMP, server_default=func.now())
 
 # class StockImage(Base):
