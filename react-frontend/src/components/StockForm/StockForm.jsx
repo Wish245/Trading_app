@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './StockForm.css';
 import * as StockAPI from "../../api/stock";
 import { useNavigate,useParams } from 'react-router-dom';
@@ -13,6 +13,7 @@ const StockForm = () => {
   const navigate = useNavigate();
   const { stall_id } = useParams();
 
+  console.log("Stall_id = ", stall_id);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -27,7 +28,7 @@ const StockForm = () => {
     try {
       const response = await StockAPI.createStock(stall_id, file, data);
       console.log("Stock created:", response.data);
-      navigate(`/stall/${stall_id}`);
+      navigate(`/market`);
     } catch (err) {
       console.error(err);
       setError("Error creating stock");
@@ -37,7 +38,7 @@ const StockForm = () => {
   };
 
   const onCancel = () => {
-    navigate(`/stall/${stall_id}`);
+    navigate(`/market`);
     console.log("Stock creation cancelled");
   };
 
@@ -55,6 +56,13 @@ const StockForm = () => {
         placeholder='Price'
         value={price}
         onChange={(e) => setPrice(e.target.value)}
+        required
+      />
+      <input
+        type='number'
+        placeholder='Quantity'
+        value={quantity}
+        onChange={(e) => setQuantity(e.target.value)}
         required
       />
       <input

@@ -34,7 +34,7 @@ def stall_create(stall_data: CreateStall, db: Session = Depends(get_db), current
 def all_stalls(db: Session = Depends(get_db)):
     try:
         stall = stall_crud.get_all_stall(db)
-        return stall
+        return stall or []
     except Exception:
         raise HTTPException(status_code=404, details="Stalls not found")
 
@@ -42,7 +42,7 @@ def all_stalls(db: Session = Depends(get_db)):
 def my_stalls(db: Session = Depends(get_db), current_user: User = Depends(get_current_user)):
     try:
         stall = stall_crud.get_my_stall(db, current_user.user_id)
-        return stall
+        return stall or []
     except Exception:
         raise HTTPException(status_code=404, details="Stalls not found")
     
