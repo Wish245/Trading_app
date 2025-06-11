@@ -10,7 +10,7 @@ import Market from './pages/Market/Market'
 import Login from './pages/Login/Login'
 import SignUp from './pages/SignUp/SignUp'
 import AddStall from './components/AddStall/AddStall'
-
+import StockForm from './components/StockForm/StockForm'
 const App = () => {
   return (
     <>
@@ -25,6 +25,7 @@ const App = () => {
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<SignUp/>}/>
           <Route path='/createStall' element={<AddStall/>}/>
+          <Route path='/stock-form/:stall_id' element={<StockForm/>}/>
         </Routes>
       </div>
       <Footer />

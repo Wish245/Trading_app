@@ -1,72 +1,66 @@
 .stock-form {
-  width: 400px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.stock-form input[type="text"],
+.stock-form input[type="number"],
+.stock-form input[type="file"] {
+  padding: 10px 12px;
+  font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
+  border-radius: 8px;
+  transition: border 0.2s ease-in-out;
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
+.stock-form input:focus {
+  border-color: #6c63ff;
+  outline: none;
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="file"] {
-  width: 100%;
-  padding: 8px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #4caf50;
-  color: white;
+.stock-form button {
+  padding: 10px 14px;
+  font-size: 1rem;
+  font-weight: 600;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
 }
 
-button:hover {
-  background-color: #45a049;
+.stock-form button[type="submit"] {
+  background-color:  #38b000;
+  color: white;
 }
 
-.error-message,
-.success-message {
-  padding: 10px;
-  margin-bottom: 15px;
-  text-align: center;
+.stock-form button[type="submit"]:hover {
+  background-color:#71e000;
+}
+
+.stock-form button[type="submit"]:disabled {
+  background-color: #a69ee9;
+  cursor: not-allowed;
+}
+
+.stock-form .cancel {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.stock-form .cancel:hover {
+  background-color: #c0392b;
+}
+
+.stock-form .error {
+  color: red;
   font-weight: bold;
-}
-
-.error-message {
-  background-color: #f44336;
-  color: white;
-}
-
-.success-message {
-  background-color: #4caf50;
-  color: white;
-}
-
-.image-preview {
-  margin-top: 10px;
-  width: 100%;
-  height: auto;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  margin-top: -10px;
 }

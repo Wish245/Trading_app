@@ -1,131 +1,83 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import './StockForm.css';
+import * as StockAPI from "../../api/stock";
+import { useNavigate,useParams } from 'react-router-dom';
 
 const StockForm = () => {
-  const [flowerName, setFlowerName] = useState('');
-  const [quantity, setQuantity] = useState('');
-  const [price, setPrice] = useState('');
-  const [image, setImage] = useState(null);
-  const [imagePreview, setImagePreview] = useState(null);
-  const [error, setError] = useState('');
-  const [successMessage, setSuccessMessage] = useState('');
+  const [itemName,setItemName] = useState("");
+  const [price, setPrice] = useState("");
+  const [quantity, setQuantity] = useState("");
+  const [error, setError] = useState(null);
+  const [file, setFile] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+  const { stall_id } = useParams();
 
-  const handleImageChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setImage(file);
-      const reader = new FileReader();
-      reader.onloadend = () => setImagePreview(reader.result);
-      reader.readAsDataURL(file);
-    }
-  };
-
+  console.log("Stall_id = ", stall_id);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
-    setSuccessMessage('');
-    const userId = localStorage.getItem("user_id");
-    if (!userId) {
-      setError("User not logged in. Please log in to create a stock.");
-      return;
-    }
-
-    // Validation
-    if (!flowerName || !quantity || !price || !image) {
-      setError('All fields are required.');
-      return;
-    }
-
-    if (quantity <= 0 || price <= 0) {
-      setError('Quantity and price must be positive values.');
-      return;
-    }
-
-    const formData = new FormData();
-    formData.append('flowerName', flowerName);
-    formData.append('quantity', quantity);
-    formData.append('price', price);
-    formData.append('image', image);
-    formData.append('user_id', userId)
+    setLoading(true);
+    setError(null);
+    
+    const data = {
+      item_name: itemName,
+      price: price,
+      quantity: quantity,
+    };
 
     try {
-      const response = await axios.post('/api/stock', formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-      setSuccessMessage('Flower stock added successfully!');
-      // Reset the form after successful submission
-      setFlowerName('');
-      setQuantity('');
-      setPrice('');
-      setImage(null);
-      setImagePreview(null);
-    } catch (error) {
-      setError('Failed to add flower stock. Please try again.');
+      const response = await StockAPI.createStock(stall_id, file, data);
+      console.log("Stock created:", response.data);
+      navigate(`/market`);
+    } catch (err) {
+      console.error(err);
+      setError("Error creating stock");
+    } finally {
+      setLoading(false);
     }
   };
 
-  return (
-    <div className="stock-form">
-      <h2>Add Flower Stock</h2>
-      {error && <div className="error-message">{error}</div>}
-      {successMessage && <div className="success-message">{successMessage}</div>}
-      
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="flowerName">Flower Name:</label>
-          <input
-            type="text"
-            id="flowerName"
-            value={flowerName}
-            onChange={(e) => setFlowerName(e.target.value)}
-            required
-          />
-        </div>
+  const onCancel = () => {
+    navigate(`/market`);
+    console.log("Stock creation cancelled");
+  };
 
-        <div className="form-group">
-          <label htmlFor="quantity">Quantity Available:</label>
-          <input
-            type="number"
-            id="quantity"
-            value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
-            min="1"
-            required
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="price">Price per Flower:</label>
-          <input
-            type="number"
-            id="price"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            min="0.01"
-            step="0.01"
-            required
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="image">Flower Picture:</label>
-          <input
-            type="file"
-            id="image"
-            onChange={handleImageChange}
-            accept="image/*"
-            required
-          />
-          {imagePreview && <img src={imagePreview} alt="Flower Preview" className="image-preview" />}
-        </div>
-
-        <button type="submit">Add Stock</button>
-      </form>
-    </div>
+  return(
+    <form onSubmit={handleSubmit} className="stock-form">
+      <input
+        type='text'
+        placeholder='Item Name'
+        value={itemName}
+        onChange={(e) => setItemName(e.target.value)}
+        required
+      />
+      <input
+        type='number'
+        placeholder='Price'
+        value={price}
+        onChange={(e) => setPrice(e.target.value)}
+        required
+      />
+      <input
+        type='number'
+        placeholder='Quantity'
+        value={quantity}
+        onChange={(e) => setQuantity(e.target.value)}
+        required
+      />
+      <input
+        type='file'
+        placeholder='Image'
+        onChange={(e) => setFile(e.target.files[0])}
+        accept='image/*'
+        required
+      />
+      <button type="submit" disabled={loading}>
+        {loading ? "Creating..." : "Create Stock"}
+      </button>
+      {error && <p className='error'>{error}</p>}
+      <button type='button' className='cancel' onClick={onCancel}>Cancel</button>
+    </form>
   );
 };
-
 export default StockForm;
