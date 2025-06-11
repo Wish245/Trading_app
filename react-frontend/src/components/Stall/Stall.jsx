@@ -74,6 +74,10 @@ function Stall({ stall_id, stall_name, onDelete }) {
     }
   };
 
+  const handleCreateStock = () => {
+    navigate(`/StockForm/${stall_id}`);
+  };
+
   return (
     <div
       className="stall-box"
@@ -147,7 +151,7 @@ function Stall({ stall_id, stall_name, onDelete }) {
 
       {/* “Create Stock” button */}
       <div className="stock-create-btn">
-        <button>Create Stock</button>
+        <button onClick = {() => handleCreateStock}>Create Stock</button>
       </div>
 
       {/* Stock table */}

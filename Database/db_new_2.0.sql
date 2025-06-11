@@ -5,28 +5,15 @@ CREATE TABLE users (
     password TEXT NOT NULL,
     national_id VARCHAR(20) NOT NULL UNIQUE,
     phone VARCHAR(10) NOT NULL,
-    email VARCHAR(50) NOT NULL
+    email VARCHAR(50) NOT NULL,
+    CONSTRAINT uq_users_username UNIQUE (username),
+    CONSTRAINT uq_users_national_id UNIQUE (national_id)
 );
 
 CREATE INDEX ix_users_user_id ON users (user_id);
 CREATE INDEX ix_users_username ON users (username);
 CREATE INDEX ix_users_phone ON users (phone);
 CREATE INDEX ix_users_email ON users (email);
-
--- ITEM CATEGORIES
-CREATE TABLE item_categories (
-    category_id SERIAL PRIMARY KEY,
-    category_name VARCHAR(100) NOT NULL UNIQUE
-);
-
--- ITEMS
-CREATE TABLE items (
-    item_id SERIAL PRIMARY KEY,
-    item_name VARCHAR(100) NOT NULL,
-    item_img_path TEXT,
-    category_id INTEGER,
-    FOREIGN KEY (category_id) REFERENCES item_categories(category_id) ON DELETE SET NULL
-);
 
 -- STALLS
 CREATE TABLE stall (
@@ -44,18 +31,8 @@ CREATE TABLE stock (
     item_name VARCHAR(100) NOT NULL,
     price NUMERIC(10, 2) NOT NULL,
     quantity INTEGER NOT NULL,
-    stock_img_path VARCHAR(500),
     created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (stall_id) REFERENCES stall(stall_id) ON DELETE CASCADE
-);
-
--- STOCK IMAGES
-CREATE TABLE stock_images (
-    image_id SERIAL PRIMARY KEY,
-    stock_id INTEGER NOT NULL,
-    image_path TEXT NOT NULL,
-    uploaded_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (stock_id) REFERENCES stock(stock_id) ON DELETE CASCADE
 );
 
 -- ORDERS

@@ -30,7 +30,6 @@ export const uploadBackground = async (stall_id, file) => {
   const formData = new FormData();
   formData.append("stall_id", stall_id);
   formData.append("image", file);
-
   const response = await axiosInstance.post('/stall/upload-background', formData, {
     headers: { 'Content-Type': 'multipart/form-data' }
   });
