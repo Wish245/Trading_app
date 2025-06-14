@@ -27,4 +27,21 @@ def get_all_stock(db: Session) -> List[StockOut]:
         logger.error(f"failed to fetch stocks")
         raise e
     
-def create_stock(db: Session, stall_id: int, )
+def create_stock(db: Session, stock_data: str, image_path:str):
+    try:
+        db_stock = stock_model(stall_id=stock_data.stall_id, 
+                               item_name=stock_data.item_name,
+                               price=stock_data.price,
+                               quantity=stock_data.quantity,
+                               stock_img_path=image_path
+                               )
+        db.add(db_stock)
+        db.commit()
+        db.refresh(db_stock)
+        return db_stock
+    
+    except Exception as e:
+        db.rollback()
+        logger.error(f"Failed to create the stock")
+        raise e
+    
