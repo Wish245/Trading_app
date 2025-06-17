@@ -11,6 +11,8 @@ import Login from './pages/Login/Login'
 import SignUp from './pages/SignUp/SignUp'
 import AddStall from './components/AddStall/AddStall'
 import StockForm from './components/StockForm/StockForm'
+import Stock from './components/Stock/Stock'
+
 const App = () => {
   return (
     <>
@@ -26,6 +28,7 @@ const App = () => {
           <Route path='/signup' element={<SignUp/>}/>
           <Route path='/createStall' element={<AddStall/>}/>
           <Route path='/stock-form/:stall_id' element={<StockForm/>}/>
+          <Route path='/stock/:stock_id' element={<Stock/>}/>
         </Routes>
       </div>
       <Footer />

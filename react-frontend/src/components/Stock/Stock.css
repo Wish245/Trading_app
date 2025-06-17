@@ -1,0 +1,44 @@
+.stock-details {
+  padding: 20px;
+  max-width: 500px;
+  margin: 50px auto; /* Center + spacing */
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.stock-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  background-color: #38b000;  /* Green for Order */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #71e000;
+}
+
+button.close {
+  background-color: #d00000; /* Red for Close */
+}
+
+button.close:hover {
+  background-color: #ff4d4d;
+}
