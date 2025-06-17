@@ -41,7 +41,7 @@ const Stock = () => {
   return (
     <div className="stock-details">
       <h2>{`${stock.item_name} #${stock.stock_id}`}</h2>
-      {stock.image_filename && (
+      {stock.stock_img_path && (
         <img 
           src={`http://localhost:8000/static/${stock.stock_img_path}`} 
           alt={stock.item_name}
