@@ -32,3 +32,8 @@ export const createStock = async (stall_id, file, data) => {
 
    return response;
 };
+
+export const getStockById = async (stock_id) => {
+  const response = await axiosInstance.get(`/stock/${stock_id}`);
+  return response.data;
+};

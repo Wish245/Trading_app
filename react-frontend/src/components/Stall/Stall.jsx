@@ -168,7 +168,7 @@ function Stall({ stall_id, stall_name, onDelete }) {
               <tr key={stock.stock_id} className="st-t-body">
                 <td className="head">{stock.item_name}</td>
                 <td className="head">
-                  <button>View</button>
+                  <button onClick={() => navigate(`/stock/${stock.stock_id}`)}> View</button>
                 </td>
               </tr>
             ))}

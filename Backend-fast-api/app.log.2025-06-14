@@ -1,0 +1,791 @@
+2025-06-14 17:48:14,040 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-06-14 17:48:15,133 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-06-14 17:48:16,361 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-06-14 17:48:21,053 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-06-14 17:48:22,282 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-06-14 17:49:11,641 - app.main - INFO - [HTTP] POST /logout - 200 - 0.02s
+2025-06-14 17:49:27,597 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-06-14 17:49:27,599 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-06-14 17:49:27,611 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-06-14 17:49:27,613 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-06-14 17:49:27,620 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-06-14 17:49:27,622 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-06-14 17:49:27,625 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:49:27,631 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-06-14 17:49:27,634 - sqlalchemy.engine.Engine - INFO - [generated in 0.00257s] {'username_1': 'Sankha', 'param_1': 1}
+2025-06-14 17:49:27,801 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 17:49:27,803 - app.main - INFO - [HTTP] POST /login - 200 - 0.52s
+2025-06-14 17:49:33,350 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:49:33,353 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-06-14 17:49:33,356 - sqlalchemy.engine.Engine - INFO - [cached since 5.725s ago] {'username_1': 'Sankha', 'param_1': 1}
+2025-06-14 17:49:33,362 - sqlalchemy.engine.Engine - INFO - SELECT stall.stall_id AS stall_stall_id, stall.stall_name AS stall_stall_name, stall.user_id AS stall_user_id, stall.stall_bg_img AS stall_stall_bg_img 
+FROM stall 
+WHERE stall.user_id = %(user_id_1)s
+2025-06-14 17:49:33,364 - sqlalchemy.engine.Engine - INFO - [generated in 0.00202s] {'user_id_1': 1}
+2025-06-14 17:49:33,381 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 17:49:33,384 - app.main - INFO - [HTTP] GET /stall/me - 200 - 0.04s
+2025-06-14 17:49:33,408 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:49:33,412 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 17:49:33,413 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:49:33,423 - sqlalchemy.engine.Engine - INFO - [generated in 0.01108s] {'stall_id_1': 2}
+2025-06-14 17:49:33,425 - sqlalchemy.engine.Engine - INFO - SELECT stall.stall_id AS stall_stall_id, stall.stall_name AS stall_stall_name, stall.user_id AS stall_user_id, stall.stall_bg_img AS stall_stall_bg_img 
+FROM stall
+2025-06-14 17:49:33,427 - sqlalchemy.engine.Engine - INFO - [generated in 0.00213s] {}
+2025-06-14 17:49:33,432 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 17:49:33,435 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 17:49:33,438 - app.main - INFO - [HTTP] GET /stall/all - 200 - 0.09s
+2025-06-14 17:49:33,440 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.03s
+2025-06-14 17:49:33,444 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:49:33,450 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 17:49:33,452 - sqlalchemy.engine.Engine - INFO - [cached since 0.03931s ago] {'stall_id_1': 1}
+2025-06-14 17:49:33,453 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:49:33,455 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 17:49:33,455 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 17:49:33,457 - sqlalchemy.engine.Engine - INFO - [cached since 0.04473s ago] {'stall_id_1': 2}
+2025-06-14 17:49:33,460 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.02s
+2025-06-14 17:49:33,470 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 17:49:33,471 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.02s
+2025-06-14 17:49:33,475 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:49:33,478 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 17:49:33,483 - sqlalchemy.engine.Engine - INFO - [cached since 0.0697s ago] {'stall_id_1': 1}
+2025-06-14 17:49:33,486 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 17:49:33,488 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.01s
+2025-06-14 17:49:33,839 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.13s
+2025-06-14 17:49:33,841 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.13s
+2025-06-14 17:49:33,842 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.13s
+2025-06-14 17:49:33,844 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.13s
+2025-06-14 17:49:33,853 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.00s
+2025-06-14 17:49:33,859 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 17:49:33,868 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.00s
+2025-06-14 17:49:33,871 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 17:50:04,823 - app.main - ERROR - [ERROR] POST http://localhost:8000/stock/create - create_stock() missing 1 required positional argument: 'image_path'
+2025-06-14 17:52:11,993 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-06-14 17:52:18,645 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-06-14 17:52:19,304 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-06-14 17:54:53,345 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-06-14 17:55:05,453 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-06-14 17:55:05,455 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-06-14 17:55:05,458 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-06-14 17:55:05,459 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-06-14 17:55:05,463 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-06-14 17:55:05,464 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-06-14 17:55:05,466 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:55:05,469 - sqlalchemy.engine.Engine - INFO - INSERT INTO stock (stall_id, item_name, price, quantity, stock_img_path) VALUES (%(stall_id)s, %(item_name)s, %(price)s, %(quantity)s, %(stock_img_path)s) RETURNING stock.stock_id, stock.created_date
+2025-06-14 17:55:05,471 - sqlalchemy.engine.Engine - INFO - [generated in 0.00115s] {'stall_id': 1, 'item_name': 'Rose', 'price': Decimal('100.00'), 'quantity': 1000, 'stock_img_path': 'assets\\stock-img\\stock_1_Rose_6eb09b6c44b94ccbbd6c8fc0232c90b9.jpg'}
+2025-06-14 17:55:05,523 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-06-14 17:55:05,527 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:55:05,529 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id, stock.stall_id, stock.item_name, stock.price, stock.quantity, stock.stock_img_path, stock.created_date 
+FROM stock 
+WHERE stock.stock_id = %(pk_1)s
+2025-06-14 17:55:05,531 - sqlalchemy.engine.Engine - INFO - [generated in 0.00118s] {'pk_1': 1}
+2025-06-14 17:55:05,538 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 17:55:05,540 - app.main - ERROR - [ERROR] POST http://localhost:8000/stock/create - 1 validation errors:
+  {'type': 'missing', 'loc': ('response', 'image_filename'), 'msg': 'Field required', 'input': <app.models.stock.Stock object at 0x0000022E8A62EE10>}
+
+2025-06-14 17:58:25,545 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-06-14 17:58:26,787 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-06-14 17:58:35,771 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-06-14 17:58:35,773 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-06-14 17:58:35,775 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-06-14 17:58:35,775 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-06-14 17:58:35,777 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-06-14 17:58:35,778 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-06-14 17:58:35,780 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:58:35,783 - sqlalchemy.engine.Engine - INFO - INSERT INTO stock (stall_id, item_name, price, quantity, stock_img_path) VALUES (%(stall_id)s, %(item_name)s, %(price)s, %(quantity)s, %(stock_img_path)s) RETURNING stock.stock_id, stock.created_date
+2025-06-14 17:58:35,784 - sqlalchemy.engine.Engine - INFO - [generated in 0.00103s] {'stall_id': 1, 'item_name': 'Rose', 'price': Decimal('100.00'), 'quantity': 1000, 'stock_img_path': 'assets\\stock-img\\stock_1_Rose_7b39240faf314597a88d3a37be775b21.jpg'}
+2025-06-14 17:58:35,789 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-06-14 17:58:35,793 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:58:35,795 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id, stock.stall_id, stock.item_name, stock.price, stock.quantity, stock.stock_img_path, stock.created_date 
+FROM stock 
+WHERE stock.stock_id = %(pk_1)s
+2025-06-14 17:58:35,796 - sqlalchemy.engine.Engine - INFO - [generated in 0.00108s] {'pk_1': 2}
+2025-06-14 17:58:35,801 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 17:58:35,805 - app.main - INFO - [HTTP] POST /stock/create - 200 - 0.10s
+2025-06-14 17:58:35,831 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:58:35,841 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-06-14 17:58:35,843 - sqlalchemy.engine.Engine - INFO - [generated in 0.00344s] {'username_1': 'Sankha', 'param_1': 1}
+2025-06-14 17:58:35,851 - sqlalchemy.engine.Engine - INFO - SELECT stall.stall_id AS stall_stall_id, stall.stall_name AS stall_stall_name, stall.user_id AS stall_user_id, stall.stall_bg_img AS stall_stall_bg_img 
+FROM stall 
+WHERE stall.user_id = %(user_id_1)s
+2025-06-14 17:58:35,854 - sqlalchemy.engine.Engine - INFO - [generated in 0.00139s] {'user_id_1': 1}
+2025-06-14 17:58:35,857 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 17:58:35,859 - app.main - INFO - [HTTP] GET /stall/me - 200 - 0.03s
+2025-06-14 17:58:35,868 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:58:35,871 - sqlalchemy.engine.Engine - INFO - SELECT stall.stall_id AS stall_stall_id, stall.stall_name AS stall_stall_name, stall.user_id AS stall_user_id, stall.stall_bg_img AS stall_stall_bg_img 
+FROM stall
+2025-06-14 17:58:35,876 - sqlalchemy.engine.Engine - INFO - [generated in 0.00432s] {}
+2025-06-14 17:58:35,882 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 17:58:35,885 - app.main - INFO - [HTTP] GET /stall/all - 200 - 0.02s
+2025-06-14 17:58:35,896 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:58:35,900 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 17:58:35,902 - sqlalchemy.engine.Engine - INFO - [generated in 0.00166s] {'stall_id_1': 2}
+2025-06-14 17:58:35,905 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 17:58:35,910 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.02s
+2025-06-14 17:58:35,917 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:58:35,918 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 17:58:35,919 - sqlalchemy.engine.Engine - INFO - [cached since 0.01914s ago] {'stall_id_1': 1}
+2025-06-14 17:58:35,922 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 17:58:35,923 - app.main - INFO - [HTTP] GET /stock/me - 200 - 0.01s
+2025-06-14 17:58:35,928 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:58:35,930 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 17:58:35,931 - sqlalchemy.engine.Engine - INFO - [cached since 0.03105s ago] {'stall_id_1': 2}
+2025-06-14 17:58:35,933 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 17:58:35,934 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.01s
+2025-06-14 17:58:35,938 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 17:58:35,939 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 17:58:35,940 - sqlalchemy.engine.Engine - INFO - [cached since 0.04047s ago] {'stall_id_1': 1}
+2025-06-14 17:58:35,949 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 17:58:35,952 - app.main - INFO - [HTTP] GET /stock/me - 200 - 0.01s
+2025-06-14 17:58:36,200 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 17:58:36,269 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.08s
+2025-06-14 17:58:36,271 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.08s
+2025-06-14 17:58:36,273 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.08s
+2025-06-14 17:58:36,284 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.01s
+2025-06-14 17:58:36,288 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 17:58:36,291 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 17:58:36,297 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.00s
+2025-06-14 23:02:01,726 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:02:01,733 - app.main - ERROR - [ERROR] GET http://localhost:8000/stall/me - 'NoneType' object has no attribute 'get'
+2025-06-14 23:02:01,744 - sqlalchemy.engine.Engine - INFO - SELECT stall.stall_id AS stall_stall_id, stall.stall_name AS stall_stall_name, stall.user_id AS stall_user_id, stall.stall_bg_img AS stall_stall_bg_img 
+FROM stall
+2025-06-14 23:02:01,750 - sqlalchemy.engine.Engine - INFO - [cached since 1.821e+04s ago] {}
+2025-06-14 23:02:01,809 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:02:01,811 - app.main - INFO - [HTTP] GET /stall/all - 200 - 0.24s
+2025-06-14 23:02:01,844 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:02:01,851 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:02:01,852 - sqlalchemy.engine.Engine - INFO - [cached since 1.821e+04s ago] {'stall_id_1': 2}
+2025-06-14 23:02:01,857 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:02:01,860 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.02s
+2025-06-14 23:02:02,041 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:02:02,044 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:02:02,045 - sqlalchemy.engine.Engine - INFO - [cached since 1.821e+04s ago] {'stall_id_1': 1}
+2025-06-14 23:02:02,049 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:02:02,051 - app.main - INFO - [HTTP] GET /stock/me - 200 - 0.21s
+2025-06-14 23:02:02,142 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.01s
+2025-06-14 23:02:02,143 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.01s
+2025-06-14 23:02:02,145 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 23:02:02,147 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 23:02:05,157 - app.main - INFO - [HTTP] POST /logout - 200 - 0.00s
+2025-06-14 23:02:21,920 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:02:21,922 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:02:21,923 - sqlalchemy.engine.Engine - INFO - [cached since 1.823e+04s ago] {'username_1': 'Sankha', 'param_1': 1}
+2025-06-14 23:02:22,053 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:02:22,055 - app.main - INFO - [HTTP] POST /login - 200 - 0.15s
+2025-06-14 23:02:27,466 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:02:27,467 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:02:27,469 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:02:27,472 - sqlalchemy.engine.Engine - INFO - SELECT stall.stall_id AS stall_stall_id, stall.stall_name AS stall_stall_name, stall.user_id AS stall_user_id, stall.stall_bg_img AS stall_stall_bg_img 
+FROM stall
+2025-06-14 23:02:27,473 - sqlalchemy.engine.Engine - INFO - [cached since 1.823e+04s ago] {'username_1': 'Sankha', 'param_1': 1}
+2025-06-14 23:02:27,474 - sqlalchemy.engine.Engine - INFO - [cached since 1.823e+04s ago] {}
+2025-06-14 23:02:27,479 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:02:27,480 - sqlalchemy.engine.Engine - INFO - SELECT stall.stall_id AS stall_stall_id, stall.stall_name AS stall_stall_name, stall.user_id AS stall_user_id, stall.stall_bg_img AS stall_stall_bg_img 
+FROM stall 
+WHERE stall.user_id = %(user_id_1)s
+2025-06-14 23:02:27,482 - app.main - INFO - [HTTP] GET /stall/all - 200 - 0.02s
+2025-06-14 23:02:27,483 - sqlalchemy.engine.Engine - INFO - [cached since 1.823e+04s ago] {'user_id_1': 1}
+2025-06-14 23:02:27,489 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:02:27,490 - app.main - INFO - [HTTP] GET /stall/me - 200 - 0.03s
+2025-06-14 23:02:27,502 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:02:27,506 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:02:27,509 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:02:27,511 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:02:27,512 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 23:02:27,515 - sqlalchemy.engine.Engine - INFO - [cached since 1.823e+04s ago] {'stall_id_1': 2}
+2025-06-14 23:02:27,516 - sqlalchemy.engine.Engine - INFO - [cached since 1.823e+04s ago] {'stall_id_1': 1}
+2025-06-14 23:02:27,525 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:02:27,527 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:02:27,530 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.03s
+2025-06-14 23:02:27,531 - app.main - INFO - [HTTP] GET /stock/me - 200 - 0.03s
+2025-06-14 23:02:27,535 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:02:27,539 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:02:27,544 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:02:27,545 - sqlalchemy.engine.Engine - INFO - [cached since 1.823e+04s ago] {'stall_id_1': 2}
+2025-06-14 23:02:27,546 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:02:27,550 - sqlalchemy.engine.Engine - INFO - [cached since 1.823e+04s ago] {'stall_id_1': 1}
+2025-06-14 23:02:27,552 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:02:27,555 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:02:27,556 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.02s
+2025-06-14 23:02:27,560 - app.main - INFO - [HTTP] GET /stock/me - 200 - 0.02s
+2025-06-14 23:02:27,803 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.00s
+2025-06-14 23:02:27,815 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 23:02:27,818 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.01s
+2025-06-14 23:02:27,820 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 23:02:27,827 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.00s
+2025-06-14 23:02:27,836 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.00s
+2025-06-14 23:02:27,880 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.00s
+2025-06-14 23:02:30,195 - app.main - INFO - [HTTP] GET /stock/1 - 404 - 0.00s
+2025-06-14 23:08:55,154 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-06-14 23:08:57,127 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-06-14 23:08:57,128 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-06-14 23:08:58,197 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-06-14 23:09:23,819 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-06-14 23:09:25,265 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-06-14 23:09:34,215 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-06-14 23:09:45,493 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-06-14 23:09:46,372 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-06-14 23:09:47,541 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-06-14 23:09:48,092 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-06-14 23:09:49,159 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-06-14 23:10:48,015 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-06-14 23:10:48,017 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-06-14 23:10:48,019 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-06-14 23:10:48,019 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-06-14 23:10:48,021 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-06-14 23:10:48,022 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-06-14 23:10:48,024 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:10:48,028 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:10:48,029 - sqlalchemy.engine.Engine - INFO - [generated in 0.00114s] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:10:48,033 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:10:48,036 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.12s
+2025-06-14 23:10:59,464 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:10:59,466 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:10:59,467 - sqlalchemy.engine.Engine - INFO - [cached since 11.44s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:10:59,471 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:10:59,473 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.01s
+2025-06-14 23:11:01,675 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:11:01,679 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:11:01,680 - sqlalchemy.engine.Engine - INFO - [generated in 0.00125s] {'username_1': 'Sankha', 'param_1': 1}
+2025-06-14 23:11:01,685 - sqlalchemy.engine.Engine - INFO - SELECT stall.stall_id AS stall_stall_id, stall.stall_name AS stall_stall_name, stall.user_id AS stall_user_id, stall.stall_bg_img AS stall_stall_bg_img 
+FROM stall 
+WHERE stall.user_id = %(user_id_1)s
+2025-06-14 23:11:01,686 - sqlalchemy.engine.Engine - INFO - [generated in 0.00102s] {'user_id_1': 1}
+2025-06-14 23:11:01,692 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:11:01,694 - app.main - INFO - [HTTP] GET /stall/me - 200 - 0.02s
+2025-06-14 23:11:01,708 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:11:01,710 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:11:01,711 - sqlalchemy.engine.Engine - INFO - [generated in 0.00074s] {'stall_id_1': 2}
+2025-06-14 23:11:01,716 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:11:01,718 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.01s
+2025-06-14 23:11:01,723 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:11:01,724 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:11:01,724 - sqlalchemy.engine.Engine - INFO - [cached since 0.01434s ago] {'stall_id_1': 1}
+2025-06-14 23:11:01,727 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:11:01,728 - app.main - INFO - [HTTP] GET /stock/me - 200 - 0.01s
+2025-06-14 23:11:01,736 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:11:01,741 - sqlalchemy.engine.Engine - INFO - SELECT stall.stall_id AS stall_stall_id, stall.stall_name AS stall_stall_name, stall.user_id AS stall_user_id, stall.stall_bg_img AS stall_stall_bg_img 
+FROM stall
+2025-06-14 23:11:01,742 - sqlalchemy.engine.Engine - INFO - [generated in 0.00094s] {}
+2025-06-14 23:11:01,746 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:11:01,747 - app.main - INFO - [HTTP] GET /stall/all - 200 - 0.07s
+2025-06-14 23:11:01,764 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:11:01,764 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:11:01,765 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:11:01,765 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:11:01,766 - sqlalchemy.engine.Engine - INFO - [cached since 0.05649s ago] {'stall_id_1': 1}
+2025-06-14 23:11:01,767 - sqlalchemy.engine.Engine - INFO - [cached since 0.05725s ago] {'stall_id_1': 2}
+2025-06-14 23:11:01,770 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:11:01,771 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:11:01,772 - app.main - INFO - [HTTP] GET /stock/me - 200 - 0.01s
+2025-06-14 23:11:01,773 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.02s
+2025-06-14 23:11:02,029 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 23:11:02,031 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 23:11:02,138 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.12s
+2025-06-14 23:11:02,140 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.12s
+2025-06-14 23:11:02,152 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.01s
+2025-06-14 23:11:02,154 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 23:11:02,159 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.00s
+2025-06-14 23:11:02,163 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.01s
+2025-06-14 23:13:29,023 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:13:29,025 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:13:29,026 - sqlalchemy.engine.Engine - INFO - [cached since 161s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:13:29,031 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:13:29,033 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.01s
+2025-06-14 23:21:41,235 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:21:41,236 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:21:41,240 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:21:41,242 - sqlalchemy.engine.Engine - INFO - SELECT stall.stall_id AS stall_stall_id, stall.stall_name AS stall_stall_name, stall.user_id AS stall_user_id, stall.stall_bg_img AS stall_stall_bg_img 
+FROM stall
+2025-06-14 23:21:41,245 - sqlalchemy.engine.Engine - INFO - [cached since 639.6s ago] {'username_1': 'Sankha', 'param_1': 1}
+2025-06-14 23:21:41,246 - sqlalchemy.engine.Engine - INFO - [cached since 639.5s ago] {}
+2025-06-14 23:21:41,252 - sqlalchemy.engine.Engine - INFO - SELECT stall.stall_id AS stall_stall_id, stall.stall_name AS stall_stall_name, stall.user_id AS stall_user_id, stall.stall_bg_img AS stall_stall_bg_img 
+FROM stall 
+WHERE stall.user_id = %(user_id_1)s
+2025-06-14 23:21:41,254 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:21:41,261 - sqlalchemy.engine.Engine - INFO - [cached since 639.6s ago] {'user_id_1': 1}
+2025-06-14 23:21:41,264 - app.main - INFO - [HTTP] GET /stall/all - 200 - 0.04s
+2025-06-14 23:21:41,268 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:21:41,274 - app.main - INFO - [HTTP] GET /stall/me - 200 - 0.06s
+2025-06-14 23:21:41,294 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:21:41,295 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:21:41,296 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:21:41,299 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:21:41,308 - sqlalchemy.engine.Engine - INFO - [cached since 639.6s ago] {'stall_id_1': 1}
+2025-06-14 23:21:41,309 - sqlalchemy.engine.Engine - INFO - [cached since 639.6s ago] {'stall_id_1': 2}
+2025-06-14 23:21:41,313 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:21:41,315 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.03s
+2025-06-14 23:21:41,314 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:21:41,324 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:21:41,325 - app.main - INFO - [HTTP] GET /stock/me - 200 - 0.04s
+2025-06-14 23:21:41,327 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:21:41,330 - sqlalchemy.engine.Engine - INFO - [cached since 639.6s ago] {'stall_id_1': 2}
+2025-06-14 23:21:41,333 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:21:41,335 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:21:41,339 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.02s
+2025-06-14 23:21:41,338 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:21:41,345 - sqlalchemy.engine.Engine - INFO - [cached since 639.6s ago] {'stall_id_1': 1}
+2025-06-14 23:21:41,356 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:21:41,359 - app.main - INFO - [HTTP] GET /stock/me - 200 - 0.03s
+2025-06-14 23:21:41,589 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.00s
+2025-06-14 23:21:41,594 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 23:21:41,596 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.01s
+2025-06-14 23:21:41,598 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 23:21:41,607 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.00s
+2025-06-14 23:21:41,612 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 23:21:41,625 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 23:21:41,627 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.00s
+2025-06-14 23:21:44,140 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:21:44,141 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:21:44,143 - sqlalchemy.engine.Engine - INFO - [cached since 656.1s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:21:44,146 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:21:44,151 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.01s
+2025-06-14 23:23:36,155 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:23:36,157 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:23:36,158 - sqlalchemy.engine.Engine - INFO - [cached since 768.1s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:23:36,163 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:23:36,166 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.01s
+2025-06-14 23:23:36,838 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:23:36,840 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:23:36,842 - sqlalchemy.engine.Engine - INFO - [cached since 768.8s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:23:36,850 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:23:36,853 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.02s
+2025-06-14 23:23:42,842 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:23:42,844 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:23:42,847 - sqlalchemy.engine.Engine - INFO - [cached since 774.8s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:23:42,852 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:23:42,855 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.02s
+2025-06-14 23:23:46,833 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:23:46,834 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:23:46,835 - sqlalchemy.engine.Engine - INFO - [cached since 778.8s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:23:46,840 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:23:46,843 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.01s
+2025-06-14 23:23:55,155 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:23:55,158 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:23:55,160 - sqlalchemy.engine.Engine - INFO - [cached since 787.1s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:23:55,166 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:23:55,176 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.02s
+2025-06-14 23:23:58,831 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:23:58,833 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:23:58,835 - sqlalchemy.engine.Engine - INFO - [cached since 790.8s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:23:58,839 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:23:58,841 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.01s
+2025-06-14 23:24:00,833 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:24:00,836 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:24:00,843 - sqlalchemy.engine.Engine - INFO - [cached since 792.8s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:24:00,850 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:24:00,852 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.02s
+2025-06-14 23:24:08,143 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:24:08,149 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:24:08,152 - sqlalchemy.engine.Engine - INFO - [cached since 800.1s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:24:08,156 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:24:08,166 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.03s
+2025-06-14 23:24:08,840 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:24:08,842 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:24:08,843 - sqlalchemy.engine.Engine - INFO - [cached since 800.8s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:24:08,848 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:24:08,849 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.01s
+2025-06-14 23:24:11,835 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:24:11,838 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:24:11,840 - sqlalchemy.engine.Engine - INFO - [cached since 803.8s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:24:11,844 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:24:11,846 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.01s
+2025-06-14 23:24:13,830 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:24:13,832 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:24:13,834 - sqlalchemy.engine.Engine - INFO - [cached since 805.8s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:24:13,841 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:24:13,844 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.02s
+2025-06-14 23:24:28,831 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:24:28,834 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:24:28,836 - sqlalchemy.engine.Engine - INFO - [cached since 820.8s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:24:28,842 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:24:28,845 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.02s
+2025-06-14 23:24:39,143 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:24:39,147 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:24:39,150 - sqlalchemy.engine.Engine - INFO - [cached since 831.1s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:24:39,157 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:24:39,163 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.02s
+2025-06-14 23:24:44,841 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:24:44,843 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:24:44,849 - sqlalchemy.engine.Engine - INFO - [cached since 836.8s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:24:44,854 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:24:44,857 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.02s
+2025-06-14 23:24:52,540 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:24:52,542 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:24:52,544 - sqlalchemy.engine.Engine - INFO - [cached since 844.5s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:24:52,549 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:24:52,551 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.01s
+2025-06-14 23:25:23,455 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:25:23,463 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:25:23,473 - sqlalchemy.engine.Engine - INFO - [cached since 875.4s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:25:23,487 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:25:23,490 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.04s
+2025-06-14 23:28:53,145 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:28:53,149 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:28:53,150 - sqlalchemy.engine.Engine - INFO - [cached since 1085s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:28:53,155 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:28:53,157 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.01s
+2025-06-14 23:28:58,837 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:28:58,840 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:28:58,842 - sqlalchemy.engine.Engine - INFO - [cached since 1091s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:28:58,851 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:28:58,853 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.02s
+2025-06-14 23:29:02,836 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:29:02,840 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:29:02,844 - sqlalchemy.engine.Engine - INFO - [cached since 1095s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:29:02,853 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:29:02,855 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.02s
+2025-06-14 23:31:19,141 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:31:19,143 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:31:19,144 - sqlalchemy.engine.Engine - INFO - [cached since 1231s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:31:19,151 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:31:19,158 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.02s
+2025-06-14 23:31:19,831 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:31:19,832 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:31:19,834 - sqlalchemy.engine.Engine - INFO - [cached since 1232s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:31:19,836 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:31:19,838 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.01s
+2025-06-14 23:31:21,834 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:31:21,835 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:31:21,835 - sqlalchemy.engine.Engine - INFO - [cached since 1234s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:31:21,838 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:31:21,840 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.01s
+2025-06-14 23:31:25,136 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:31:25,137 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:31:25,139 - sqlalchemy.engine.Engine - INFO - [cached since 1237s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:31:25,144 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:31:25,146 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.01s
+2025-06-14 23:31:27,846 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:31:27,850 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:31:27,850 - sqlalchemy.engine.Engine - INFO - [cached since 1240s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:31:27,852 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:31:27,854 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.01s
+2025-06-14 23:32:31,138 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:32:31,140 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:32:31,143 - sqlalchemy.engine.Engine - INFO - [cached since 1303s ago] {'stock_id_1': 1, 'param_1': 1}
+2025-06-14 23:32:31,149 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:32:31,158 - app.main - INFO - [HTTP] GET /stock/1 - 200 - 0.02s
+2025-06-14 23:42:23,401 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-06-14 23:42:30,724 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-06-14 23:43:31,565 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-06-14 23:43:33,786 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-06-14 23:43:43,488 - app.main - INFO - [SHUTDOWN] Flower Market backend shutting down.
+2025-06-14 23:43:57,178 - app.main - INFO - [STARTUP] Flower Market backend initialized.
+2025-06-14 23:44:32,300 - app.main - ERROR - [ERROR] GET http://localhost:8000/stall/me - 'NoneType' object has no attribute 'get'
+2025-06-14 23:44:32,372 - sqlalchemy.engine.Engine - INFO - select pg_catalog.version()
+2025-06-14 23:44:32,374 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-06-14 23:44:32,376 - sqlalchemy.engine.Engine - INFO - select current_schema()
+2025-06-14 23:44:32,378 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-06-14 23:44:32,380 - sqlalchemy.engine.Engine - INFO - show standard_conforming_strings
+2025-06-14 23:44:32,380 - sqlalchemy.engine.Engine - INFO - [raw sql] {}
+2025-06-14 23:44:32,383 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:44:32,386 - sqlalchemy.engine.Engine - INFO - SELECT stall.stall_id AS stall_stall_id, stall.stall_name AS stall_stall_name, stall.user_id AS stall_user_id, stall.stall_bg_img AS stall_stall_bg_img 
+FROM stall
+2025-06-14 23:44:32,388 - sqlalchemy.engine.Engine - INFO - [generated in 0.00191s] {}
+2025-06-14 23:44:32,393 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:44:32,396 - app.main - INFO - [HTTP] GET /stall/all - 200 - 0.11s
+2025-06-14 23:44:32,422 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:44:32,426 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:44:32,427 - sqlalchemy.engine.Engine - INFO - [generated in 0.00117s] {'stall_id_1': 2}
+2025-06-14 23:44:32,430 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:44:32,432 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.02s
+2025-06-14 23:44:32,437 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:44:32,439 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:44:32,440 - sqlalchemy.engine.Engine - INFO - [cached since 0.01395s ago] {'stall_id_1': 1}
+2025-06-14 23:44:32,444 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:44:32,446 - app.main - INFO - [HTTP] GET /stock/me - 200 - 0.01s
+2025-06-14 23:44:32,776 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.06s
+2025-06-14 23:44:32,777 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.06s
+2025-06-14 23:44:32,781 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.00s
+2025-06-14 23:44:32,782 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.00s
+2025-06-14 23:44:35,389 - app.main - INFO - [HTTP] POST /logout - 200 - 0.00s
+2025-06-14 23:44:50,317 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:44:50,320 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:44:50,321 - sqlalchemy.engine.Engine - INFO - [generated in 0.00158s] {'username_1': 'Sankha', 'param_1': 1}
+2025-06-14 23:44:50,456 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:44:50,459 - app.main - INFO - [HTTP] POST /login - 200 - 0.15s
+2025-06-14 23:44:53,879 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:44:53,881 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:44:53,882 - sqlalchemy.engine.Engine - INFO - [cached since 3.562s ago] {'username_1': 'Sankha', 'param_1': 1}
+2025-06-14 23:44:53,890 - sqlalchemy.engine.Engine - INFO - SELECT stall.stall_id AS stall_stall_id, stall.stall_name AS stall_stall_name, stall.user_id AS stall_user_id, stall.stall_bg_img AS stall_stall_bg_img 
+FROM stall 
+WHERE stall.user_id = %(user_id_1)s
+2025-06-14 23:44:53,892 - sqlalchemy.engine.Engine - INFO - [generated in 0.00315s] {'user_id_1': 1}
+2025-06-14 23:44:53,897 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:44:53,899 - app.main - INFO - [HTTP] GET /stall/me - 200 - 0.02s
+2025-06-14 23:44:53,915 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.00s
+2025-06-14 23:44:53,922 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:44:53,924 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:44:53,925 - sqlalchemy.engine.Engine - INFO - [cached since 21.5s ago] {'stall_id_1': 2}
+2025-06-14 23:44:53,927 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:44:53,928 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.01s
+2025-06-14 23:44:53,951 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:44:53,952 - sqlalchemy.engine.Engine - INFO - SELECT stall.stall_id AS stall_stall_id, stall.stall_name AS stall_stall_name, stall.user_id AS stall_user_id, stall.stall_bg_img AS stall_stall_bg_img 
+FROM stall
+2025-06-14 23:44:53,952 - sqlalchemy.engine.Engine - INFO - [cached since 21.57s ago] {}
+2025-06-14 23:44:53,955 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:44:53,956 - app.main - INFO - [HTTP] GET /stall/all - 200 - 0.08s
+2025-06-14 23:44:53,966 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:44:53,967 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:44:53,968 - sqlalchemy.engine.Engine - INFO - [cached since 21.54s ago] {'stall_id_1': 2}
+2025-06-14 23:44:53,970 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:44:53,971 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.01s
+2025-06-14 23:44:53,980 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:44:53,982 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:44:53,982 - sqlalchemy.engine.Engine - INFO - [cached since 21.56s ago] {'stall_id_1': 1}
+2025-06-14 23:44:53,986 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:44:53,987 - app.main - INFO - [HTTP] GET /stock/me - 200 - 0.07s
+2025-06-14 23:44:53,991 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:44:53,992 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:44:53,994 - sqlalchemy.engine.Engine - INFO - [cached since 21.57s ago] {'stall_id_1': 1}
+2025-06-14 23:44:53,998 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:44:54,000 - app.main - INFO - [HTTP] GET /stock/me - 200 - 0.01s
+2025-06-14 23:44:54,236 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.00s
+2025-06-14 23:44:54,238 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.01s
+2025-06-14 23:44:54,240 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 23:44:54,252 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.00s
+2025-06-14 23:44:54,256 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.00s
+2025-06-14 23:44:54,263 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.00s
+2025-06-14 23:44:54,323 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.00s
+2025-06-14 23:45:22,415 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:45:22,419 - sqlalchemy.engine.Engine - INFO - INSERT INTO stock (stall_id, item_name, price, quantity, stock_img_path) VALUES (%(stall_id)s, %(item_name)s, %(price)s, %(quantity)s, %(stock_img_path)s) RETURNING stock.stock_id, stock.created_date
+2025-06-14 23:45:22,421 - sqlalchemy.engine.Engine - INFO - [generated in 0.00225s] {'stall_id': 1, 'item_name': 'pichcha', 'price': Decimal('100'), 'quantity': 10000, 'stock_img_path': 'stock-img\\stock_1_pichcha_96db4cd7f45a4645952034486b713a0f.jpg'}
+2025-06-14 23:45:22,460 - sqlalchemy.engine.Engine - INFO - COMMIT
+2025-06-14 23:45:22,463 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:45:22,465 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id, stock.stall_id, stock.item_name, stock.price, stock.quantity, stock.stock_img_path, stock.created_date 
+FROM stock 
+WHERE stock.stock_id = %(pk_1)s
+2025-06-14 23:45:22,466 - sqlalchemy.engine.Engine - INFO - [generated in 0.00106s] {'pk_1': 3}
+2025-06-14 23:45:22,469 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:45:22,472 - app.main - INFO - [HTTP] POST /stock/create - 200 - 0.07s
+2025-06-14 23:45:22,493 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:45:22,494 - sqlalchemy.engine.Engine - INFO - SELECT users.user_id AS users_user_id, users.username AS users_username, users.password AS users_password, users.national_id AS users_national_id, users.phone AS users_phone, users.email AS users_email 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:45:22,495 - sqlalchemy.engine.Engine - INFO - [cached since 32.18s ago] {'username_1': 'Sankha', 'param_1': 1}
+2025-06-14 23:45:22,505 - sqlalchemy.engine.Engine - INFO - SELECT stall.stall_id AS stall_stall_id, stall.stall_name AS stall_stall_name, stall.user_id AS stall_user_id, stall.stall_bg_img AS stall_stall_bg_img 
+FROM stall 
+WHERE stall.user_id = %(user_id_1)s
+2025-06-14 23:45:22,506 - sqlalchemy.engine.Engine - INFO - [cached since 28.62s ago] {'user_id_1': 1}
+2025-06-14 23:45:22,509 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:45:22,511 - app.main - INFO - [HTTP] GET /stall/me - 200 - 0.02s
+2025-06-14 23:45:22,516 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:45:22,517 - sqlalchemy.engine.Engine - INFO - SELECT stall.stall_id AS stall_stall_id, stall.stall_name AS stall_stall_name, stall.user_id AS stall_user_id, stall.stall_bg_img AS stall_stall_bg_img 
+FROM stall
+2025-06-14 23:45:22,518 - sqlalchemy.engine.Engine - INFO - [cached since 50.13s ago] {}
+2025-06-14 23:45:22,524 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:45:22,526 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.00s
+2025-06-14 23:45:22,527 - app.main - INFO - [HTTP] GET /stall/all - 200 - 0.01s
+2025-06-14 23:45:22,529 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 23:45:22,534 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:45:22,536 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:45:22,536 - sqlalchemy.engine.Engine - INFO - [cached since 50.11s ago] {'stall_id_1': 2}
+2025-06-14 23:45:22,540 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:45:22,543 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.01s
+2025-06-14 23:45:22,545 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.01s
+2025-06-14 23:45:22,550 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.01s
+2025-06-14 23:45:22,555 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:45:22,558 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:45:22,561 - sqlalchemy.engine.Engine - INFO - [cached since 50.13s ago] {'stall_id_1': 1}
+2025-06-14 23:45:22,563 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.00s
+2025-06-14 23:45:22,565 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:45:22,567 - app.main - INFO - [HTTP] GET /stock/me - 200 - 0.01s
+2025-06-14 23:45:22,575 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:45:22,577 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:45:22,579 - sqlalchemy.engine.Engine - INFO - [cached since 50.15s ago] {'stall_id_1': 2}
+2025-06-14 23:45:22,583 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:45:22,586 - app.main - INFO - [HTTP] GET /stock/me - 404 - 0.01s
+2025-06-14 23:45:22,594 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:45:22,597 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stall_id = %(stall_id_1)s
+2025-06-14 23:45:22,599 - sqlalchemy.engine.Engine - INFO - [cached since 50.17s ago] {'stall_id_1': 1}
+2025-06-14 23:45:22,607 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:45:22,609 - app.main - INFO - [HTTP] GET /stock/me - 200 - 0.02s
+2025-06-14 23:45:22,859 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.00s
+2025-06-14 23:45:22,869 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_2.png - 404 - 0.00s
+2025-06-14 23:45:22,887 - app.main - INFO - [HTTP] GET /static/Stall-Bgm/stall_1.png - 200 - 0.00s
+2025-06-14 23:45:27,875 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2025-06-14 23:45:27,878 - sqlalchemy.engine.Engine - INFO - SELECT stock.stock_id AS stock_stock_id, stock.stall_id AS stock_stall_id, stock.item_name AS stock_item_name, stock.price AS stock_price, stock.quantity AS stock_quantity, stock.stock_img_path AS stock_stock_img_path, stock.created_date AS stock_created_date 
+FROM stock 
+WHERE stock.stock_id = %(stock_id_1)s 
+ LIMIT %(param_1)s
+2025-06-14 23:45:27,880 - sqlalchemy.engine.Engine - INFO - [generated in 0.00221s] {'stock_id_1': 3, 'param_1': 1}
+2025-06-14 23:45:27,884 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2025-06-14 23:45:27,886 - app.main - INFO - [HTTP] GET /stock/3 - 200 - 0.01s

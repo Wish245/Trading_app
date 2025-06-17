@@ -56,9 +56,10 @@ async def stock_create(
             ext = os.path.splitext(image.filename)[1] or ".png"
             safe_item_name = item_name.replace(" ", "_")
             filename = f"stock_{stall_id}_{safe_item_name}_{unique_id}{ext}"
-            image_path = os.path.join(upload_dir, filename)
+            image_path = os.path.join("stock-img", filename)
 
-            with open(image_path, "wb") as f:
+            file_path = os.path.join("assets", image_path)
+            with open(file_path, "wb") as f:
                 f.write(await image.read())
         except Exception as e:
             raise HTTPException(status_code=500, detail=f"Image upload failed: {e}")
@@ -68,3 +69,12 @@ async def stock_create(
         return db_stock
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Creating the stock failed: {e}")
+    
+
+@router.get("/{stock_id}", response_model=StockOut)
+def get_stock_by_id(stock_id: int, db: Session = Depends(get_db)):
+    stock = stock_crud.get_stock_by_id(db, stock_id)
+    if not stock:
+        raise HTTPException(status_code=404, detail="Stock not found")
+    return stock
+
