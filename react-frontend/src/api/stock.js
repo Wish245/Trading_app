@@ -37,3 +37,10 @@ export const getStockById = async (stock_id) => {
   const response = await axiosInstance.get(`/stock/${stock_id}`);
   return response.data;
 };
+
+export const deleteStock = async(stock_id) => {
+    const response = await axiosInstance.delete('/stock/delete', {
+        params: {stock_id}
+    });
+    return response;
+}
