@@ -60,6 +60,9 @@ const NavBar = () => {
           <Link to="" onClick={scrollToContact}>Contact</Link>
         </li>
         <li>
+          <Link to="/order">My Orders</Link>
+        </li>
+        <li>
           <Link to="/profile">Profile</Link>
         </li>
       </ul>
