@@ -1,3 +1,18 @@
 .order-form {
-    
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    background-color: #DDFFCC;
+    border: 1px double #95FF80;
+    border-radius: 15px 15px 15px 15px;
+    box-shadow: inset 1px 2px 15px 7px rgba(29,255,53,0.47);
+    gap: 2rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+.fixed-comtent {
+    display: flex;
+    align-items:flex-start;
 }
