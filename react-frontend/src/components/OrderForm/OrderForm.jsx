@@ -8,10 +8,10 @@ const OrderForm = () => {
     const [stallId, setStallId] = useState("");
     const [itemName, setItemName] = useState("");
     const [quantity, setQuantity] = useState("");
-    const [error, setError] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [isOpenOrder, setOpenOrder] = useState(false);
-    const [isOpenPayement, setOpenPayment] = useState(false);
+    const setError = useState(null);
+    const setLoading = useState(false);
+    const setOpenOrder = useState(false);
+    const setOpenPayment = useState(false);
     const navigate = useNavigate();
     const { stock_id } = useParams();
 

@@ -28,7 +28,7 @@ const Stock = () => {
 
   const handleOrder = () => {
     // Navigate to order page or trigger order logic
-    navigate('/order');  // Adjust as needed
+    navigate(`/order-form/${stock_id}`);  // Adjust as needed
   };
 
   const handleCut = () => {
