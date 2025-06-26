@@ -89,7 +89,15 @@ const OrderForm = () => {
             </div>
             <div className="form-fill">
                 <label htmlFor="quantity">Quantity</label>
+                <input type="text" className="quantity" value={quantity}/>
+            </div>
+            <div className="btn-field">
+                <button className="cart-btn" onClick={handleSave}>Add-to-Cart</button>
+                <button className="cancel-btn" onClick={onCancel}>Cancel</button>
+                <button className="payment-btn" onClick={handlePayment}>Payment</button>
             </div>
         </div>
     )
 }
+
+export default OrderForm;
