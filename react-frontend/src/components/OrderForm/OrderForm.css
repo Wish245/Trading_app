@@ -15,4 +15,6 @@
 .fixed-comtent {
     display: flex;
     align-items:flex-start;
+    padding : 0.5px;
 }
+
